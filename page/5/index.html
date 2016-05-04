@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">postgresql の使い方 </a></h1>
+  <div class="meta">
+    Jan 4, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  普段 MySQL ばっかりなので、ポスグレは分からない… SHOW databases; \l SHOW tables; \d 大文字について もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。 select * from &quot;SCHEMA&quot;.users; select * from &quot;PREFIX_users&quot;; スキーマを指定 「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。 set search_path=&quot;SCHEMA&quot;, &quot;SCHEMA2&quot;, public
+  <a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/01/04/setup-iterm2/">Setup iTerm2 </a></h1>
   <div class="meta">
     Jan 4, 2013 &nbsp;
@@ -115,20 +129,6 @@
 
   RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。 具体例 describe User do describe '#admin?' do subject { user.admin? } let(:user) { FactoryGirl.create :user, admin: admin } context &quot;when user is administrator&quot; do let(:admin) { true } it &quot;returns true&quot; do expect(subject).to be_true end end context &quot;when user is not administrator&quot; do let(:admin) { false } it &quot;returns false&quot; do expect(subject).to be_false end end end end ポイント describe と context を明確に使い分ける let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない このルールを守るとテストの見通しがすごく良くなる context 直上の describe は以下のルールを用いている subject, let(/let!), before, it, context の順で書く（let と let!
   <a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/">Cucumberファーストインプレッション </a></h1>
-  <div class="meta">
-    Oct 1, 2012 &nbsp;
-    
-  </div>
-</div>
-
-  Cucumberのメモガキ 前準備 とりあえず Emacs の拡張を入れる https://github.com/michaelklishin/cucumber.el はじめる！ Cucumber を読む http://tatsu-zine.com/books/cuke The RSpec Book を読む http://www.amazon.co.jp/dp/4798121932/ 実践テスト駆動開発を読む http://www.amazon.co.jp/sim/4798124583/2 実践 Guard で自動実行させる まず、シナリオの粒度に悩む 悩んでも仕方無いから、とにかく書いてみる Cucumber の本である上の2冊は情報が古いため、そのままやっても動かないことがある cucumber-rails はデフォルトのステップ定義を用意してくれない! tag の指定方法が変わっている! &ndash;tags @piyo で指定できる etc, etc, etc,,,, 日本語情報が少ない(古いものが多い)から、英語で調べるのが吉 でも結局公式wikiで答えが見つかる事も多い https://github.com/cucumber/cucumber ステップ定義は Capybara との戦いになりがち やっぱり調べ物には公式wikiが良かったりする https://github.com/jnicklas/capybara Capybara には HTTP メソッドの PUT と DELETE がなくて詰みかける @javascript タグをつけるのが正解 Capybara の JS-driver は capybara-webkit が良い Qt を入れる必要があって若干ハードルが高いけど、selenium よりこっちが良い 何より、ブラウザが立ち上がらないのが素晴らしい Capybara さんには、save_and_open_page というメソッドでその状態の HTML をブラウザで開く機能があってめっちゃ便利 前提 /^デバッグ$/ {
-  <a href="http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/" class="read-on">続きを読む → </a>
 </div>
 
   
