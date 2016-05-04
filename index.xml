@@ -6,8 +6,18 @@
     <description>Recent content on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 May 2016 20:02:11 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 May 2016 20:32:51 +0900</lastBuildDate>
     <atom:link href="http://blog.tanaka51.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ifttt連携テスト</title>
+      <link>http://blog.tanaka51.jp/2016/05/04/ifttt%E9%80%A3%E6%90%BA%E3%83%86%E3%82%B9%E3%83%88/</link>
+      <pubDate>Wed, 04 May 2016 20:32:51 +0900</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2016/05/04/ifttt%E9%80%A3%E6%90%BA%E3%83%86%E3%82%B9%E3%83%88/</guid>
+      <description>&lt;p&gt;新規投稿したら tweet されるはず&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>hugoに移行した</title>
@@ -1068,32 +1078,6 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 &lt;li&gt;&lt;a href=&#34;http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html&#34; title=&#34;Synchronous Processes - GNU Emacs Lisp Reference Manual&#34;&gt;Synchronous Processes - GNU Emacs Lisp Reference Manual&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://haraita9283.blog98.fc2.com/blog-entry-387.html&#34; title=&#34;Emacs Lisp メモ: バッファローカル変数 | anobota&#34;&gt;Emacs Lisp メモ: バッファローカル変数 | anobota&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>git blame in Emacs</title>
-      <link>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</link>
-      <pubDate>Fri, 22 Mar 2013 12:51:00 +0000</pubDate>
-      
-      <guid>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</guid>
-      <description>&lt;p&gt;あなたは Emacs でコードを読んでいる最中に、git blame したくなったことはありませんか？
-コードの意図が知りたい時、この&lt;strong&gt;素晴らしい&lt;/strong&gt;コードを書いた人を知りたい時
-…そんな時、お気に入りのシェルに移動して、 git blame -L ええと何行目だったけかな、そうそう 72 行目だった、でももうちょっと前から見たいから 70 位にしてそれでええとファイル名は…なんてやっていた事はないでしょうか。私はよくあります。&lt;/p&gt;
-
-&lt;p&gt;さて、あなたが使っているエディタは何でしたっけ？
-…そう、Emacs ですね。Emacs なら、この問題に対する素敵なソリューションが&lt;strong&gt;標準で&lt;/strong&gt;存在します。
-もう git blame の為にシェルに戻る時、脳内スタックに行数とファイル名を追加する必要はありません。&lt;/p&gt;
-
-&lt;p&gt;さてその方法ですが、Git 管理下のファイルで以下のコマンドを優しく叩いてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;C-x v g&lt;/code&gt; もしくは &lt;code&gt;M-x git-annotate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;そうすると、新しくバッファを開いて git blame の結果を表示します。 &lt;code&gt;git-annotate&lt;/code&gt; したポイントを中心に表示してくれるのでかなり便利です。
-このバッファは &lt;code&gt;q&lt;/code&gt; で閉じる事ができます。
-popup.el と組み合わせると更に良い感じになります。&lt;/p&gt;
-
-&lt;p&gt;これであの素敵なコードを書いた人を調べる作業が高速にかつ快適にできるようになりました:)&lt;/p&gt;
 </description>
     </item>
     

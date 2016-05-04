@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/07/%E5%88%9D%E5%9B%9E%E6%99%82%E3%81%AEyum%E3%81%AE%E8%A8%AD%E5%AE%9A/">初回時のyumの設定 </a></h1>
+  <div class="meta">
+    Jan 7, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  CentOS 導入したら、まず yum を強くするのだ！！ yum をはやくする % sudo yum -y install yum-fastestmirror 開発用ツール % sudo yum groupinstall &quot;Development Tools&quot; パッケージ管理のリポジトリ追加 rpmforge, epel, remi の３つを入れておけば、大体なんとかなるらしい。 rpmforge % sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt % sudo rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm epel % sudo rpm --import http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/RPM-GPG-KEY-EPEL-6 % sudo rpm -ivh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm remi % sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi % sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm Development Tools を入れれば一応入るとおもわれるが、以下をやっておくと安心 % sudo yum install -y gcc-c++ gcc-c make patch readline
+  <a href="http://blog.tanaka51.jp/2013/01/07/%E5%88%9D%E5%9B%9E%E6%99%82%E3%81%AEyum%E3%81%AE%E8%A8%AD%E5%AE%9A/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">postgresql の使い方 </a></h1>
   <div class="meta">
     Jan 4, 2013 &nbsp;
@@ -115,20 +129,6 @@
 
   clips で webmock を使って Github API との通信部分をスタブしたのだけど、このスタブ定義をすべての example に適用させた時の記録。または shared_context をすべての example に適用する方法。 参考 rspec-users - using shared_context in a global way 結果 clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub やり方 （というかほぼ参考にしたページの日本語約） まず、&rsquo;RSpec.configure&rsquo; 内で、すべての example に適用させる before を定義できる。 だけど、let だとか RSpec の DSL は &lsquo;RSpec.configure&rsquo; 内では使えない。だから、&rsquo;RSpec::Core::SharedContext&rsquo; を extend した module をつくって、configure 内ではその自作 module を include させるようにすると良い。 で、具体例。 # spec/spec_helper.rb RSpec.configure do |config| config.include StubHttpRequest end # spec/support/stub_http_request.rb require 'rspec/core/shared_context' module StubHttpRequest extend RSpec::Core::SharedContext before do stub_request(:any, /.*api\.github\.com.*/).
   <a href="http://blog.tanaka51.jp/2012/12/14/rspec-%E3%81%AE-shared_context-%E3%82%92%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE-example-%E3%81%AB%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/">RSpec Best Practice </a></h1>
-  <div class="meta">
-    Dec 14, 2012 &nbsp;
-    
-  </div>
-</div>
-
-  RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。 具体例 describe User do describe '#admin?' do subject { user.admin? } let(:user) { FactoryGirl.create :user, admin: admin } context &quot;when user is administrator&quot; do let(:admin) { true } it &quot;returns true&quot; do expect(subject).to be_true end end context &quot;when user is not administrator&quot; do let(:admin) { false } it &quot;returns false&quot; do expect(subject).to be_false end end end end ポイント describe と context を明確に使い分ける let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない このルールを守るとテストの見通しがすごく良くなる context 直上の describe は以下のルールを用いている subject, let(/let!), before, it, context の順で書く（let と let!
-  <a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/" class="read-on">続きを読む → </a>
 </div>
 
   
