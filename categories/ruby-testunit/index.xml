@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby Testunit on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/ruby-testunit/</link>
+    <description>Recent content in Ruby Testunit on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 31 Jan 2013 19:18:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/ruby-testunit/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い</title>
+      <link>http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/</link>
+      <pubDate>Thu, 31 Jan 2013 19:18:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/</guid>
+      <description>
+
+&lt;p&gt;仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。
+原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。
+Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。&lt;/p&gt;
+
+&lt;p&gt;自分が触った範囲で違うところをまとめる。&lt;/p&gt;
+
+&lt;h2 id=&#34;assertion-メソッドのmessage引数:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;assertion メソッドのmessage引数&lt;/h2&gt;
+
+&lt;p&gt;ここは大きな違い。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ruby標準ライブラリ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;to_s&lt;/code&gt; に反応するものなら何でもOK&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;gemのtest-unit&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nil&lt;/code&gt; &lt;code&gt;String&lt;/code&gt; &lt;code&gt;Proc&lt;/code&gt; &lt;code&gt;AssertionMessage&lt;/code&gt; だけしか受け付けない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;出力系:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;出力系&lt;/h2&gt;
+
+&lt;p&gt;Test::Unit:::UI::Console::TestRunner 辺り&lt;/p&gt;
+
+&lt;h3 id=&#34;output:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#output&lt;/h3&gt;
+
+&lt;p&gt;出力の為のメソッド。いろんな所で使われている。
+とる引数が違うので、オーバーライドしてると大変。&lt;/p&gt;
+
+&lt;p&gt;``` ruby Ruby 標準ライブラリ
+def output(something, level=NORMAL)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+``` ruby gem 版 test-unit
+def output(something, color=nil, level=nil)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;add-fault:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#add_fault&lt;/h3&gt;
+
+&lt;p&gt;&amp;rdquo;&amp;hellip;F..F.E.&amp;rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。
+標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（&lt;code&gt;@show_detail_immediately&lt;/code&gt;の値によって変わる）。&lt;/p&gt;
+
+&lt;p&gt;``` ruby Ruby 標準ライブラリ
+def add_fault(fault)
+  @faults &amp;lt;&amp;lt; fault
+  output_single(fault.single_character_display, PROGRESS_ONLY)
+  @already_outputted = true
+end&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+``` ruby gem 版 test-unit
+def add_fault(fault)
+  @faults &amp;lt;&amp;lt; fault
+  output_progress(fault.single_character_display, fault_color(fault))
+  output_progress_in_detail(fault) if @show_detail_immediately
+  @already_outputted = true if fault.critical?
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;finished:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#finished&lt;/h3&gt;
+
+&lt;p&gt;テストが全て終了した後に呼ばれるメソッド。
+標準ライブラリ版は全部のエラー情報をここで表示。gem版はデフォルトだと表示しない（&lt;code&gt;@show_detail_immediately&lt;/code&gt;の値によって変わる）。&lt;/p&gt;
+
+&lt;p&gt;``` ruby Ruby 標準ライブラリ
+def finished(elapsed_time)
+  nl
+  output(&amp;ldquo;Finished in #{elapsed_time} seconds.&amp;ldquo;)
+  @faults.each_with_index do |fault, index|
+    nl
+    output(&amp;ldquo;%3d) %s&amp;rdquo; % [index + 1, fault.long_display])
+  end
+  nl
+  output(@result)
+end&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+``` ruby gem 版 test-unit
+def finished(elapsed_time)
+  nl if output?(NORMAL) and !output?(VERBOSE)
+  output_faults unless @show_detail_immediately
+  nl(PROGRESS_ONLY)
+  change_output_level(IMPORTANT_FAULTS_ONLY) do
+    output_statistics(elapsed_time)
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;gem版はスタックトレースまで表示するけど、shoulda と同時に使っていると shoulda のエラー箇所を表示するので、相性が悪いっぽい。&lt;/li&gt;
+&lt;li&gt;gem版でも &lt;code&gt;--no-show-detail-immediately&lt;/code&gt; オプションをつければ &lt;code&gt;@show_detail_immediately&lt;/code&gt; の値が false になって 、Ruby版と同じタイミング（テストが全て終わった後）でエラーの表示ができる。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

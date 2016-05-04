@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    feature spec | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2014/09/08/feature-spec/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2014/09/08/feature-spec/">feature spec </a></h1>
+  <div class="meta">
+    Sep 8, 2014 &nbsp;
+    
+      #<a href="/tags/rails">rails</a>&nbsp;
+    
+      #<a href="/tags/test">test</a>&nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>Rails の話。</p>
+
+<p>最近では model のスペックをあまり書かなくなってきた。ほとんど feature spec で済ませている。</p>
+
+<p>feature spec に対する思いをダンプしたくなったのでしておく。</p>
+
+<h2 id="ここにいたるまでの遍歴:057049ee2235b2aeaf5f64966f3d2f89">ここにいたるまでの遍歴</h2>
+
+<ul>
+<li>rails 触り始め、テストという概念は知りつつも書き方が全く分から無い</li>
+<li>model spec の書き方を覚える</li>
+<li>model だけをテストファーストで書いたりする、テスト書くの楽しくなる</li>
+<li>BDD を知り feature spec driven で全部の行程で test first で開発するも、テスト書くの辛い</li>
+<li>テスト書くのが面倒になる</li>
+<li>あるチームで、納期が短いけどテスト書かないのはヤバイ、じゃあ後からでも良いから feature spec だけでも書こうという話になる。</li>
+<li>最低限 feature spec を書けば良いんだ、という気付き</li>
+<li>feature spec 書くの楽しい!!! &lt;- イマココ</li>
+</ul>
+
+<h2 id="主動で確認するのが面倒な部分こそ-feature-spec:057049ee2235b2aeaf5f64966f3d2f89">主動で確認するのが面倒な部分こそ feature spec</h2>
+
+<p>以前は model のスペックをひたすら頑張って書いていたけど、それだと結局、最終的なブラウザ上でのテストを手で頑張る感じになっていた。</p>
+
+<p>データを用意するのが面倒な部分なんかは、feature spec を用意しておくと、動作確認がすごく楽になる。
+あと、API を作るときとか、ワザワザ curl 叩くとか面倒だけど spec があると動作確認の代わりとして使えて楽。</p>
+
+<h2 id="ユーザ目線での最低ラインの動作保証:057049ee2235b2aeaf5f64966f3d2f89">ユーザ目線での最低ラインの動作保証</h2>
+
+<p>feature spec があるとその機能に関しては動作が保証されるので、安心感がある。</p>
+
+<p>Rails のバージョンアップも、feature spec があると安心して行える。
+例えば model のスペックだけだとユーザが触る部分の自動テストが無いことになるので、怖くてバージョンし辛くなりがち。</p>
+
+<h2 id="結合試験的な意味合い:057049ee2235b2aeaf5f64966f3d2f89">結合試験的な意味合い</h2>
+
+<p>routing も controller も view も model もそれぞれ Unit テストとして単体テストがかけるけど、
+それらを全て繋ぎあわせたテストが feature spec というイメージ。</p>
+
+<p>必然的に、ある機能に対する一連のコードを通るので、ちょっとしたリファクタリングをした時の typo だとかにも気づきやすい。</p>
+
+<h2 id="辛さからの解放:057049ee2235b2aeaf5f64966f3d2f89">辛さからの解放</h2>
+
+<p>プロダクトコードを書きながら仕様を固めていく事が多いので、先にテストを書く方法というのが僕には結構辛かったみたい。</p>
+
+<p>それで最近は、</p>
+
+<ul>
+<li>ある一連の機能をテストなしでとりあず作る</li>
+<li>それに対して feature spec を書く</li>
+<li>リファクタリング</li>
+<li>必要があればモデルにスペックを足す</li>
+</ul>
+
+<p>みたいにやってる。
+もしくは、データをつくるのが面倒な時などは、先に feature spec を書くことも結構ある。</p>
+
+<h2 id="周辺技術:057049ee2235b2aeaf5f64966f3d2f89">周辺技術</h2>
+
+<p>ちょっと前までは capybara webkit の build が面倒だから〜とかあって敬遠しがちだったけど、
+最近は PhantomJS がでてきて、前より楽になった気がする。</p>
+
+<h2 id="最近の流れ:057049ee2235b2aeaf5f64966f3d2f89">最近の流れ</h2>
+
+<p>TDD は死んだ、みたいな記事もあったし、そういうのが盛り上がってるのかも、とも思ったり。</p>
+
+<h2 id="気をつける事:057049ee2235b2aeaf5f64966f3d2f89">気をつける事</h2>
+
+<p>必ず失敗する事を確認するようにしたい。偶然他の所で同じ文言が表示されててたまたま通ってたとか、そもそもマッチャーの使い方間違ってたとかよくあるので。</p>
+
+<h2 id="悩み1-テスト実行時間:057049ee2235b2aeaf5f64966f3d2f89">悩み1: テスト実行時間</h2>
+
+<p>feature spec が溜まってくると、本当にテストの実行時間が遅くなって辛い。</p>
+
+<h2 id="悩み2-はまりやすい:057049ee2235b2aeaf5f64966f3d2f89">悩み2: はまりやすい</h2>
+
+<p>特に JS が絡んでくると、描画タイミングの問題とかあったりしてハマりやすい。
+CI だけ落ちるテストとかあったりして闇が深くなりがち。。</p>
+
+<h2 id="オチ:057049ee2235b2aeaf5f64966f3d2f89">オチ</h2>
+
+<p>特に無い</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2014/09/07/vim-%E3%81%A7%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%81%9F/" rel="prev">Vim でコードリーディングする環境を整えた</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2014/09/16/%E6%9C%80%E8%BF%91%E9%BA%BB%E9%9B%80%E3%81%A7%E8%B2%A0%E3%81%91%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E4%BD%95%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%82%8B%E3%81%8B%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8A%E3%81%8F/" rel="next">最近麻雀で負けていないので、何をやってるか書いておく</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/emacs/</link>
+    <description>Recent content in Emacs on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 22 Mar 2013 12:51:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>git blame in Emacs</title>
+      <link>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</link>
+      <pubDate>Fri, 22 Mar 2013 12:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</guid>
+      <description>&lt;p&gt;あなたは Emacs でコードを読んでいる最中に、git blame したくなったことはありませんか？
+コードの意図が知りたい時、この&lt;strong&gt;素晴らしい&lt;/strong&gt;コードを書いた人を知りたい時
+…そんな時、お気に入りのシェルに移動して、 git blame -L ええと何行目だったけかな、そうそう 72 行目だった、でももうちょっと前から見たいから 70 位にしてそれでええとファイル名は…なんてやっていた事はないでしょうか。私はよくあります。&lt;/p&gt;
+
+&lt;p&gt;さて、あなたが使っているエディタは何でしたっけ？
+…そう、Emacs ですね。Emacs なら、この問題に対する素敵なソリューションが&lt;strong&gt;標準で&lt;/strong&gt;存在します。
+もう git blame の為にシェルに戻る時、脳内スタックに行数とファイル名を追加する必要はありません。&lt;/p&gt;
+
+&lt;p&gt;さてその方法ですが、Git 管理下のファイルで以下のコマンドを優しく叩いてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;C-x v g&lt;/code&gt; もしくは &lt;code&gt;M-x git-annotate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;そうすると、新しくバッファを開いて git blame の結果を表示します。 &lt;code&gt;git-annotate&lt;/code&gt; したポイントを中心に表示してくれるのでかなり便利です。
+このバッファは &lt;code&gt;q&lt;/code&gt; で閉じる事ができます。
+popup.el と組み合わせると更に良い感じになります。&lt;/p&gt;
+
+&lt;p&gt;これであの素敵なコードを書いた人を調べる作業が高速にかつ快適にできるようになりました:)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

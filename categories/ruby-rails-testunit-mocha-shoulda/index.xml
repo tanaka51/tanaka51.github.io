@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby Rails Testunit Mocha Shoulda on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/ruby-rails-testunit-mocha-shoulda/</link>
+    <description>Recent content in Ruby Rails Testunit Mocha Shoulda on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 14 Feb 2013 14:39:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/ruby-rails-testunit-mocha-shoulda/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>sample test unit with mocha and shoulda</title>
+      <link>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</link>
+      <pubDate>Thu, 14 Feb 2013 14:39:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</guid>
+      <description>
+
+&lt;p&gt;最近、Test::Unit + mocha + Shoulda の構成の Rails アプリを扱っている。&lt;/p&gt;
+
+&lt;p&gt;参考になるコードが欲しくて Github で &lt;code&gt;gem shoulda gem mocha&lt;/code&gt; で検索したものから、良さ気なものをリストアップ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/grosser/i18n-backend-http&#34; title=&#34;grosser/i18n-backend-http · GitHub&#34;&gt;grosser/i18n-backend-http · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/grosser/i18n-backend-http/blob/master/test/i18n/backend/http_test.rb&#34; title=&#34;i18n-backend-http/test/i18n/backend/http_test.rb at master · grosser/i18n-backend-http · GitHub&#34;&gt;i18n-backend-http/test/i18n/backend/http_test.rb at master · grosser/i18n-backend-http · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/juanibiapina/minglr&#34; title=&#34;juanibiapina/minglr · GitHub&#34;&gt;juanibiapina/minglr · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TestCase 自体をアプリ名でネームスペース区切ってる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/juanibiapina/minglr/blob/master/test/commands_test.rb&#34; title=&#34;minglr/test/commands_test.rb at master · juanibiapina/minglr · GitHub&#34;&gt;minglr/test/commands_test.rb at master · juanibiapina/minglr · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jnunemaker/joint&#34; title=&#34;jnunemaker/joint · GitHub&#34;&gt;jnunemaker/joint · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RSpec 風&lt;/li&gt;
+&lt;li&gt;僕も割とこんな感じで書いてる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jnunemaker/joint/blob/master/test/test_joint.rb&#34; title=&#34;joint/test/test_joint.rb at master · jnunemaker/joint · GitHub&#34;&gt;joint/test/test_joint.rb at master · jnunemaker/joint · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/britt/facebook-warden-strategy&#34; title=&#34;britt/facebook-warden-strategy · GitHub&#34;&gt;britt/facebook-warden-strategy · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mocha の subject を使ってる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/britt/facebook-warden-strategy/blob/master/test/facebook_connect_test.rb&#34; title=&#34;facebook-warden-strategy/test/facebook_connect_test.rb at master · britt/facebook-warden-strategy · GitHub&#34;&gt;facebook-warden-strategy/test/facebook_connect_test.rb at master · britt/facebook-warden-strategy · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;mocha-tips:b4ebb700532968320e3ba7fc512a88e7&#34;&gt;mocha Tips&lt;/h2&gt;
+
+&lt;h3 id=&#34;stub-method-chain:b4ebb700532968320e3ba7fc512a88e7&#34;&gt;stub method chain&lt;/h3&gt;
+
+&lt;p&gt;メソッドチェーンをスタブする&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&#34;http://viget.com/extend/stubbing-method-chains-with-mocha&#34; title=&#34;Stubbing Method Chains with Mocha | Viget&#34;&gt;Stubbing Method Chains with Mocha | Viget&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;Hoge.foo.bar.baz =&amp;gt; # hoge
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なら&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;Hoge.stub(:foo).returns(stub(:bar =&amp;gt; stub(:baz =&amp;gt; &#39;hoge&#39;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ずっと RSpec 使ってて、RSpec 大好き人間だったけど、Test::Unit + mocha + Shoulda の組み合わせも、シンプルで好きになってきた最近。&lt;/p&gt;
+
+&lt;p&gt;あと、Github はコードサンプル探すのに良いですねぇ。 Github+1&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

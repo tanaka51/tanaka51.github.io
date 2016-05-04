@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    RSpec Best Practice | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/">RSpec Best Practice </a></h1>
+  <div class="meta">
+    Dec 14, 2012 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。</p>
+
+<p>具体例</p>
+
+<pre><code class="language-ruby">describe User do
+  describe '#admin?' do
+    subject { user.admin? }
+
+    let(:user) { FactoryGirl.create :user, admin: admin }
+
+    context &quot;when user is administrator&quot; do
+      let(:admin) { true }
+
+      it &quot;returns true&quot; do
+        expect(subject).to be_true
+      end
+    end
+
+    context &quot;when user is not administrator&quot; do
+      let(:admin) { false }
+
+      it &quot;returns false&quot; do
+        expect(subject).to be_false
+      end
+    end
+  end
+end
+</code></pre>
+
+<h2 id="ポイント:838bb363fb560aa47691a63c7186a8fa">ポイント</h2>
+
+<ul>
+<li>describe と context を明確に使い分ける</li>
+<li>let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない
+
+<ul>
+<li>このルールを守るとテストの見通しがすごく良くなる</li>
+</ul></li>
+<li>context 直上の describe は以下のルールを用いている
+
+<ul>
+<li>subject, let(/let!), before, it, context の順で書く（let と let! は自分の中でまだ決まってない）</li>
+<li>context によって状況を切り分ける必要がある場合、変化する対象を let でくくりだす（上のサンプルでは、user 生成時の admin パラメータを let としてくくりだし、context 内で変化させている）</li>
+<li>let でくくり出した場合、必要があればこの場所にデフォルト値を書いておく</li>
+</ul></li>
+<li>context による切り分けが必要ないもので、かつ変数にしたい（名前をつけておきたい）ものに関しては、let! を用いて正格評価としておくと、意味論的にすっきりする</li>
+</ul>
+
+<p>例えば、スタブした値を場合によって切り分けたい場合は以下のようになる（rspec, factory_girl の他に rspec-spies を使っている）。</p>
+
+<pre><code class="language-ruby">describe ClipController do
+  describe &quot;POST 'create'&quot; do
+    let!(:clip)   { FactoryGirl.create :clip }
+    let!(:params) do
+      { 'clip' =&gt; { 'code' =&gt; 'hogehoge' } }
+    end
+
+    let(:successed) { true }
+
+    before do
+      Clip.stub(:new)  { clip }
+      clip.stub(:save) { successed }
+
+      post 'create', params
+    end
+
+    it &quot;creates a new Clip&quot; do
+      expect(Clip).to have_received(:new).with('code' =&gt; 'hogehoge')
+      expect(clip).to have_received(:save)
+    end
+
+    context 'when successed to save' do
+      # 一見冗長だが、書いた方が context を明確にできて良い気がしている
+      let(:successed) { true }
+
+      it &quot;redirects to 'show'&quot; do
+        expect(response).to redirect_to clip_path(clip)
+      end
+
+      it &quot;sets a flash[:notice]&quot; do
+        expect(flash[:notice]).to_not be_nil
+      end
+    end
+
+    context 'when failed to save' do
+      let(:successed) { false }
+
+      it &quot;renders template 'new'&quot; do
+        expect(page).to render_template('new')
+      end
+    end
+  end
+
+end
+</code></pre>
+
+<h2 id="結論:838bb363fb560aa47691a63c7186a8fa">結論</h2>
+
+<p>RSpec 最大の魅力は let という遅延評価される変数を用意した事であると思っている。これを最大限に生かしたスペックをかければ、DRY かつ見通しのよいスペックが書けると思う。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/" rel="prev">Cucumberファーストインプレッション</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2012/12/14/rspec-%E3%81%AE-shared_context-%E3%82%92%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE-example-%E3%81%AB%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B/" rel="next">rspec の shared_context をすべての example に適用する</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

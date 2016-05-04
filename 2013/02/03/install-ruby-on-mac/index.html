@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    install ruby on mac | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/">install ruby on mac </a></h1>
+  <div class="meta">
+    Feb 3, 2013 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>Ruby 1.9.3-p374 を Mac にインストールしようとしたら一発でできなかったのでメモ。</p>
+
+<ul>
+<li>OS: OSX 10.8.2 (moutain lion)</li>
+<li>rvm: 1.18.5</li>
+</ul>
+
+<p>3行でまとめると、</p>
+
+<ul>
+<li>MacPorts をアンインストール</li>
+<li>Homebrew に完全移行</li>
+<li><code>rm -rf ~/.rvm/usr</code> (不要な rvm pkg をアンインストール)</li>
+</ul>
+
+<p>という事になる。</p>
+
+<p>最新の Ruby のインストールは、Homebrew のライブラリが相性が良いのかなーという印象。正しいかどうかは分からない。</p>
+
+<p>以後、長いけれども、作業メモ。</p>
+
+<p><code>rvm install ruby</code> したらこんなエラー。</p>
+
+<pre><code>koichi% rvm install ruby
+Searching for binary rubies, this might take some time.
+No binary rubies available for: osx/10.8/x86_64/ruby-1.9.3-p374.
+Continuing with compilation. Please read 'rvm mount' to get more information on binary rubies.
+Installing Ruby from source to: /Users/koichi/.rvm/rubies/ruby-1.9.3-p374, this may take a while depending on your cpu(s)...
+ruby-1.9.3-p374 - #downloading ruby-1.9.3-p374, this may take a while depending on your connection...
+ruby-1.9.3-p374 - #extracted to /Users/koichi/.rvm/src/ruby-1.9.3-p374 (already extracted)
+ruby-1.9.3-p374 - #configuring
+ruby-1.9.3-p374 - #compiling
+Error running 'make', please read /Users/koichi/.rvm/log/ruby-1.9.3-p374/make.log
+There has been an error while running make. Halting the installation.
+</code></pre>
+
+<p>エラー起こしてる make の log はこんな感じ。</p>
+
+<pre><code>compiling openssl_missing.c
+In file included from openssl_missing.c:22:
+openssl_missing.h:71: error: conflicting types for 'HMAC_CTX_copy'
+/opt/local/include/openssl/hmac.h:102: error: previous declaration of 'HMAC_CTX_copy' was here
+openssl_missing.h:95: error: conflicting types for 'EVP_CIPHER_CTX_copy'
+/opt/local/include/openssl/evp.h:503: error: previous declaration of 'EVP_CIPHER_CTX_copy' was here
+openssl_missing.c:27: error: conflicting types for 'HMAC_CTX_copy'
+/opt/local/include/openssl/hmac.h:102: error: previous declaration of 'HMAC_CTX_copy' was here
+openssl_missing.c:122: error: conflicting types for 'EVP_CIPHER_CTX_copy'
+/opt/local/include/openssl/evp.h:503: error: previous declaration of 'EVP_CIPHER_CTX_copy' was here
+make[2]: *** [openssl_missing.o] Error 1
+make[1]: *** [ext/openssl/all] Error 2
+make: *** [build-ext] Error 2
+</code></pre>
+
+<p><a href="http://d.hatena.ne.jp/todomasa/20110218/1298007883" title="MacOSX v10.6.6でrvmを使ったruby1.9のインストールができない - todomasaの日記">MacOSX v10.6.6でrvmを使ったruby1.9のインストールができない - todomasaの日記</a></p>
+
+<p>↑を参考。openssl と readline を別に入れる必要があるみたい。ちなみに、今は <code>rvm package install</code> から <code>rvm pkg install</code> に名前が変わったので注意。</p>
+
+<p>とりあえず、rvm の update をする。</p>
+
+<pre><code>koichi% rvm get stable
+koichi% rvm --version
+
+rvm 1.18.5 (stable) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]
+</code></pre>
+
+<p>で、openssl と readline をインストールしてみる。 インストールには結構時間がかかる。</p>
+
+<pre><code>koichi% rvm pkg inatall openssl
+Fetching openssl-1.0.1c.tar.gz to /Users/koichi/.rvm/archives
+######################################################################## 100.0%
+Extracting openssl to /Users/koichi/.rvm/src/openssl-1.0.1c
+Configuring openssl in /Users/koichi/.rvm/src/openssl-1.0.1c.
+Compiling openssl in /Users/koichi/.rvm/src/openssl-1.0.1c.
+Installing openssl to /Users/koichi/.rvm/usr
+
+Please note that it's required to reinstall all rubies:
+
+    rvm reinstall all --force
+
+Updating openssl certificates
+</code></pre>
+
+<p>ここでしばらく止まってて、処理が続いてると思ったけど、エンター押したら進んだ。</p>
+
+<p>続いて readline。</p>
+
+<pre><code>koichi% rvm pkg install readline
+Fetching readline-5.2.tar.gz to /Users/koichi/.rvm/archives
+######################################################################## 100.0%
+Extracting readline to /Users/koichi/.rvm/src/readline-5.2
+Applying patch '/Users/koichi/.rvm/patches/readline-5.2/shobj-conf.patch'...
+Configuring readline in /Users/koichi/.rvm/src/readline-5.2.
+Compiling readline in /Users/koichi/.rvm/src/readline-5.2.
+Installing readline to /Users/koichi/.rvm/usr
+
+Please note that it's required to reinstall all rubies:
+
+    rvm reinstall all --force
+
+Fetching readline-6.2.tar.gz to /Users/koichi/.rvm/archives
+######################################################################## 100.0%
+Extracting readline to /Users/koichi/.rvm/src/readline-6.2
+Applying patch '/Users/koichi/.rvm/patches/readline-6.2/patch-shobj-conf.diff'...
+Configuring readline in /Users/koichi/.rvm/src/readline-6.2.
+Compiling readline in /Users/koichi/.rvm/src/readline-6.2.
+Installing readline to /Users/koichi/.rvm/usr
+
+Please note that it's required to reinstall all rubies:
+
+    rvm reinstall all --force
+</code></pre>
+
+<p>なんで 5.2 と 6.2 をインストールしてるんだろう。Ruby のバージョンによって要求するバージョンが違うのかな。</p>
+
+<p>それでようやっと ruby のインストール。さっきインストールしたパッケージのディレクトリを指定する。</p>
+
+<pre><code>koichi% rvm install ruby --with-openssl-dir=$HOME/.rvm/usr --with-readline-dir=$HOME/.rvm/usr
+Installing Ruby from source to: /Users/koichi/.rvm/rubies/ruby-1.9.3-p374, this may take a while depending on your cpu(s)...
+ruby-1.9.3-p374 - #downloading ruby-1.9.3-p374, this may take a while depending on your connection...
+ruby-1.9.3-p374 - #extracted to /Users/koichi/.rvm/src/ruby-1.9.3-p374 (already extracted)
+ruby-1.9.3-p374 - #configuring
+ruby-1.9.3-p374 - #compiling
+Error running 'make', please read /Users/koichi/.rvm/log/ruby-1.9.3-p374/make.log
+There has been an error while running make. Halting the installation.
+</code></pre>
+
+<p>が… <strong>ダメ！！！！</strong></p>
+
+<p>make のエラーもさっきと同じ。うーん、openssl のインストールが怪しい感じだったから、そこが原因かなぁ。</p>
+
+<p>と思って <code>~/.rvm/log/</code> らへんを見るけど、特に分からない。とりあえず、install 方法に間違いがあるかも、と思って <code>rvm help | less</code> したら、 <code>rvm insatll</code> の項目に公式へのリンクがはってあったので行ってみた。</p>
+
+<p><a href="https://rvm.io/rubies/installing/" title="RVM: Ruby Version Manager - './install' - Installing RVM.">RVM: Ruby Version Manager - &lsquo;./install&rsquo; - Installing RVM.</a></p>
+
+<p>そしたらこんな事が書いてあるじゃないですかー。</p>
+
+<pre><code>Find the requirements (follow the instructions):
+
+    $ rvm requirements
+
+Install ruby:
+
+    $ rvm install 1.9.3
+</code></pre>
+
+<p>で、さっそく <code>rvm requirements</code> からの、<code>brew install</code> しようとしたらエラー。</p>
+
+<pre><code>koichi% brew install autoconf automake apple-gcc42 libtool pkg-config openssl readline libyaml sqlite libxml2 libxslt libksba
+Error: No available formula for apple-gcc42
+</code></pre>
+
+<p>こういう時は黙って <code>brew update</code> してみる。再度 <code>brew insatll</code> したら進んだ（なんかワーニングは出てたけど）。色々と必要なライブラリが足りてなかったみたい。。。</p>
+
+<p>もう一度、ruby のインストール。</p>
+
+<p>やっぱりダメ。さっきと同じ、openssl 周りでのエラー。何がだめなんだろう。とりあえず、関係無いと思うけど、 <code>brew insatll</code> した時に XCode のバージョンが古いって言ってたから AppStore からアップデートする。結構時間かかる。そしたら OS のバージョンアップも…OS再起動する。戻ってきたけど何も変わらない。諸行無常。極楽浄土。小春日和。今までと違ったアプローチをとった記事を発見。</p>
+
+<p><a href="http://tech.tenki.cc/archives/62 &quot;OS X (Lion">OS X (Lion)へのrvmでのrubyインストール時にopenssl_missing.cでconflictingがでて失敗する問題の解消 | とりあえず残しとくか</a>へのrvmでのrubyインストール時にopenssl_missing.cでconflictingがでて失敗する問題の解消 | とりあえず残しとくか&rdquo;)</p>
+
+<p>これを試してみる。 <code>/opt/local/include/openssl/hmac.h</code> の102行目と <code>/opt/local/include/openssl/evp.h:</code> の503行目をコメントアウト。</p>
+
+<p>そして再度インストール。</p>
+
+<p>できた。</p>
+
+<p>** コンパイルできた！！！！ **</p>
+
+<pre><code>koichi% rvm install ruby --with-openssl-dir=$HOME/.rvm/usr --with-readline-dir=$HOME/.rvm/usr
+Installing Ruby from source to: /Users/koichi/.rvm/rubies/ruby-1.9.3-p374, this may take a while depending on your cpu(s)...
+ruby-1.9.3-p374 - #downloading ruby-1.9.3-p374, this may take a while depending on your connection...
+ruby-1.9.3-p374 - #extracted to /Users/koichi/.rvm/src/ruby-1.9.3-p374 (already extracted)
+ruby-1.9.3-p374 - #configuring
+ruby-1.9.3-p374 - #compiling
+ruby-1.9.3-p374 - #installing 
+Retrieving rubygems-1.8.25
+######################################################################## 100.0%
+Extracting rubygems-1.8.25 ...
+Removing old Rubygems files...
+Installing rubygems-1.8.25 for ruby-1.9.3-p374 ...
+Installation of rubygems completed successfully.
+Saving wrappers to '/Users/koichi/.rvm/bin'.
+ruby-1.9.3-p374 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+ruby-1.9.3-p374 - #importing default gemsets, this may take time ...
+Install of ruby-1.9.3-p374 - #complete 
+</code></pre>
+
+<p>でもこれでいいのか…な…まぁよしとしておこうか…そもそも、rvm のディレクトリ指定してるのになんで /opt/ 以下を見に行っているのか…うーん…</p>
+
+<p>やっぱりきちんとインストールできてなかったみたい。 <code>gem i bundler</code> でエラー。</p>
+
+<pre><code>koichi% gem i bundler
+ERROR:  While executing gem ... (ArgumentError)
+    negative string size (or size too big)
+</code></pre>
+
+<p>これもエラー。</p>
+
+<pre><code>koichi% gem install rubygems-update
+ruby(71425,0x7fff7de79180) malloc: *** mmap(size=1152921504606851072) failed (error code=12)
+*** error: can't allocate region
+*** set a breakpoint in malloc_error_break to debug
+ruby(71425,0x7fff7de79180) malloc: *** mmap(size=1152921504606851072) failed (error code=12)
+*** error: can't allocate region
+*** set a breakpoint in malloc_error_break to debug
+/Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/openssl/ssl-internal.rb:91:in `value': failed to allocate memory (NoMemoryError)
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/openssl/ssl-internal.rb:91:in `block in verify_certificate_identity'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/openssl/ssl-internal.rb:89:in `each'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/openssl/ssl-internal.rb:89:in `verify_certificate_identity'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/openssl/ssl-internal.rb:120:in `post_connection_check'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/net/http.rb:801:in `connect'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/net/http.rb:755:in `do_start'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/net/http.rb:750:in `start'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/remote_fetcher.rb:329:in `connection_for'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/remote_fetcher.rb:413:in `request'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/remote_fetcher.rb:205:in `fetch_http'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/remote_fetcher.rb:220:in `fetch_http'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/remote_fetcher.rb:238:in `fetch_path'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:260:in `load_specs'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:231:in `block in list'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:227:in `each'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:227:in `list'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:150:in `find_matching_with_errors'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/spec_fetcher.rb:89:in `fetch_with_errors'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/dependency_installer.rb:110:in `find_gems_with_sources'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/dependency_installer.rb:228:in `find_spec_by_name_and_version'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/dependency_installer.rb:259:in `install'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/commands/install_command.rb:121:in `block in execute'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/commands/install_command.rb:115:in `each'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/commands/install_command.rb:115:in `execute'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/command.rb:278:in `invoke'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/command_manager.rb:147:in `process_args'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/command_manager.rb:117:in `run'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/site_ruby/1.9.1/rubygems/gem_runner.rb:65:in `run'
+        from /Users/koichi/.rvm/rubies/ruby-1.9.3-p374/bin/gem:25:in `&lt;main&gt;'
+</code></pre>
+
+<p>マジで積んだ気がする…</p>
+
+<p>とりあえず、さっきまでのやつを消す</p>
+
+<pre><code>koichi% rvm --force uninstall ruby-1.9.3-p374
+Removing /Users/koichi/.rvm/src/ruby-1.9.3-p374...
+Removing /Users/koichi/.rvm/rubies/ruby-1.9.3-p374...
+</code></pre>
+
+<p>再度 <code>rvm install</code> インストールして先ほどと同じエラーが出る事を確認。そしてどうするかなー。とりあえず、MacPorts の openssl をアップデートしてみる…が、ダメ。どこかで、MacPorts で入れた openssl だとかじゃなくて、Homebrew で入れた openssl でインストールしろとか書いてあったので、MacPorts を前削除する方針で動く。以下を参考に。</p>
+
+<p><a href="http://yatmsu.hatenablog.com/entry/20120115/1326617749" title="macportsからhomebrewへ移行 - 一分一秒真剣勝負！">macportsからhomebrewへ移行 - 一分一秒真剣勝負！</a></p>
+
+<p>で、さらば MacPorts こんにちは Homebrew したら、再び <code>rvm install</code> 。だけど、今度は configure で落ちている模様。なんか C コンパイラーが無いとか。 <code>~/.zshrc</code> には MacPorts の為に export していたパスがいくつかあったので削除してログアウト→ログイン、 <code>rvm install</code> する。と、また make で落ちる。いつもの箇所。けど今度は、.rvm 以下のファイルを見て落ちている模様。こうなると、おそらく <code>pkg install</code> したファイル群が良くないと思われるので、 <code>rm -rf ~/.rvm/usr</code> して <code>pkg install</code> したライブラリを消す。そして <code>rvm install</code> 。</p>
+
+<p>今度こそコンパイルができた。 <code>gem install bundler</code> も動く模様。 ここまで長かった…</p>
+
+<hr />
+
+<h3 id="追記-2013-2-5:72ac6891991cc7b39ae5ac38c6897710">追記(2013/2/5)</h3>
+
+<p>今まで MacPorts のライブラリや RVM パッケージでインストールしていた Ruby 達は、新たにインストールしなおさないと動かなくなる。</p>
+
+<pre><code>rvm reinstall [target]
+</code></pre>
+
+<p>で再インストールする必要がある。</p>
+
+<p>また、Ruby 1.8 系をインストールする際にエラーが出る事があるのだが、tk/tcl を先にインストールする必要がある（もしくはリンクしないオプションを指定する）。</p>
+
+<p><a href="http://stackoverflow.com/questions/12469530/getting-ruby-1-8-7-installed-on-mountain-lion-10-8 &quot;rvm - Getting Ruby 1.8.7 installed on Mountain Lion (10.8">rvm - Getting Ruby 1.8.7 installed on Mountain Lion (10.8) - Stack Overflow</a> - Stack Overflow&rdquo;)</p>
+
+<blockquote>
+<p>just figured it out! Please reference this question on SO</p>
+
+<p>rvm can no longer install 1.8.7-p352 on Mac OS X Mountain Lion</p>
+
+<pre><code>rvm reinstall 1.8.7 --without-tcl --without-tk`
+</code></pre>
+
+<p>Alternatively, try this installation order if you have Homebrew.</p>
+
+<pre><code>brew install tcl
+
+brew install tk
+
+rvm reinstall 1.8.7`
+</code></pre>
+</blockquote>
+
+<p>で、tk のインストールでエラー。Mountain Lion には、X11 のライブラリが無いらしく、brew にも登録がないらしいから、別途インストールする必要があるっぽい（エラーメッセージにも出てくる）。以下も参照。</p>
+
+<p><a href="http://memo.yomukaku.net/entries/SKNgCdP &quot;X11 (XQuartz 2.7.2">X11 (XQuartz 2.7.2)をMac OS X 10.8 Mountain Lionにインストールする - memo.yomukaku.net</a>をMac OS X 10.8 Mountain Lionにインストールする - memo.yomukaku.net&rdquo;)</p>
+
+<p>で、再度 <code>brew install tk</code> すると、インストールが完了。</p>
+
+<p>で落ち着くと思ったら、なぜか ruby のインストールはうまくいかない。X11/Xlib.h が見つかってないっぽい。こんな記事を見つける。</p>
+
+<p><a href="http://stackoverflow.com/questions/11664835/mountain-lion-rvm-install-1-8-7-x11-error/11666019#11666019" title="ruby - Mountain Lion rvm install 1.8.7 x11 error - Stack Overflow">ruby - Mountain Lion rvm install 1.8.7 x11 error - Stack Overflow</a></p>
+
+<p>で、上記記事通りやってもうまくいかない。install.log をよくみてみると、</p>
+
+<pre><code>Valid [tclConfig.sh, tkConfig.sh] are found in [[&quot;/usr/local/lib&quot;, &quot;/usr/local/lib&quot;]]
+Use [tclConfig.sh, tkConfig.sh] == [&quot;/usr/local/lib/tclConfig.sh&quot;, &quot;/usr/local/lib/tkConfig.sh&quot;]
+Use MacOS X Frameworks.
+Use X11 libraries (or use TK_XINCLUDES/TK_XLIBSW information on tkConfig.sh).
+</code></pre>
+
+<p>とかって書いてあるので、 <code>export TK_XINCLUDES='-I/opt/X11/include'</code> として実行してみる。だが、ダメ。しょうがないから、 <code>/usr/local/lib/tkConfig.sh</code> を直接編集したる。以下のような感じ</p>
+
+<p>``` sh /usr/local/lib/tkConfig.sh 45行目辺り</p>
+
+<h1 id="i-switch-es-to-use-to-make-all-of-the-x11-include-files-accessible:72ac6891991cc7b39ae5ac38c6897710">-I switch(es) to use to make all of the X11 include files accessible:</h1>
+
+<h1 id="tk-xincludes:72ac6891991cc7b39ae5ac38c6897710">TK_XINCLUDES=&rdquo;</h1>
+
+<p>TK_XINCLUDES=&lsquo;-I/opt/X11/include&rsquo;
+```</p>
+
+<p>そしたらうまくインストールできた。でももしかしたら、 <code>TK_XINCLUDES</code> を外から指定する方法があるかもしれない。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/" rel="prev">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/" rel="next">sample test unit with mocha and shoulda</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

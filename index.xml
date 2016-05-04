@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>status code 51</title>
+    <link>http://blog.tanaka51.jp/</link>
+    <description>Recent content on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 30 Aug 2015 23:58:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust of Us - Chapter 3 に参加してきた</title>
+      <link>http://blog.tanaka51.jp/2015/08/30/rust-of-us---chapter-3-%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F/</link>
+      <pubDate>Sun, 30 Aug 2015 23:58:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2015/08/30/rust-of-us---chapter-3-%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rust-of-us.doorkeeper.jp/events/28471&#34;&gt;Rust of Us - Chapter 3 - Rust of Us | Doorkeeper&lt;/a&gt; に参加してきた。&lt;/p&gt;
+
+&lt;p&gt;今日で2回目の参加。今回は参加者が &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/&#34;&gt;The Rust Programming Language&lt;/a&gt; から好きな所をまとめて発表するスタイル。
+僕は &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/ownership.html&#34;&gt;Ownership&lt;/a&gt; を担当した。時間が若干あまったから
+&lt;a href=&#34;https://doc.rust-lang.org/nightly/book/references-and-borrowing.html&#34;&gt;References and Borrowing&lt;/a&gt; も駆け足でスライドに足した。
+(が、結構ボロボロな発表になってしまったのでちょっと反省。)
+スライドをパブリックにする約束があったような気がしたので、帰宅後にガシガシ修正してた。
+そして @katsuyoshi さん担当の &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/lifetimes.html&#34;&gt;Lifetimes&lt;/a&gt; も入れておきたいと思って、そこも追加したりした。&lt;/p&gt;
+
+&lt;p&gt;スライドはこちら: &lt;a href=&#34;http://blog.tanaka51.jp/rust_ownership_slide/#1&#34;&gt;Ownership of Rust | Rust of Us - Chapter 3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;人数も少なく、他の人の発表もつっこみつつ聞けて、深く理解できたような、気がする。&lt;/p&gt;
+
+&lt;p&gt;印象に残ったのは、Rust は RFC ベースでオープンに開発が進んでいるので、開発の経緯を追いかけやすい、という話。
+力技で実装されてる部分を綺麗にするのに RFC 出して実装する、という流れがあって、意外と汚い実装が残ってたりするんだなぁとか、
+なんかオープンソースに対してお硬いイメージを持ってたけど、ちょっと親近感がわいた・・・ような気がした。良かった。&lt;/p&gt;
+
+&lt;p&gt;第二外国語的に Rust 力をつけたいなぁと思っているので、これからも定期的に参加していきたい。
+次回は String について調べてまとめたいと考えてるけど、それまでになにがしかの実装もしたいなぁ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IRuby を試してみた</title>
+      <link>http://blog.tanaka51.jp/2015/05/12/iruby-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <pubDate>Tue, 12 May 2015 08:27:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2015/05/12/iruby-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <description>
+
+&lt;p&gt;GitHub が IPython なるものをレンダリングできると発表していて、Ruby でも使えるらしいのでやってみた。&lt;/p&gt;
+
+&lt;p&gt;環境は Mac OS X 10.10.3&lt;/p&gt;
+
+&lt;h2 id=&#34;ipython-環境をつくる:1b7bdf37094534fd0535adb1bbbf01bd&#34;&gt;IPython 環境をつくる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ brew install python3
+$ pip install ipython pyzmq tornado Jinja2 jsonschema
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ipython&lt;/code&gt; より後の依存モジュールが無いと動かない&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ipython&lt;/code&gt; とか &lt;code&gt;ipython notebook&lt;/code&gt; で動けば :ok_woman:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install &amp;quot;ipython[notebook]&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とすると依存モジュールが全部自動で入るようです。thx @uu59&lt;/p&gt;
+
+&lt;h2 id=&#34;iruby-環境をつくる:1b7bdf37094534fd0535adb1bbbf01bd&#34;&gt;IRuby 環境をつくる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ brew install zeromq
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;が必要。参考: &lt;a href=&#34;https://github.com/minad/iruby/issues/18#issuecomment-49619447&#34;&gt;install problem · Issue #18 · minad/iruby&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ gem i iruby
+$ iruby
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;書いてみる:1b7bdf37094534fd0535adb1bbbf01bd&#34;&gt;書いてみる&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;$ iruby notebook&lt;/code&gt; でブラウザが起動するので、そこで書物をするみたい。右上の &amp;ldquo;New&amp;rdquo; から &amp;ldquo;Python 3&amp;rdquo; を選ぶと、
+IRuby のインタプリタが起動するので、Ruby の式を書いて、上の再生ボタンっぽいのを押すと実行結果がレンダリングされる。
+&amp;ldquo;Python 3&amp;rdquo; となるは何かのアレだと思うので気にしない。
+ローカルには &lt;code&gt;[Filenam].ipynb&lt;/code&gt; ができてるので、それを GitHub 上に push するとこんな感じで見れた: &lt;a href=&#34;https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb&#34;&gt;https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;エラーもそのまま表示されてて若干恥ずかしいけど、あえてそのまま表示させてみた。スマホからは表示されないっぽい。(素の JSON が表示される)&lt;/p&gt;
+
+&lt;h2 id=&#34;感想:1b7bdf37094534fd0535adb1bbbf01bd&#34;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;今のところ、何が便利なのかあまり分かってない。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考リンク:1b7bdf37094534fd0535adb1bbbf01bd&#34;&gt;参考リンク&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.jupyter.org/2015/05/07/rendering-notebooks-on-github/&#34;&gt;Rendering IPython notebooks on GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ipython.org/install.html&#34;&gt;Installing IPython — IPython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb&#34;&gt;nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/minad/iruby/issues/18#issuecomment-49619447&#34;&gt;install problem · Issue #18 · minad/iruby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>最近、麻雀で勝てない</title>
+      <link>http://blog.tanaka51.jp/2015/04/29/%E6%9C%80%E8%BF%91%E9%BA%BB%E9%9B%80%E3%81%A7%E5%8B%9D%E3%81%A6%E3%81%AA%E3%81%84/</link>
+      <pubDate>Wed, 29 Apr 2015 18:11:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2015/04/29/%E6%9C%80%E8%BF%91%E9%BA%BB%E9%9B%80%E3%81%A7%E5%8B%9D%E3%81%A6%E3%81%AA%E3%81%84/</guid>
+      <description>&lt;p&gt;まぁタイトルの通りなんだけど、ここ1年間位麻雀を一緒にやってるグループで、
+明らかに自分の成績が悪い。すこぶる悪い。発足当初はすごく勝ってたけど、
+最近はもうすごく負けてる。&lt;a href=&#34;http://blog.tanaka51.jp/2014/09/16/mahjong/&#34;&gt;こんなエントリー&lt;/a&gt;を書いた
+こともあって、悔しさと恥ずかしさとなんかその他色々な感情が入り混じっている
+状態である。それで一応、負け続けてる理由を考えたのでダンプしておきたかった。&lt;/p&gt;
+
+&lt;p&gt;結論から言えば、周りのみんなが強くなっただけ、という事だと思っている。
+そもそも集まったメンバーは手作りのレベルとかオリのレベルとか、
+そこら辺は多分同じくらいのところにあると思っていて、その上で
+自分がやっていたのは近代の麻雀のセオリーである即リーベタオリくらいで、
+それを実践するだけで勝ってた状態。で、打ち終わった後の飲み会とかで
+気を付けてる事を聞かれたら基本的にはテンパイ即リー、ベタオリの徹底してる
+だけだよ〜とかって話したり、後は各々勉強を始めたりとかしてて、
+グループ自体のレベルが上がってきたんだなぁって。やっぱり打ち続けてれば
+強くなるんですなぁ。感慨深い。もう一つの要因としては、最近常連になってた
+メンバーのレベルの高さもあるかなぁと。まぁそんな感じで、平均レベルがあがった
+結果、まったく成長してない自分は相対的に負け続けるのも納得なのであった。&lt;/p&gt;
+
+&lt;p&gt;で、負け続けるのも悔しいから、本腰入れて勉強せねばなぁと思っているわけである。
+手始めに積ん読になっていた近代麻雀技術論を読み始めた。最近はじめたエアロバイク
+のお供として読み進めようかなぁと。さっき少し読み進めたけど、自分が当たり前に思って
+やってた事が7割位で間違っていたのであった。ショックな反面、逆に負けているのが
+運じゃじゃくて実力だった事が分かったのは良かった。基礎をしっかりと身に付ければ、
+今より強くなれる余地がある事は嬉しい。というわけで、麻雀の勉強をしていこうと
+思っているのであった。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vue.js が辛くなってきた</title>
+      <link>http://blog.tanaka51.jp/2015/02/24/vue.js-%E3%81%8C%E8%BE%9B%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link>
+      <pubDate>Tue, 24 Feb 2015 23:36:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2015/02/24/vue.js-%E3%81%8C%E8%BE%9B%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
+      <description>
+
+&lt;p&gt;Vue.js が辛くなってきた。&lt;/p&gt;
+
+&lt;h1 id=&#34;ひとまず現状の辛さをダンプ:fee4d7bb414dd76447cd68e09a101516&#34;&gt;ひとまず現状の辛さをダンプ&lt;/h1&gt;
+
+&lt;p&gt;今日チームで改めて話し合って辛さがハッキリしてきたので、それをつらつらと書いてく。&lt;/p&gt;
+
+&lt;p&gt;(今のチームは僕を含めて Rails プログラマが多くて、フロントエンドを専門にやってる人はいない。)&lt;/p&gt;
+
+&lt;h2 id=&#34;グローバル変数大量問題-もしくはイベント地獄問題:fee4d7bb414dd76447cd68e09a101516&#34;&gt;グローバル変数大量問題(もしくはイベント地獄問題)&lt;/h2&gt;
+
+&lt;p&gt;たくさんの状態(変数)が必要 &amp;amp;&amp;amp; 複数 DOM にまたがるレンダリングがしたい。&lt;/p&gt;
+
+&lt;p&gt;今は、左ペインで選択して右ペインに出す、みたいな事をしている。
+左ペインはタブで様々な種類の項目を選べて、選択したものを右側でリスト化して表示している。&lt;/p&gt;
+
+&lt;p&gt;これをやろうとするにあたって、方向性が２つあると思っていて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;左ペインと右ペインでコンポーネントを分けて、親玉 ViewModel に変更を通知して親玉がレンダリング制御する
+
+&lt;ul&gt;
+&lt;li&gt;-&amp;gt; イベント地獄&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;左ペインと右ペインの上位の親玉 ViewModel をつくって全ての変数を定義
+
+&lt;ul&gt;
+&lt;li&gt;-&amp;gt; これがグローバル変数のようなもので、それが大量につくられる&lt;/li&gt;
+&lt;li&gt;(現状はイベント地獄よりはマシだと思ってこっちを採用している)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;jquery-plugin-との合わせ技の辛さ:fee4d7bb414dd76447cd68e09a101516&#34;&gt;jQuery(plugin) との合わせ技の辛さ&lt;/h2&gt;
+
+&lt;p&gt;最初に jQuery で頑張っていた名残もあって、jQuery プラグインをいくつか使っている。
+それを Vue.js と強調動作させるためにクラスをいくつか作っているけど、割りと見通しが悪い。&lt;/p&gt;
+
+&lt;p&gt;あとは jQuery のイベントハンドリングが便利で使っていて、それも辛さを増す原因になっている。
+なんで jQuery を使っているかというと、グローバルなイベントをハンドリングする仕組みが Vue.js にないから(たぶん)。&lt;/p&gt;
+
+&lt;p&gt;具体的には、 左ペインで入力/選択したら右ペインでハイライトする、みたいなのをしたいと思った時に、
+左ペインの入力/選択した要素はそれぞれモデルの property になってるんだけど、それらに対してまとめてイベントをリッスンして何かするって事がすっきり書けない。
+そこで jQuery で &lt;code&gt;$(&#39;#left-pain input&#39;).on(&#39;change&#39;, function(e) { vm.highlight(e) }&lt;/code&gt; のようにするんだけど、
+こういうのが増えていくと、ViewModel 内でのイベントと jQuery でのイベントとが合わさって予期せぬ挙動をする事があって辛くなってくる（きた）。&lt;/p&gt;
+
+&lt;h2 id=&#34;vue-js-が力技で動く:fee4d7bb414dd76447cd68e09a101516&#34;&gt;Vue.js が力技で動く&lt;/h2&gt;
+
+&lt;p&gt;これは Vue.js の利点でもあるんだけど、割りと雑に書いてもそれなりに動く。
+そういうのもあって上述したような辛さが増していく。
+これはまぁプログラマの責任なんだけど、いかんせんフロントエンドに対する知見が無いので、どうしよう、という感じ。&lt;/p&gt;
+
+&lt;h2 id=&#34;vue-js-の知見が-web-上に少ない:fee4d7bb414dd76447cd68e09a101516&#34;&gt;Vue.js の知見が Web 上に少ない&lt;/h2&gt;
+
+&lt;p&gt;Vue.js で困ったことがあった時に頼れるものが少ない。手探り状態。
+もっと流行ってくれればよかったのに、世の中 React.js で盛り上がっててもう誰も Vue.js 見てないんじゃないか感があって寂しさがある。&lt;/p&gt;
+
+&lt;h1 id=&#34;vue-js-自体は良いライブラリだと思う:fee4d7bb414dd76447cd68e09a101516&#34;&gt;Vue.js 自体は良いライブラリだと思う&lt;/h1&gt;
+
+&lt;p&gt;例えば管理画面でユーザのテーブルを表示していて、項目名をクリックして並び替える、みたいな事をするのには
+Vue.js だと割りと楽に実装できるし、便利。
+IE 9 まで対応してるのも良い。
+HTML もほぼそのままの形で書けるので、デザイナーフレンドリーだと思う。&lt;/p&gt;
+
+&lt;p&gt;なので、使いドコロだと思っている。今回のプロジェクトに Vue.js を使うにはちょっと非力だったのかなぁ、という感じ。
+Vue.js が提供しているのは ViewModel だけで、その他の部分を考え始めると辛くなってくるのかなぁというのが今の感想。&lt;/p&gt;
+
+&lt;h1 id=&#34;というわけで次の一手を探している:fee4d7bb414dd76447cd68e09a101516&#34;&gt;というわけで次の一手を探している&lt;/h1&gt;
+
+&lt;p&gt;正直 Vue.js (or フロントエンド)に精通している人からしたら、もっと工夫の余地はあると言われると思う。
+けど、Vue.js に拘る必要姓は無いと考えているし、卒業しようと考えている。&lt;/p&gt;
+
+&lt;p&gt;最近はやりの React.js に乗り換えるか、と考えていたけど、どうやら React.js は足回り担当のようで、
+その上のフレームワークのようなものを何にするか、が重要だという事までわかった。&lt;/p&gt;
+
+&lt;p&gt;個人的には、React.js + Bacon.js で FRP と呼ばれる思想に則ってやるが良いのかなぁとボンヤリ思っている。
+React.js + Flux 系フレームワークも気になっている。
+Web 上の知見が多そうなのは後者なのかなぁ。&lt;/p&gt;
+
+&lt;p&gt;ということで終わり。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>why-vuejs</title>
+      <link>http://blog.tanaka51.jp/2014/12/01/why-vuejs/</link>
+      <pubDate>Mon, 01 Dec 2014 15:56:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/12/01/why-vuejs/</guid>
+      <description>
+
+&lt;p&gt;直近の開発案件で Vue.js を使うことに決めた。&lt;/p&gt;
+
+&lt;h2 id=&#34;背景:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;背景&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;サーバは Rails&lt;/li&gt;
+&lt;li&gt;今後、開発チームに Rails エンジニアが JOIN する可能性が高い&lt;/li&gt;
+&lt;li&gt;一部分だけ UI をリッチにしたい&lt;/li&gt;
+&lt;li&gt;ある程度まで素の JS + jQuery で実装してたけど、辛くなってきた&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;要件:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;要件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;学習コストはできるだけ低い方が良さそう(Rails エンジニアがすぐに適応できる位)&lt;/li&gt;
+&lt;li&gt;JS ライブラリには最低限データバインディングができると嬉しそう&lt;/li&gt;
+&lt;li&gt;ルーティングは(現状)いらない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;vue-js-選定理由:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;Vue.js 選定理由&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;学習コストが低い&lt;/li&gt;
+&lt;li&gt;手軽に使える&lt;/li&gt;
+&lt;li&gt;データバインディングある&lt;/li&gt;
+&lt;li&gt;ルーティングない&lt;/li&gt;
+&lt;li&gt;弊社内の他案件で導入実績がある
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fluent/fluentd-ui&#34;&gt;fluent/fluentd-ui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;他を選ばなかった理由:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;他を選ばなかった理由&lt;/h2&gt;
+
+&lt;h3 id=&#34;angular-js-ember-js:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;Angular.js/Ember.js&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;やりたい事に対して機能が多い&lt;/li&gt;
+&lt;li&gt;学習コスト高い&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;react-js:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;React.js&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;データバインディングない?&lt;/del&gt;
+
+&lt;ul&gt;
+&lt;li&gt;すみませんありました。単方向データバインディング的な感じらしい。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;仮想 DOM という新しい概念&lt;/li&gt;
+&lt;li&gt;Rails と一緒に使いづらそう&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;backbone-js:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;backbone.js&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;機能が少ない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;その他:a01df0dfbb36b604a250d6063a9088a4&#34;&gt;その他&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/2014/10/01/10day-diet/&#34;&gt;これのその後&lt;/a&gt; についてはまた後日書きます。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>10日間で確実に下腹を凹ます事ができなかったけれども</title>
+      <link>http://blog.tanaka51.jp/2014/10/01/10%E6%97%A5%E9%96%93%E3%81%A7%E7%A2%BA%E5%AE%9F%E3%81%AB%E4%B8%8B%E8%85%B9%E3%82%92%E5%87%B9%E3%81%BE%E3%81%99%E4%BA%8B%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%91%E3%82%8C%E3%81%A9%E3%82%82/</link>
+      <pubDate>Wed, 01 Oct 2014 07:35:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/10/01/10%E6%97%A5%E9%96%93%E3%81%A7%E7%A2%BA%E5%AE%9F%E3%81%AB%E4%B8%8B%E8%85%B9%E3%82%92%E5%87%B9%E3%81%BE%E3%81%99%E4%BA%8B%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%91%E3%82%8C%E3%81%A9%E3%82%82/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/dp/4800209382&#34;&gt;10日間で確実に下腹を凹ます&lt;/a&gt; という本を多分1年位前に買って、
+放置していた。んだけど、突然10日前位に意識が高まって、再度再開しだした。&lt;/p&gt;
+
+&lt;p&gt;体の歪みが下腹をたるませるので、歪みを直しながら下腹に贅肉がたまりにくくしよう、というコンセプトの本。
+内容は10日間のトレーニングメニューが載ってて、それをやっていく。
+ちなみにこのトレーニングは、普段ネット徘徊ばかりしている自分には結構キツかった。&lt;/p&gt;
+
+&lt;p&gt;前回は4,5日やって終わったけど、今回は10日間終わらせる事ができたから記念にここに書いておく。&lt;/p&gt;
+
+&lt;p&gt;すごい！！！！！おめでとう！！！！！！&lt;/p&gt;
+
+&lt;p&gt;で、結局、下腹は &lt;strong&gt;凹まなかった&lt;/strong&gt; けど、以下のような効果があった。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;10日で下腹を凹ます本、やり終えた！結果、腹回り実測変化無し！筋肉はついてるっぽい雰囲気を感じる！体重は2.4kg減！体脂肪率は1.2%減！明日からもう一周する！&lt;/p&gt;&amp;mdash; Koichi Tanaka (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/516938977455001600&#34;&gt;2014, 9月 30&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;ツイートしている通り、腹回りは実測的には変化していないけど、皮下脂肪の下に筋肉がいる感じはある。体重/体脂肪率は微減。
+あと、昨日のランチで「最初の3週間は筋肉がつく。その後に脂肪が減っていく。」と教えてもらったので、
+そこに期待しつつ、2周目3週目と続けていきたい。 本によると、10日で効果がでなくても、
+確実に下腹が凹む体質に変化してるので2,3日様子を見て、と書いてあったけど、 まぁトレーニングを続けた方が確実だと思うのでやる。&lt;/p&gt;
+
+&lt;p&gt;また10日間のトレーニングを終える事ができたら自分を褒め称えつつ、どんな効果があったか記事にしようと思う。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>最近麻雀で負けていないので、何をやってるか書いておく</title>
+      <link>http://blog.tanaka51.jp/2014/09/16/%E6%9C%80%E8%BF%91%E9%BA%BB%E9%9B%80%E3%81%A7%E8%B2%A0%E3%81%91%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E4%BD%95%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%82%8B%E3%81%8B%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8A%E3%81%8F/</link>
+      <pubDate>Tue, 16 Sep 2014 07:31:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/16/%E6%9C%80%E8%BF%91%E9%BA%BB%E9%9B%80%E3%81%A7%E8%B2%A0%E3%81%91%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E4%BD%95%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%82%8B%E3%81%8B%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8A%E3%81%8F/</guid>
+      <description>
+
+&lt;p&gt;最近、麻雀でほとんど負けていない。&lt;/p&gt;
+
+&lt;p&gt;せっかくだから何を意識して打ってるのか、書いておこうと思う。&lt;/p&gt;
+
+&lt;h1 id=&#34;今から話す対象:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;今から話す対象&lt;/h1&gt;
+
+&lt;p&gt;まず最初に、普段やってる麻雀についてと、負けないとはどういう事か、を書いておく。&lt;/p&gt;
+
+&lt;h2 id=&#34;どんな麻雀か:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;どんな麻雀か&lt;/h2&gt;
+
+&lt;p&gt;どういう麻雀かと言うと、仲間内4,5人で雀荘にセットで入って、だいたい6~10回位ハンチャンを打つ。一回で8時間位は打つのかな。
+ルールは赤3枚入りのアリアリ、2万5千持ちの3万返し、馬有りの、よくあるもの。&lt;/p&gt;
+
+&lt;h2 id=&#34;負けないの定義:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;負けないの定義&lt;/h2&gt;
+
+&lt;p&gt;それで、負けていない、とはどういう事かと言うと、その日の最終的なトータルがマイナスにならない、ということ。そのハンチャンで勝つのではなく、トータルでプラスになっていれば良い。&lt;/p&gt;
+
+&lt;h1 id=&#34;実践していること:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;実践していること&lt;/h1&gt;
+
+&lt;p&gt;上述したような長丁場の麻雀がほとんどなので、疲れても実践できる事を大事にしている。省エネ精神。
+麻雀が本職、というわけじゃないので、こまけーこたぁいいんだよ！という精神で打っている。&lt;/p&gt;
+
+&lt;p&gt;さて本題。僕が最近意識してる事は以下。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リーチは最強&lt;/li&gt;
+&lt;li&gt;待ちを読まない&lt;/li&gt;
+&lt;li&gt;くさらない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;順番にもうちょっと詳しく書いていく。&lt;/p&gt;
+
+&lt;h2 id=&#34;リーチは最強:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;リーチは最強&lt;/h2&gt;
+
+&lt;p&gt;リーチは最強と思っている。とにかくリーチする。攻撃は最大の防御である。基本的に聴牌したら即リーチする。愚形ならリーチをかけない、という戦術を見かけるが、僕はどんな愚形でもリーチと決めたらリーチする。流れとか運とかは気にしない。&lt;/p&gt;
+
+&lt;p&gt;長く囲んでる仲間内だと「田中のリーチは愚形も多いからな」と勝負される事もままあるけど、それで良い。
+リーチは勝負してくれた方が勝率があがるらしいので。&lt;/p&gt;
+
+&lt;p&gt;基本的にリーチしていく戦略なので、リーチをしない時、を大事にしている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ダマで満貫以上あるとき&lt;/li&gt;
+&lt;li&gt;4,5巡目以前での愚形でのテンパイ時(手替わりを狙う)&lt;/li&gt;
+&lt;li&gt;待ちがないとき&lt;/li&gt;
+&lt;li&gt;ツモが残り少ないとき&lt;/li&gt;
+&lt;li&gt;リーチした所で逆転できないとき&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな所だろうか。&lt;/p&gt;
+
+&lt;p&gt;特に赤ありで打ってるとダマで満貫以上は割と出来やすいように思う。そういう時は基本的にダマでいく。ダマ満貫に振り込むと精神的に辛いので、そういう効果もある。&lt;/p&gt;
+
+&lt;h2 id=&#34;待ちを読まない:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;待ちを読まない&lt;/h2&gt;
+
+&lt;p&gt;基本的に、リーチが入ったら全力で降りる。6巡目以降は相手の手出しにだけ注意しておく。下手に待ちを読んで振り込むのが一番辛い。
+だから降りる技術を磨くのが大事だと思う。基本的には 現物 &amp;gt; 字牌 &amp;gt; 一九牌 &amp;gt;= 壁 位の優先順位で打っていく。それでも振り込んだら事故。しゃーない。&lt;/p&gt;
+
+&lt;h2 id=&#34;くさらない:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;くさらない&lt;/h2&gt;
+
+&lt;p&gt;どんなに頑張っても振り込む。おっかけリーチで負ける。とぶ事もある。気にしない。トータルで勝てば良い。素直に他の人のアガリを褒める。
+あとミスもする。ミスをすることを否定しない、ミスをする事もあるししゃーない、位の気持ちで打つ。&lt;/p&gt;
+
+&lt;h1 id=&#34;おわり:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;おわり&lt;/h1&gt;
+
+&lt;p&gt;まぁつまり &lt;a href=&#34;http://www.amazon.co.jp/dp/4061497650&#34;&gt;科学する麻雀&lt;/a&gt; からつまみ食いで簡単にできそうな事をやってたら最近は負けてない、という感じでした。&lt;/p&gt;
+
+&lt;h1 id=&#34;おまけ:a7581750e9716e06f8d1f41277cc7e4e&#34;&gt;おまけ&lt;/h1&gt;
+
+&lt;p&gt;他の人を批判するつもりでは無いが、ドラマチックな麻雀漫画やアニメを参考にしてたらまず勝てないので、きちんと麻雀と向き合うことが大事だと思う。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>feature spec</title>
+      <link>http://blog.tanaka51.jp/2014/09/08/feature-spec/</link>
+      <pubDate>Mon, 08 Sep 2014 00:11:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/08/feature-spec/</guid>
+      <description>
+
+&lt;p&gt;Rails の話。&lt;/p&gt;
+
+&lt;p&gt;最近では model のスペックをあまり書かなくなってきた。ほとんど feature spec で済ませている。&lt;/p&gt;
+
+&lt;p&gt;feature spec に対する思いをダンプしたくなったのでしておく。&lt;/p&gt;
+
+&lt;h2 id=&#34;ここにいたるまでの遍歴:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;ここにいたるまでの遍歴&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rails 触り始め、テストという概念は知りつつも書き方が全く分から無い&lt;/li&gt;
+&lt;li&gt;model spec の書き方を覚える&lt;/li&gt;
+&lt;li&gt;model だけをテストファーストで書いたりする、テスト書くの楽しくなる&lt;/li&gt;
+&lt;li&gt;BDD を知り feature spec driven で全部の行程で test first で開発するも、テスト書くの辛い&lt;/li&gt;
+&lt;li&gt;テスト書くのが面倒になる&lt;/li&gt;
+&lt;li&gt;あるチームで、納期が短いけどテスト書かないのはヤバイ、じゃあ後からでも良いから feature spec だけでも書こうという話になる。&lt;/li&gt;
+&lt;li&gt;最低限 feature spec を書けば良いんだ、という気付き&lt;/li&gt;
+&lt;li&gt;feature spec 書くの楽しい!!! &amp;lt;- イマココ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;主動で確認するのが面倒な部分こそ-feature-spec:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;主動で確認するのが面倒な部分こそ feature spec&lt;/h2&gt;
+
+&lt;p&gt;以前は model のスペックをひたすら頑張って書いていたけど、それだと結局、最終的なブラウザ上でのテストを手で頑張る感じになっていた。&lt;/p&gt;
+
+&lt;p&gt;データを用意するのが面倒な部分なんかは、feature spec を用意しておくと、動作確認がすごく楽になる。
+あと、API を作るときとか、ワザワザ curl 叩くとか面倒だけど spec があると動作確認の代わりとして使えて楽。&lt;/p&gt;
+
+&lt;h2 id=&#34;ユーザ目線での最低ラインの動作保証:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;ユーザ目線での最低ラインの動作保証&lt;/h2&gt;
+
+&lt;p&gt;feature spec があるとその機能に関しては動作が保証されるので、安心感がある。&lt;/p&gt;
+
+&lt;p&gt;Rails のバージョンアップも、feature spec があると安心して行える。
+例えば model のスペックだけだとユーザが触る部分の自動テストが無いことになるので、怖くてバージョンし辛くなりがち。&lt;/p&gt;
+
+&lt;h2 id=&#34;結合試験的な意味合い:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;結合試験的な意味合い&lt;/h2&gt;
+
+&lt;p&gt;routing も controller も view も model もそれぞれ Unit テストとして単体テストがかけるけど、
+それらを全て繋ぎあわせたテストが feature spec というイメージ。&lt;/p&gt;
+
+&lt;p&gt;必然的に、ある機能に対する一連のコードを通るので、ちょっとしたリファクタリングをした時の typo だとかにも気づきやすい。&lt;/p&gt;
+
+&lt;h2 id=&#34;辛さからの解放:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;辛さからの解放&lt;/h2&gt;
+
+&lt;p&gt;プロダクトコードを書きながら仕様を固めていく事が多いので、先にテストを書く方法というのが僕には結構辛かったみたい。&lt;/p&gt;
+
+&lt;p&gt;それで最近は、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ある一連の機能をテストなしでとりあず作る&lt;/li&gt;
+&lt;li&gt;それに対して feature spec を書く&lt;/li&gt;
+&lt;li&gt;リファクタリング&lt;/li&gt;
+&lt;li&gt;必要があればモデルにスペックを足す&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;みたいにやってる。
+もしくは、データをつくるのが面倒な時などは、先に feature spec を書くことも結構ある。&lt;/p&gt;
+
+&lt;h2 id=&#34;周辺技術:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;周辺技術&lt;/h2&gt;
+
+&lt;p&gt;ちょっと前までは capybara webkit の build が面倒だから〜とかあって敬遠しがちだったけど、
+最近は PhantomJS がでてきて、前より楽になった気がする。&lt;/p&gt;
+
+&lt;h2 id=&#34;最近の流れ:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;最近の流れ&lt;/h2&gt;
+
+&lt;p&gt;TDD は死んだ、みたいな記事もあったし、そういうのが盛り上がってるのかも、とも思ったり。&lt;/p&gt;
+
+&lt;h2 id=&#34;気をつける事:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;気をつける事&lt;/h2&gt;
+
+&lt;p&gt;必ず失敗する事を確認するようにしたい。偶然他の所で同じ文言が表示されててたまたま通ってたとか、そもそもマッチャーの使い方間違ってたとかよくあるので。&lt;/p&gt;
+
+&lt;h2 id=&#34;悩み1-テスト実行時間:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;悩み1: テスト実行時間&lt;/h2&gt;
+
+&lt;p&gt;feature spec が溜まってくると、本当にテストの実行時間が遅くなって辛い。&lt;/p&gt;
+
+&lt;h2 id=&#34;悩み2-はまりやすい:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;悩み2: はまりやすい&lt;/h2&gt;
+
+&lt;p&gt;特に JS が絡んでくると、描画タイミングの問題とかあったりしてハマりやすい。
+CI だけ落ちるテストとかあったりして闇が深くなりがち。。&lt;/p&gt;
+
+&lt;h2 id=&#34;オチ:057049ee2235b2aeaf5f64966f3d2f89&#34;&gt;オチ&lt;/h2&gt;
+
+&lt;p&gt;特に無い&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vim でコードリーディングする環境を整えた</title>
+      <link>http://blog.tanaka51.jp/2014/09/07/vim-%E3%81%A7%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%81%9F/</link>
+      <pubDate>Sun, 07 Sep 2014 15:02:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/07/vim-%E3%81%A7%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%81%9F/</guid>
+      <description>
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;なんか急に nginx と仲良くなりたい気持ちになってきた&lt;/p&gt;&amp;mdash; Koichi Tanaka (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/507893426637897729&#34;&gt;2014, 9月 5&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;ので nginx のソースコードを読むために Vim で環境を整えたのでメモ。&lt;/p&gt;
+
+&lt;p&gt;と言っても特別な事をしたのではなくて、ctags を vim でどう使うか、という話。環境は Mac。&lt;/p&gt;
+
+&lt;p&gt;(普段仕事では Rails で開発していて &lt;a href=&#34;https://github.com/tpope/vim-rails&#34;&gt;tpope/vim-rails&lt;/a&gt; を使ってたり &lt;a href=&#34;https://github.com/hibariya/reditor&#34;&gt;hibariya/reditor&lt;/a&gt; を使ってて、 ctags が欲しいと思う事があまりなかった)&lt;/p&gt;
+
+&lt;h2 id=&#34;用意する:ed59711a27ed47a0dca5b7025be391d5&#34;&gt;用意する&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ctags&lt;/li&gt;
+&lt;li&gt;vim-ctrlp-tjump&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ctags:ed59711a27ed47a0dca5b7025be391d5&#34;&gt;ctags&lt;/h2&gt;
+
+&lt;p&gt;いろんなサイトで解説されてるけど、Homebrew で入れた Exuberant Ctags を使うと Ruby とかでも使えて便利らしい。&lt;/p&gt;
+
+&lt;p&gt;インストールしたらコマンド一発叩くだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;ctags -R
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;make 後に生成した方が、環境ごとの定数とかが含まれて良い感じ。&lt;/p&gt;
+
+&lt;h3 id=&#34;git-hook-に仕込む-ついでに:ed59711a27ed47a0dca5b7025be391d5&#34;&gt;git hook に仕込む(ついでに)&lt;/h3&gt;
+
+&lt;p&gt;nginx は mercurial なので関係ないけど、ついでなので git の hook を仕込んでおく。&lt;/p&gt;
+
+&lt;p&gt;ここを参考にした: &lt;a href=&#34;http://qiita.com/soramugi/items/9a3687bb81ce35e3f99a&#34;&gt;ctags - gitのhookでtags作成 - Qiita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;mercurial の使いかた、覚えた方が良いのだろうか&lt;/p&gt;
+
+&lt;h2 id=&#34;vim-ctrlp-tjump:ed59711a27ed47a0dca5b7025be391d5&#34;&gt;vim-ctrlp-tjump&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/2014/09/06/memo-with-vim/&#34;&gt;前回の記事&lt;/a&gt;で ctrlp を入れていたのだけど、このインターフェースで tagjump できるように、以下の拡張を入れた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ivalkeen/vim-ctrlp-tjump&#34;&gt;ivalkeen/vim-ctrlp-tjump&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;nnoremap &amp;lt;c-]&amp;gt; :CtrlPtjump&amp;lt;CR&amp;gt;
+vnoremap &amp;lt;c-]&amp;gt; :CtrlPtjumpVisual&amp;lt;CR&amp;gt;
+let g:ctrlp_tjump_only_silent = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Unix/Windows 両対応の C のプロジェクトってコンパイルオプションで関数を切り分けると思うけど(少なくとも nginx はそうだった)、
+知らない関数に出くわして &lt;code&gt;ctrl-]&lt;/code&gt; して、タグ一覧が出た時に &lt;code&gt;src/unix/xxx&lt;/code&gt; &lt;code&gt;src/windows/xxx&lt;/code&gt; と出ると「あーこれは互換性のために分岐してあるコードだ」というのが一発で分かって嬉しい。&lt;/p&gt;
+
+&lt;p&gt;一番下の設定を入れておくと、定義が一つだけの時は選択ウィンドウ(?)が出ないですぐに飛ぶので便利。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vim で memo をとる環境を(漸く)整えた</title>
+      <link>http://blog.tanaka51.jp/2014/09/06/vim-%E3%81%A7-memo-%E3%82%92%E3%81%A8%E3%82%8B%E7%92%B0%E5%A2%83%E3%82%92%E6%BC%B8%E3%81%8F%E6%95%B4%E3%81%88%E3%81%9F/</link>
+      <pubDate>Sat, 06 Sep 2014 12:32:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/06/vim-%E3%81%A7-memo-%E3%82%92%E3%81%A8%E3%82%8B%E7%92%B0%E5%A2%83%E3%82%92%E6%BC%B8%E3%81%8F%E6%95%B4%E3%81%88%E3%81%9F/</guid>
+      <description>
+
+&lt;p&gt;ブログのデザインを新しくしたら更新するんだ、と思って早1年と半年。
+漸く重い腰をあげて Octopress 用のテーマを探しにいったら、&lt;a href=&#34;https://github.com/tlvince/leanpress&#34;&gt;良い感じにシンプルなやつ&lt;/a&gt; があったので、これだ！とブログをいじりはじめたのでした。&lt;/p&gt;
+
+&lt;p&gt;そして久しぶりの更新。&lt;/p&gt;
+
+&lt;p&gt;最後の記事が Emacs の記事、今では Vim を使う毎日なのであった。&lt;br /&gt;
+半年前から使い始めた Vim で memo をとる環境を(漸く)整えた整えたのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;memolist-vim-ctrlp:4ac54fb92d0d116a06824140fd5a2b75&#34;&gt;memolist.vim + ctrlp&lt;/h2&gt;
+
+&lt;p&gt;基本的にはこれを参考に設定しただけ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://mattn.kaoriya.net/software/vim/20120328183428.htm&#34;&gt;Big Sky :: 2012年のVimメモ取り環境はmemolistとctrlpに決まりだ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;合わせて、memo を Dropbox 経由で同期したいので以下の設定を追加。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;let g:memolist_path = &amp;quot;~/Dropbox/memo&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;memo 開くのとか、memo から grep するのとか、memo 一覧から fuzzy 検索するのとか、便利。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;久しぶりの blog なので、こんなメモ程度で終わり。もっと駄文を増やしていきたい気持ち。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Emacs と Tmux</title>
+      <link>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</link>
+      <pubDate>Mon, 25 Mar 2013 21:46:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</guid>
+      <description>
+
+&lt;p&gt;思う所あって、Emacs を CUI で使う事にした。僕は zsh + tmux を使っているので、その上に Emacs を載せる事になる。
+その時のメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;理由:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;理由&lt;/h2&gt;
+
+&lt;p&gt;最近、開発は vagrant で VM 立ちあげて sshfs で Mac にマウントしてそのマウントされたファイルに Emacs でアクセスして作業する事が多い。
+この sshfs でマウントした状態っていうのがおそらく問題で、Emacs の git 系の拡張の動きがすこぶる遅い。特に気になるのが helm-ls-git で、起動するのに体感5秒位かかっている状態。この拡張をまともに使えないのはすごくもったいないので、それがかなりストレスになっている。挙げ句の果てには find-file も2秒位かかる状態。ストレスフル。そして、この開発環境の VM 化は今後ずっと続くだろうから（利点の方が大きい）、解決しなくてはいけない。&lt;/p&gt;
+
+&lt;p&gt;そもそも git の操作だとか単体テストを流す作業だとかは ssh でゲストマシンに接続してやっていて、つまりマウントしている理由は Mac 側の GUI アプリで操作をしたいだけだった。そうなると、解決策は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;trump で ssh 接続する&lt;/li&gt;
+&lt;li&gt;Emacs を CUI で使うようにする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の2つある。（他にもあったら教えて下さい）&lt;/p&gt;
+
+&lt;p&gt;実は半年位前に trump でやっていたこともあったのだけど、find-file だとか、direx だとかが非常に遅かった。一度読みこめばキャッシュするんだけど、新規にファイル追加する度に読み込み直しで時間がかかるのがかなりストレスだった。（その頃は helm-ls-git を知らなかったから、それについては試してないけど、遅そう。）&lt;/p&gt;
+
+&lt;p&gt;で、後者を選択する事にした。CUI で簡潔するのってなんかカッコイイし、git のコミットメッセージを書く度に GUI ウィンドウに移動とか面倒だったし(Emacs からコミットとかをしていないのはどの拡張もしっくりこなかったから…)（それで最近はコミットメッセージは vim で書いていた）（おかげで vim 力は結構あがった）、Emacs さえ入っていればどんな環境でも作業できるっていうのはすごくメリットのある事だと思ったので。&lt;/p&gt;
+
+&lt;p&gt;という事で、zsh + tmux + Emacs の環境を構築した。&lt;/p&gt;
+
+&lt;h2 id=&#34;やったこと:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;やったこと&lt;/h2&gt;
+
+&lt;p&gt;最初にやったことは、もちろん Emacs のインストール。この辺、デフォルトで入ってないのは辛い所な気もする。それで僕の場合は cmigemo も入れる必要がある。&lt;/p&gt;
+
+&lt;p&gt;という事で、新しい VM を vagrant up したらまずすることは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cmigemo のインストール&lt;/li&gt;
+&lt;li&gt;Emacs のインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;になると思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;cmigemo-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;cmigemo のインストール&lt;/h3&gt;
+
+&lt;p&gt;だいたいいつも、どこかのブログを見たり、公式サイトを見たりしてる気がする。&lt;/p&gt;
+
+&lt;p&gt;今回はここを参考にした &lt;a href=&#34;http://ser1zw.hatenablog.com/entry/20100825/1282663086&#34; title=&#34;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&#39;s blog&#34;&gt;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&amp;rsquo;s blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;emacs-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs のインストール&lt;/h3&gt;
+
+&lt;p&gt;今回は対象が Ubuntu 10.0.4 LTS。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://core.ring.gr.jp/pub/GNU/emacs/&#34; title=&#34;Index of /pub/GNU/emacs&#34;&gt;Index of /pub/GNU/emacs&lt;/a&gt; ここらへんから最新のパッケージをとってきてビルドする。&lt;/p&gt;
+
+&lt;p&gt;今回の Emacs のオプションは、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --x-libraries=no --with-x-toolkit=no
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じにした。画像関連のライブラリが足りなかったので、それらもインストールしておく。
+後は普通に make &amp;amp;&amp;amp; make install できた。&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&#34;http://emacs.tsutomuonoda.com/emacs24-1-ubuntu-install/&#34; title=&#34;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&#34;&gt;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;emacs-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs の設定&lt;/h2&gt;
+
+&lt;p&gt;あまり既存の設定をいじる事なくできた。いじったところは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;redo+ がうまく動かないらしいから消した&lt;/li&gt;
+&lt;li&gt;window サイズの設定をまるっと消した&lt;/li&gt;
+&lt;li&gt;フォント周りもまるっと消した&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;位。&lt;/p&gt;
+
+&lt;h2 id=&#34;tmux-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;tmux の設定&lt;/h2&gt;
+
+&lt;p&gt;僕はずっとプリフィクスキーを &lt;code&gt;C-x&lt;/code&gt; にしていた。Emacs を CUI で使う事はないと思っていたのと、Emacs と似たような操作感が欲しかったから、というのが理由。今度からは Emacs 上でも tmux が操作できないといけないので、欠番キーである &lt;code&gt;C-z&lt;/code&gt; を割り当てることにした。&lt;/p&gt;
+
+&lt;p&gt;余談だけど &lt;code&gt;C-t&lt;/code&gt; に設定してる人が多いのにはビックリしてる。世の中の tmux の設定を見ると大体そんな感じがしてる。Emacs で言えば &lt;code&gt;transpose-chars&lt;/code&gt; ってコマンドになるんだけど、これ、ターミナル上でも使えて、かなり便利だと思っている。&lt;/p&gt;
+
+&lt;p&gt;例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% git psuh origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って打ってエンター押すと、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git: &#39;psuh&#39; is not a git command. See &#39;git --help&#39;.
+
+Did you mean this?
+        push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って怒られるわけです。そしたら即座に &lt;code&gt;C-p&lt;/code&gt; して &lt;code&gt;C-a&lt;/code&gt; して &lt;code&gt;M-f&lt;/code&gt; して &lt;code&gt;C-f&lt;/code&gt; を2回押して &lt;code&gt;C-t&lt;/code&gt; したらほら元通り。こんな便利な機能を何でみんな使わないのか、いつも不思議に思ってる。いやまぁ、この操作に慣れるのに時間がかかるけど…&lt;/p&gt;
+
+&lt;p&gt;ターミナル上だけでなく、Emacs 上でもこのコマンドを良く使うから、僕は手放せない。という余談でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;zsh-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;zsh の設定&lt;/h2&gt;
+
+&lt;p&gt;以下の記事を参考に以下の設定を追加。zsh 起動時に emacs を daemon で起動する。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/flada_auxv/20121110/1352527081&#34; title=&#34;最近の作業環境とか。TMUX on Emacs - flada_auxvの日記&#34;&gt;最近の作業環境とか。TMUX on Emacs - flada_auxvの日記&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;if pgrep emacs &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then
+    echo &amp;quot;Emacs server is already running...&amp;quot;
+  else
+    `emacs --daemon`
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;おわり:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;おわり&lt;/h2&gt;
+
+&lt;p&gt;ssh で接続した先で tmux 起動してると、コピペがうまくできないのよね。。何か良い設定ないかな…&lt;/p&gt;
+
+&lt;p&gt;あと、Mac で iTerm2 を使ってメタキーを Command にしたいなら、ここを見ること（じぶんあて）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/blog/2013/01/04/setup-iterm2/&#34; title=&#34;Setup iTerm2 - status code 51&#34;&gt;Setup iTerm2 - status code 51&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vagrant で SSH authentication failed! とか出た場合の対処法</title>
+      <link>http://blog.tanaka51.jp/2013/03/25/vagrant-%E3%81%A7-ssh-authentication-failed-%E3%81%A8%E3%81%8B%E5%87%BA%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
+      <pubDate>Mon, 25 Mar 2013 17:28:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/25/vagrant-%E3%81%A7-ssh-authentication-failed-%E3%81%A8%E3%81%8B%E5%87%BA%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
+      <description>
+
+&lt;p&gt;vagrant で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant halt
+[default] Attempting graceful shutdown of VM...
+SSH authentication failed! This is typically caused by the public/private
+keypair for the SSH user not being properly set on the guest VM. Please
+verify that the guest VM is setup with the proper public key, and that
+the private key path for Vagrant is setup properly as well.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんなエラーが出た時の対処方。&lt;/p&gt;
+
+&lt;p&gt;環境は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ホスト: Mac (OSX 10.8.3)&lt;/li&gt;
+&lt;li&gt;ゲスト: Ubuntu 10.04.4 LTS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;やりたいこと:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;やりたいこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;vagrant up で起動した VM に ssh を使った password-less ログインしたい&lt;/li&gt;
+&lt;li&gt;vagrant halt に成功したい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;やっていたこと:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;やっていたこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ゲスト側の &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; にホスト側の公開鍵を書いておく&lt;/li&gt;
+&lt;li&gt;ゲスト側の &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; の権限を 600 にしておく&lt;/li&gt;
+&lt;li&gt;ホスト側の &lt;code&gt;~/.vagrant.d/insecure_private_key&lt;/code&gt; の権限が (user):staff になっている事を確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;解決の仕方:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;解決の仕方&lt;/h2&gt;
+
+&lt;p&gt;以下を参考&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://superuser.com/questions/428917/ssh-basics-on-vagrant-vms&#34; title=&#34;virtualbox - SSH Basics on Vagrant VMs - Super User&#34;&gt;virtualbox - SSH Basics on Vagrant VMs - Super User&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ホスト側の &lt;code&gt;~/.vagrant.d/boxes/&amp;lt;yourbox&amp;gt;/include/Vagrantfile&lt;/code&gt; に、秘密鍵のパスを設定する必要があるらしい。&lt;/p&gt;
+
+&lt;p&gt;その部分はこんな感じに書いた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;Vagrant::Config.run do |config|
+  # This Vagrantfile is auto-generated by `vagrant package` to contain
+  # the MAC address of the box. Custom configuration should be placed in
+  # the actual `Vagrantfile` in this box.
+  config.vm.base_mac = &amp;quot;XXXXXXXXXXXX&amp;quot;
+  config.ssh.private_key_path = &amp;quot;~/.ssh/id_rsa&amp;quot; # ここを追加
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;念のためホスト側の &lt;code&gt;~/.ssh/id_rsa.pub&lt;/code&gt; をゲスト側の &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; にコピーしなおしたら、password-less ログインも vagrant halt もうまくいった。&lt;/p&gt;
+
+&lt;p&gt;めでたしめでたし。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話</title>
+      <link>http://blog.tanaka51.jp/2013/03/23/octomacs-%E3%82%92-rvm-%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF-emacs-lisp-%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E6%96%B9%E6%B3%95emacs-lisp-%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</link>
+      <pubDate>Sat, 23 Mar 2013 10:19:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/23/octomacs-%E3%82%92-rvm-%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF-emacs-lisp-%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E6%96%B9%E6%B3%95emacs-lisp-%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</guid>
+      <description>
+
+&lt;p&gt;個人ブログ、会社ブログとも Octopress を使っている。&lt;/p&gt;
+
+&lt;p&gt;Octopress を使ってて思うのは「Emacs から記事を作成(する rake タスクを実行)/編集したい！」&lt;/p&gt;
+
+&lt;p&gt;それで octomacs を使ったんだけど、rvm と組み合わせて使った時にハマった。&lt;/p&gt;
+
+&lt;p&gt;結果だけを先に述べると、octomacs で rvm を使いたい時は、/etc/ 以下のログインシェルの設定に rvm のパスを追加するようにすれば良い。ベストな解決策では無いだろうが、とりあえず動く。&lt;/p&gt;
+
+&lt;p&gt;以下、奮闘記。暇な人向け。&lt;/p&gt;
+
+&lt;h2 id=&#34;emacs-拡張の選定:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;Emacs 拡張の選定&lt;/h2&gt;
+
+&lt;p&gt;Emacs から Octopress をゴニョニョする Emacs 拡張はパッと探した感じ、2つある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jhelwig/octomacs&#34; title=&#34;jhelwig/octomacs · GitHub&#34;&gt;jhelwig/octomacs · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Marmalade に登録されているので、 package.el で設定できる&lt;/li&gt;
+&lt;li&gt;複数の Octopress プロジェクトに対応&lt;/li&gt;
+&lt;li&gt;rvm/ido に対応&lt;/li&gt;
+&lt;li&gt;使えるは `octomacs-new-post&amp;rsquo; だけ&lt;/li&gt;
+&lt;li&gt;結構複雑な事をやっている&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/gfreezy/octopress-emacs&#34; title=&#34;gfreezy/octopress-emacs · GitHub&#34;&gt;gfreezy/octopress-emacs · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;very very very simple
+
+&lt;ul&gt;
+&lt;li&gt;ゆえに外から設定とかできない&lt;/li&gt;
+&lt;li&gt;コピーして自分で適当に書き換えて配置する必要がある(rvm化、パスの設定など)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;一つの Octopress プロジェクトにだけ対応&lt;/li&gt;
+&lt;li&gt;rbenv のみに対応&lt;/li&gt;
+&lt;li&gt;ひと通りの rake タスクを Emacs から実行できる
+
+&lt;ul&gt;
+&lt;li&gt;が、同期実行だから &lt;code&gt;rake gen_deploy&lt;/code&gt; とかするとしばらく固まるし &lt;code&gt;rake preview&lt;/code&gt; とか &lt;code&gt;rake watch&lt;/code&gt; した日には Emacs 動かなくなる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ということで個人ブログだけを管理する時には octopress-emacs を使ってたけど、会社ブログも Octopress になったし、ちょっと前に Emacs 24 化してパッケージ管理を完全に package.el に以降したから、octomacs を使うことにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;octomacs-設定:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;octomacs 設定&lt;/h2&gt;
+
+&lt;p&gt;package.el を使って rvm と octomacs をインストールしておく。(Marmalade を登録しておく必要あり)&lt;/p&gt;
+
+&lt;p&gt;そしたら init.el に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(require &#39;rvm)
+(require &#39;octomacs)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と書いておく。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトの設定は &lt;code&gt;M-x customize-group octomacs&lt;/code&gt; で &lt;code&gt;Octomacs Workdir Alist&lt;/code&gt; を編集するか、init.el か何かに&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(custom-set-variables
+ &#39;(octomacs-workdir-alist
+   ((&amp;quot;my-blog&amp;quot;     . &amp;quot;~/my-blog&amp;quot;)
+    (&amp;quot;kaisha-blog&amp;quot; . &amp;quot;~/kaisha-blog&amp;quot;))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とか書いておけばおｋ。alist は `(プロジェクト選択時に出る名前 . ディレクトリパス) という形。&lt;/p&gt;
+
+&lt;p&gt;以上が済んだらおもむろに &lt;code&gt;M-x octomacs-new-post&lt;/code&gt; を叩く。プロジェクトを選んで、ポスト名を入力する。良い感じ。だが、無残なメッセージと共にコマンドは失敗する:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Unable to create post: /bin/bash: rvm: command not found
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無念。&lt;/p&gt;
+
+&lt;h2 id=&#34;失敗する関数を特定したい:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;失敗する関数を特定したい&lt;/h2&gt;
+
+&lt;p&gt;さて、原因を探る。まずやる事は、どの関数で失敗したかを知る事だ。幸い、Emacs にはあるパッケージの呼び出しのプロファイルをとる関数が用意されていたので、それを使ってみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;M-x elp-instrument-package octomacs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;してから、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;M-x octomacs-new-post
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;してプロジェクト名を入力、ポスト名を適当に入れて、失敗する事を確認する。その後、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;M-x elp-results
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;してやると、octomacs パッケージ内での各関数呼び出しのプロファイルが出てくる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;octomacs-new-post                    1           5.199352      5.199352
+octomacs-new-post-interactive        1           3.722928      3.722928
+octomacs-read-project                1           2.010394      2.010394
+octomacs-read-post-name              1           1.712456      1.712456
+octomacs-rake                        1           0.926343      0.926343
+octomacs-rake-with-rvm               1           0.926298      0.926298
+octomacs-format-rake-task-with-args  1           2.7e-05       2.7e-05
+octomacs-shell-escape-string         1           8e-06         8e-06
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;今回はプロファイル結果に興味はないので、関数名から怪しい所を探しだす。まー怪しい所は &lt;code&gt;octomacs-rake-with-rvm&lt;/code&gt; だろう。関数名上でエンターを押下でその関数定義に飛んでくれた。便利！&lt;/p&gt;
+
+&lt;h2 id=&#34;shell-command-to-string-との出会い:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;shell-command-to-string との出会い&lt;/h2&gt;
+
+&lt;p&gt;こんな関数定義だった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(defun octomacs-rake-with-rvm (directory task &amp;amp;optional arguments)
+  &amp;quot;Run rake task TASK with specified ARGUMENTS in DIRECTORY using rvm&amp;quot;
+  (let* ((default-directory (file-name-as-directory (expand-file-name directory)))
+         (rvmrc-path (rvm--rvmrc-locate directory))
+         (rvmrc-info (if rvmrc-path (rvm--rvmrc-read-version rvmrc-path) nil))
+         (rvm-command (if rvmrc-info
+                          (concat &amp;quot;rvm &amp;quot; (mapconcat &#39;identity rvmrc-info &amp;quot;@&amp;quot;) &amp;quot; do &amp;quot;)
+                        &amp;quot;&amp;quot;)))
+    (shell-command-to-string (format &amp;quot;%srake %s&amp;quot; rvm-command (octomacs-format-rake-task-with-args task arguments)))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;エラーを思い出すと&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Unable to create post: /bin/bash: rvm: command not found
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じなので、予想としては &lt;code&gt;shell-command-to-string&lt;/code&gt; が原因だろうと当たりをつけた。そうすると知りたいのは、この &lt;code&gt;format&lt;/code&gt; がどんな文字列を生成しているか。 &lt;code&gt;shell-command-to-string&lt;/code&gt; が実行される直前で実行を止めてみてみたい。&lt;/p&gt;
+
+&lt;p&gt;Emacs でブレークポイントを貼りたい時は &lt;code&gt;edebug&lt;/code&gt; なるものを使うらしい。使い方は、ブレークポイントを貼りたい関数内で &lt;code&gt;C-u C-M-x&lt;/code&gt; とする。その後、その関数が評価される時に実行が止まる。知っておくべきコマンドは &lt;code&gt;space&lt;/code&gt; でステップ実行、 &lt;code&gt;e&lt;/code&gt; で現在のコンテキストでの式の評価、 &lt;code&gt;h&lt;/code&gt; でカーソルまで実行、 &lt;code&gt;q&lt;/code&gt; でデバッグ終了、位。後は、ステップ実行で式が評価される度にミニバッファに結果を表示していて、実は &lt;code&gt;*Message*&lt;/code&gt; バッファにミニバッファの表示がスタックされている事を知っていれば、今回の目的には十分である。&lt;/p&gt;
+
+&lt;p&gt;さて、そんなこんなで &lt;code&gt;format&lt;/code&gt; が生成している文字列が分かった。こんなの:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;rvm 1.9.3@octopress do rake &#39;new_post[test]&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こいつを &lt;code&gt;shell-command-to-string&lt;/code&gt; に渡してるらしい。&lt;/p&gt;
+
+&lt;p&gt;じゃあちょっとスクラッチバッファで実行してみよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;rvm 1.9.3@octopress do rake &#39;new_post[test]&#39;&amp;quot;)
+&amp;quot;rake aborted!
+No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `eval&#39;
+/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `&amp;lt;main&amp;gt;&#39;
+(See full trace by running task with --trace)
+&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…うん、実行するディレクトリを指定してないから、どこで実行してるかはわからないけど、 Rakefile が見当たらないのは当たり前だよなぁ。でも、octomacs ではきちんと Rakefile のあるディレクトリに行って実行しているっぽい気がする。じゃないと、他の人がツッコミを入れると思うし、作者もそんな凡ミスしたまま Marmalade にあげないよなぁ。何かそういう仕組みがあるはず。&lt;/p&gt;
+
+&lt;p&gt;でもまぁとりあえず、どこで実行してるかは知りたいので、スクラッチバッファで試してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;pwd&amp;quot;)
+&amp;quot;/Users/koichi
+&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ホームディレクトリだった。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;octomacs-rake-with-rvm&lt;/code&gt; にブレークポイントを貼って、その中で &lt;code&gt;pwd&lt;/code&gt; 実行したらどうなるんだろ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;/Users/koichi/my-blog\n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;うん、やっぱり何か、直接引数に渡さないで、外部からディレクトリを指定する仕組みがあるのね。&lt;/p&gt;
+
+&lt;p&gt;で、実はこれまでリファレンスを見ずに来たけど、それは &lt;code&gt;shell-command-to-string&lt;/code&gt; って名前から何をするか大体想像がつくから。おそらく、引数の文字列をシェルにコマンドとして渡して、結果の文字列を返すのかなーって感じ。&lt;/p&gt;
+
+&lt;p&gt;で、この関数の機能の想像と、渡される引数と、スクラッチバッファでの実行結果を見て2つの疑問点がわいてきた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？&lt;/li&gt;
+&lt;li&gt;外部からディレクトリを指定する方法を知りたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ついにリファレンスを見る時が来たようだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;かいけつ:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;かいけつ！&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html&#34; title=&#34;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&#34;&gt;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;上記リファレンスを見たのだが、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Function: shell-command-to-string command
+    この関数は、シェルコマンドとしてcommand（文字列）を実行し、 コマンドの出力を文字列として返す。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と書いてあるだけ。全く予想通りだし、それ以上の事も書いて無かった。疑問点は何も解決しない。
+「ついにリファレンスを見る時が来たようだ。」とか意気込んでおいてこの結末、残念すぎる。&lt;/p&gt;
+
+&lt;p&gt;こうなったらやることはググったり &lt;code&gt;shell-command-to-string&lt;/code&gt; を使ってどんな動作をしているかを確かめるしかない。&lt;/p&gt;
+
+&lt;p&gt;とりあえず、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;はグーグル先生に聞いた所、 &lt;code&gt;shell-command-to-string&lt;/code&gt; はログインシェルを使っているらしい事が分かった。で、ログインシェルを確認したら Bash だった。エラーメッセージで、bash が使われている理由が分かった。&lt;/p&gt;
+
+&lt;p&gt;僕は普段 zsh を使っているので、bash には rvm の設定をしていない。だったらログインシェルを zsh にすれば解決するだろう、という事で、ログインシェルを zsh にした。が、エラーメッセージは zsh でも command not found だから、問題は別の所にあるのだと考えた。で、次の式をスクラッチバッファで評価してみた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;echo $PATH&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そうすると &lt;code&gt;~/.zshrc&lt;/code&gt; で設定したパスが表示されて&lt;strong&gt;いない&lt;/strong&gt;。これで合点した。ホームディレクトリ以下の設定ファイルは読み込まないんだと…&lt;/p&gt;
+
+&lt;p&gt;で &lt;code&gt;/etc/zshrc&lt;/code&gt; に rvm のパスを設定するようにしたら、見事に動いた！これで解決したと言っても良いだろう。
+ひとまずの解決策として、octomacs で rvm を使いたかったら、/etc/ 以下のログインシェルの設定に、rvm へのパスを追加すれば良い。&lt;/p&gt;
+
+&lt;p&gt;問題自体はこれで解決したが、残る疑問点を解決しておきたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;emacs-lisp-の勉強:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;Emacs Lisp の勉強&lt;/h2&gt;
+
+&lt;p&gt;最後の疑問点はこれだ。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;外部からディレクトリを指定する方法を知りたい&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;もしこんな指定方法があるとすれば &lt;code&gt;shell-command-to-string&lt;/code&gt; を使っている箇所ではどこでも同じ事をしているはず。octomacs を眺めてみたら、ある共通点があった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* `let` の中で実行されている
+* `let` で `default-directory` を設定している
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完全に&lt;code&gt;default-directory&lt;/code&gt;が怪しすぎる。とりあえず、グーグル先生に聞いてみたら、英語版のリファレンスマニュアルがヒット。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html&#34; title=&#34;Synchronous Processes - GNU Emacs Lisp Reference Manual&#34;&gt;Synchronous Processes - GNU Emacs Lisp Reference Manual&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そしてこんな記述。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The current working directory of the subprocess is default-directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ビンゴー！まさしくこれだった。
+&lt;code&gt;shell-command-to-string&lt;/code&gt; は最終的に &lt;code&gt;call-process&lt;/code&gt; を読んでるだろうし、間違いないだろう。&lt;/p&gt;
+
+&lt;p&gt;で、イマイチこの辺の理解が曖昧だったのだけれども、どうやら &lt;code&gt;default-directory&lt;/code&gt; は「バッファローカル変数」らしい。これは、「デフォルト変数」といういわばグローバル変数をバッファ毎に書き換えられるものらしい。（こんな理解でいいのかな）&lt;/p&gt;
+
+&lt;p&gt;ある関数の為に &lt;code&gt;let&lt;/code&gt; でスコープを作り、その中で特定の変数に任意の値を束縛して関数の動作を制御するっていうこの Lisp のスタイル、面白いなーと思う。&lt;/p&gt;
+
+&lt;p&gt;終わり。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;参考&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dev.ariel-networks.com/articles/software-design-200802/elisp-debug/&#34; title=&#34;Emacs Lisp デバッグ — ありえるえりあ&#34;&gt;Emacs Lisp デバッグ — ありえるえりあ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/rubikitch/20101116/edebug &amp;quot;Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books&#34;&gt;Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books))&lt;/a&gt;)&amp;ldquo;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/clouder/20090529/1243564128 &amp;quot;emacs lispのshell-command-to-string(&#34;&gt;emacs lispのshell-command-to-string() - no strict; no life;&lt;/a&gt; - no strict; no life;&amp;ldquo;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html&#34; title=&#34;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&#34;&gt;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html&#34; title=&#34;Synchronous Processes - GNU Emacs Lisp Reference Manual&#34;&gt;Synchronous Processes - GNU Emacs Lisp Reference Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://haraita9283.blog98.fc2.com/blog-entry-387.html&#34; title=&#34;Emacs Lisp メモ: バッファローカル変数 | anobota&#34;&gt;Emacs Lisp メモ: バッファローカル変数 | anobota&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>git blame in Emacs</title>
+      <link>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</link>
+      <pubDate>Fri, 22 Mar 2013 12:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</guid>
+      <description>&lt;p&gt;あなたは Emacs でコードを読んでいる最中に、git blame したくなったことはありませんか？
+コードの意図が知りたい時、この&lt;strong&gt;素晴らしい&lt;/strong&gt;コードを書いた人を知りたい時
+…そんな時、お気に入りのシェルに移動して、 git blame -L ええと何行目だったけかな、そうそう 72 行目だった、でももうちょっと前から見たいから 70 位にしてそれでええとファイル名は…なんてやっていた事はないでしょうか。私はよくあります。&lt;/p&gt;
+
+&lt;p&gt;さて、あなたが使っているエディタは何でしたっけ？
+…そう、Emacs ですね。Emacs なら、この問題に対する素敵なソリューションが&lt;strong&gt;標準で&lt;/strong&gt;存在します。
+もう git blame の為にシェルに戻る時、脳内スタックに行数とファイル名を追加する必要はありません。&lt;/p&gt;
+
+&lt;p&gt;さてその方法ですが、Git 管理下のファイルで以下のコマンドを優しく叩いてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;C-x v g&lt;/code&gt; もしくは &lt;code&gt;M-x git-annotate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;そうすると、新しくバッファを開いて git blame の結果を表示します。 &lt;code&gt;git-annotate&lt;/code&gt; したポイントを中心に表示してくれるのでかなり便利です。
+このバッファは &lt;code&gt;q&lt;/code&gt; で閉じる事ができます。
+popup.el と組み合わせると更に良い感じになります。&lt;/p&gt;
+
+&lt;p&gt;これであの素敵なコードを書いた人を調べる作業が高速にかつ快適にできるようになりました:)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>sample test unit with mocha and shoulda</title>
+      <link>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</link>
+      <pubDate>Thu, 14 Feb 2013 14:39:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</guid>
+      <description>
+
+&lt;p&gt;最近、Test::Unit + mocha + Shoulda の構成の Rails アプリを扱っている。&lt;/p&gt;
+
+&lt;p&gt;参考になるコードが欲しくて Github で &lt;code&gt;gem shoulda gem mocha&lt;/code&gt; で検索したものから、良さ気なものをリストアップ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/grosser/i18n-backend-http&#34; title=&#34;grosser/i18n-backend-http · GitHub&#34;&gt;grosser/i18n-backend-http · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/grosser/i18n-backend-http/blob/master/test/i18n/backend/http_test.rb&#34; title=&#34;i18n-backend-http/test/i18n/backend/http_test.rb at master · grosser/i18n-backend-http · GitHub&#34;&gt;i18n-backend-http/test/i18n/backend/http_test.rb at master · grosser/i18n-backend-http · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/juanibiapina/minglr&#34; title=&#34;juanibiapina/minglr · GitHub&#34;&gt;juanibiapina/minglr · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TestCase 自体をアプリ名でネームスペース区切ってる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/juanibiapina/minglr/blob/master/test/commands_test.rb&#34; title=&#34;minglr/test/commands_test.rb at master · juanibiapina/minglr · GitHub&#34;&gt;minglr/test/commands_test.rb at master · juanibiapina/minglr · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jnunemaker/joint&#34; title=&#34;jnunemaker/joint · GitHub&#34;&gt;jnunemaker/joint · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RSpec 風&lt;/li&gt;
+&lt;li&gt;僕も割とこんな感じで書いてる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jnunemaker/joint/blob/master/test/test_joint.rb&#34; title=&#34;joint/test/test_joint.rb at master · jnunemaker/joint · GitHub&#34;&gt;joint/test/test_joint.rb at master · jnunemaker/joint · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/britt/facebook-warden-strategy&#34; title=&#34;britt/facebook-warden-strategy · GitHub&#34;&gt;britt/facebook-warden-strategy · GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mocha の subject を使ってる&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/britt/facebook-warden-strategy/blob/master/test/facebook_connect_test.rb&#34; title=&#34;facebook-warden-strategy/test/facebook_connect_test.rb at master · britt/facebook-warden-strategy · GitHub&#34;&gt;facebook-warden-strategy/test/facebook_connect_test.rb at master · britt/facebook-warden-strategy · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;mocha-tips:b4ebb700532968320e3ba7fc512a88e7&#34;&gt;mocha Tips&lt;/h2&gt;
+
+&lt;h3 id=&#34;stub-method-chain:b4ebb700532968320e3ba7fc512a88e7&#34;&gt;stub method chain&lt;/h3&gt;
+
+&lt;p&gt;メソッドチェーンをスタブする&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&#34;http://viget.com/extend/stubbing-method-chains-with-mocha&#34; title=&#34;Stubbing Method Chains with Mocha | Viget&#34;&gt;Stubbing Method Chains with Mocha | Viget&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;Hoge.foo.bar.baz =&amp;gt; # hoge
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なら&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;Hoge.stub(:foo).returns(stub(:bar =&amp;gt; stub(:baz =&amp;gt; &#39;hoge&#39;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ずっと RSpec 使ってて、RSpec 大好き人間だったけど、Test::Unit + mocha + Shoulda の組み合わせも、シンプルで好きになってきた最近。&lt;/p&gt;
+
+&lt;p&gt;あと、Github はコードサンプル探すのに良いですねぇ。 Github+1&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

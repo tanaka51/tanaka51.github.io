@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Octopress on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/octopress/</link>
+    <description>Recent content in Octopress on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 07 Sep 2012 10:59:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/octopress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>他の PC で Octopress をセットアップする</title>
+      <link>http://blog.tanaka51.jp/2012/09/07/%E4%BB%96%E3%81%AE-pc-%E3%81%A7-octopress-%E3%82%92%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B/</link>
+      <pubDate>Fri, 07 Sep 2012 10:59:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/09/07/%E4%BB%96%E3%81%AE-pc-%E3%81%A7-octopress-%E3%82%92%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B/</guid>
+      <description>
+
+&lt;p&gt;他の PC で octopress の記事をポストしたいときの手順&lt;/p&gt;
+
+&lt;h2 id=&#34;前提条件:10d3e4cb4ffaca5c577ccf971c5429f4&#34;&gt;前提条件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Github Pages を使っている&lt;/li&gt;
+&lt;li&gt;どこかで setup が終了している&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;やり方:10d3e4cb4ffaca5c577ccf971c5429f4&#34;&gt;やり方&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;git@github.com:username/username.github.com からクローン&lt;/li&gt;
+&lt;li&gt;source ブランチをチェックアウト
+&lt;code&gt;
+$ git checkout -b source origin/source
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;master ブランチはいらないので消す
+&lt;code&gt;
+$ git branch -D master
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;bundle インストール
+
+&lt;ul&gt;
+&lt;li&gt;RVM やらの設定もやっておく
+&lt;code&gt;
+$ bundle install
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重要&lt;/strong&gt; rake setup_github_pages を必ず実行する
+
+&lt;ul&gt;
+&lt;li&gt;これは新しくクローンしたリポジトリでは毎回実行すること&lt;/li&gt;
+&lt;li&gt;この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される&lt;/li&gt;
+&lt;li&gt;やらないとデプロイできないので注意
+&lt;code&gt;
+$ rake setup_github_pages
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;後はいつもと同じ手順でポスト可能&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

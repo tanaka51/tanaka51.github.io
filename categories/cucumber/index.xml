@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cucumber on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/cucumber/</link>
+    <description>Recent content in Cucumber on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 01 Oct 2012 23:50:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/cucumber/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cucumberファーストインプレッション</title>
+      <link>http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <pubDate>Mon, 01 Oct 2012 23:50:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <description>
+
+&lt;p&gt;Cucumberのメモガキ&lt;/p&gt;
+
+&lt;h2 id=&#34;前準備:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;前準備&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;とりあえず Emacs の拡張を入れる
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/michaelklishin/cucumber.el&#34;&gt;https://github.com/michaelklishin/cucumber.el&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;はじめる！ Cucumber を読む
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tatsu-zine.com/books/cuke&#34;&gt;http://tatsu-zine.com/books/cuke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The RSpec Book を読む
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/dp/4798121932/&#34;&gt;http://www.amazon.co.jp/dp/4798121932/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;実践テスト駆動開発を読む
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/sim/4798124583/2&#34;&gt;http://www.amazon.co.jp/sim/4798124583/2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;実践:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;実践&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Guard で自動実行させる&lt;/li&gt;
+&lt;li&gt;まず、シナリオの粒度に悩む
+
+&lt;ul&gt;
+&lt;li&gt;悩んでも仕方無いから、とにかく書いてみる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Cucumber の本である上の2冊は情報が古いため、そのままやっても動かないことがある
+
+&lt;ul&gt;
+&lt;li&gt;cucumber-rails はデフォルトのステップ定義を用意してくれない!&lt;/li&gt;
+&lt;li&gt;tag の指定方法が変わっている!
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;tags @piyo で指定できる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;etc, etc, etc,,,,&lt;/li&gt;
+&lt;li&gt;日本語情報が少ない(古いものが多い)から、英語で調べるのが吉&lt;/li&gt;
+&lt;li&gt;でも結局公式wikiで答えが見つかる事も多い
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cucumber/cucumber&#34;&gt;https://github.com/cucumber/cucumber&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ステップ定義は Capybara との戦いになりがち
+
+&lt;ul&gt;
+&lt;li&gt;やっぱり調べ物には公式wikiが良かったりする
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jnicklas/capybara&#34;&gt;https://github.com/jnicklas/capybara&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Capybara には HTTP メソッドの PUT と DELETE がなくて詰みかける
+
+&lt;ul&gt;
+&lt;li&gt;@javascript タグをつけるのが正解&lt;/li&gt;
+&lt;li&gt;Capybara の JS-driver は capybara-webkit が良い
+
+&lt;ul&gt;
+&lt;li&gt;Qt を入れる必要があって若干ハードルが高いけど、selenium よりこっちが良い&lt;/li&gt;
+&lt;li&gt;何より、ブラウザが立ち上がらないのが素晴らしい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Capybara さんには、save_and_open_page というメソッドでその状態の HTML をブラウザで開く機能があってめっちゃ便利
+
+&lt;ul&gt;
+&lt;li&gt;前提 /^デバッグ$/ { save_and_open_page } みたいなステップを定義しておくと幸せになれると思う&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ちなみに、@wip タグを実行する方法は以下。というか cucumber.yml に書いたプロファイルを実行する方法。この方法が見つけられずに辛かった(ちなみに公式wikiに載ってた)(当たり前だ)。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cucumber --profile @wip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;悩み:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;悩み&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;シナリオの粒度&lt;/li&gt;
+&lt;li&gt;CRUD のような割と定型的なシナリオをどう書くか&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;感想:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;感想&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;やはり、日本語が使えるのは大きい気がする&lt;/li&gt;
+&lt;li&gt;リズムに乗るとガシガシ書けて楽しい&lt;/li&gt;
+&lt;li&gt;が、割とカオスになりがちなのできちんとリファクタしていきませう（自戒）&lt;/li&gt;
+&lt;li&gt;エンドツーエンドテスト→ユニットテスト→実装という流れは、思っていた以上に有効な気がしてきている&lt;/li&gt;
+&lt;li&gt;これから積極的に使っていく&lt;/li&gt;
+&lt;li&gt;でもこんなに情報が少ないのはなぜだろう？
+
+&lt;ul&gt;
+&lt;li&gt;RequestSpec でやってる？&lt;/li&gt;
+&lt;li&gt;エンドツーエンドテストを書く習慣がない？&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

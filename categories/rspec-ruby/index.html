@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Rspec Ruby | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/categories/rspec-ruby/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="list" role="main">
+    <div class="article-header light-gray"><h1>#Rspec Ruby</h1></div>
+    
+      <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/">RSpec Best Practice </a></h1>
+  <div class="meta">
+    Dec 14, 2012 &nbsp;
+    
+  </div>
+</div>
+
+  RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。 具体例 describe User do describe '#admin?' do subject { user.admin? } let(:user) { FactoryGirl.create :user, admin: admin } context &quot;when user is administrator&quot; do let(:admin) { true } it &quot;returns true&quot; do expect(subject).to be_true end end context &quot;when user is not administrator&quot; do let(:admin) { false } it &quot;returns false&quot; do expect(subject).to be_false end end end end ポイント describe と context を明確に使い分ける let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない このルールを守るとテストの見通しがすごく良くなる context 直上の describe は以下のルールを用いている subject, let(/let!), before, it, context の順で書く（let と let!
+  <a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/" class="read-on">続きを読む → </a>
+</div>
+
+    
+  </main>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

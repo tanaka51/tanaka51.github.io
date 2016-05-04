@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    postgresql の使い方 | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">postgresql の使い方 </a></h1>
+  <div class="meta">
+    Jan 4, 2013 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>普段 MySQL ばっかりなので、ポスグレは分からない…</p>
+
+<ul>
+<li>SHOW databases;
+
+<ul>
+<li>\l</li>
+</ul></li>
+<li>SHOW tables;
+
+<ul>
+<li>\d</li>
+</ul></li>
+</ul>
+
+<h2 id="大文字について:2b2d98137e22701e26126c4dfa684922">大文字について</h2>
+
+<p>もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。</p>
+
+<pre><code>select * from &quot;SCHEMA&quot;.users;
+
+select * from &quot;PREFIX_users&quot;;
+</code></pre>
+
+<h2 id="スキーマを指定:2b2d98137e22701e26126c4dfa684922">スキーマを指定</h2>
+
+<p>「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。</p>
+
+<pre><code>set search_path=&quot;SCHEMA&quot;, &quot;SCHEMA2&quot;, public
+</code></pre>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2013/01/04/setup-iterm2/" rel="prev">Setup iTerm2</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2013/01/07/%E5%88%9D%E5%9B%9E%E6%99%82%E3%81%AEyum%E3%81%AE%E8%A8%AD%E5%AE%9A/" rel="next">初回時のyumの設定</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs Tmux on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/emacs-tmux/</link>
+    <description>Recent content in Emacs Tmux on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 25 Mar 2013 21:46:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.tanaka51.jp/categories/emacs-tmux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Emacs と Tmux</title>
+      <link>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</link>
+      <pubDate>Mon, 25 Mar 2013 21:46:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</guid>
+      <description>
+
+&lt;p&gt;思う所あって、Emacs を CUI で使う事にした。僕は zsh + tmux を使っているので、その上に Emacs を載せる事になる。
+その時のメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;理由:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;理由&lt;/h2&gt;
+
+&lt;p&gt;最近、開発は vagrant で VM 立ちあげて sshfs で Mac にマウントしてそのマウントされたファイルに Emacs でアクセスして作業する事が多い。
+この sshfs でマウントした状態っていうのがおそらく問題で、Emacs の git 系の拡張の動きがすこぶる遅い。特に気になるのが helm-ls-git で、起動するのに体感5秒位かかっている状態。この拡張をまともに使えないのはすごくもったいないので、それがかなりストレスになっている。挙げ句の果てには find-file も2秒位かかる状態。ストレスフル。そして、この開発環境の VM 化は今後ずっと続くだろうから（利点の方が大きい）、解決しなくてはいけない。&lt;/p&gt;
+
+&lt;p&gt;そもそも git の操作だとか単体テストを流す作業だとかは ssh でゲストマシンに接続してやっていて、つまりマウントしている理由は Mac 側の GUI アプリで操作をしたいだけだった。そうなると、解決策は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;trump で ssh 接続する&lt;/li&gt;
+&lt;li&gt;Emacs を CUI で使うようにする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の2つある。（他にもあったら教えて下さい）&lt;/p&gt;
+
+&lt;p&gt;実は半年位前に trump でやっていたこともあったのだけど、find-file だとか、direx だとかが非常に遅かった。一度読みこめばキャッシュするんだけど、新規にファイル追加する度に読み込み直しで時間がかかるのがかなりストレスだった。（その頃は helm-ls-git を知らなかったから、それについては試してないけど、遅そう。）&lt;/p&gt;
+
+&lt;p&gt;で、後者を選択する事にした。CUI で簡潔するのってなんかカッコイイし、git のコミットメッセージを書く度に GUI ウィンドウに移動とか面倒だったし(Emacs からコミットとかをしていないのはどの拡張もしっくりこなかったから…)（それで最近はコミットメッセージは vim で書いていた）（おかげで vim 力は結構あがった）、Emacs さえ入っていればどんな環境でも作業できるっていうのはすごくメリットのある事だと思ったので。&lt;/p&gt;
+
+&lt;p&gt;という事で、zsh + tmux + Emacs の環境を構築した。&lt;/p&gt;
+
+&lt;h2 id=&#34;やったこと:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;やったこと&lt;/h2&gt;
+
+&lt;p&gt;最初にやったことは、もちろん Emacs のインストール。この辺、デフォルトで入ってないのは辛い所な気もする。それで僕の場合は cmigemo も入れる必要がある。&lt;/p&gt;
+
+&lt;p&gt;という事で、新しい VM を vagrant up したらまずすることは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cmigemo のインストール&lt;/li&gt;
+&lt;li&gt;Emacs のインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;になると思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;cmigemo-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;cmigemo のインストール&lt;/h3&gt;
+
+&lt;p&gt;だいたいいつも、どこかのブログを見たり、公式サイトを見たりしてる気がする。&lt;/p&gt;
+
+&lt;p&gt;今回はここを参考にした &lt;a href=&#34;http://ser1zw.hatenablog.com/entry/20100825/1282663086&#34; title=&#34;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&#39;s blog&#34;&gt;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&amp;rsquo;s blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;emacs-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs のインストール&lt;/h3&gt;
+
+&lt;p&gt;今回は対象が Ubuntu 10.0.4 LTS。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://core.ring.gr.jp/pub/GNU/emacs/&#34; title=&#34;Index of /pub/GNU/emacs&#34;&gt;Index of /pub/GNU/emacs&lt;/a&gt; ここらへんから最新のパッケージをとってきてビルドする。&lt;/p&gt;
+
+&lt;p&gt;今回の Emacs のオプションは、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --x-libraries=no --with-x-toolkit=no
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じにした。画像関連のライブラリが足りなかったので、それらもインストールしておく。
+後は普通に make &amp;amp;&amp;amp; make install できた。&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&#34;http://emacs.tsutomuonoda.com/emacs24-1-ubuntu-install/&#34; title=&#34;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&#34;&gt;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;emacs-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs の設定&lt;/h2&gt;
+
+&lt;p&gt;あまり既存の設定をいじる事なくできた。いじったところは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;redo+ がうまく動かないらしいから消した&lt;/li&gt;
+&lt;li&gt;window サイズの設定をまるっと消した&lt;/li&gt;
+&lt;li&gt;フォント周りもまるっと消した&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;位。&lt;/p&gt;
+
+&lt;h2 id=&#34;tmux-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;tmux の設定&lt;/h2&gt;
+
+&lt;p&gt;僕はずっとプリフィクスキーを &lt;code&gt;C-x&lt;/code&gt; にしていた。Emacs を CUI で使う事はないと思っていたのと、Emacs と似たような操作感が欲しかったから、というのが理由。今度からは Emacs 上でも tmux が操作できないといけないので、欠番キーである &lt;code&gt;C-z&lt;/code&gt; を割り当てることにした。&lt;/p&gt;
+
+&lt;p&gt;余談だけど &lt;code&gt;C-t&lt;/code&gt; に設定してる人が多いのにはビックリしてる。世の中の tmux の設定を見ると大体そんな感じがしてる。Emacs で言えば &lt;code&gt;transpose-chars&lt;/code&gt; ってコマンドになるんだけど、これ、ターミナル上でも使えて、かなり便利だと思っている。&lt;/p&gt;
+
+&lt;p&gt;例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% git psuh origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って打ってエンター押すと、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git: &#39;psuh&#39; is not a git command. See &#39;git --help&#39;.
+
+Did you mean this?
+        push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って怒られるわけです。そしたら即座に &lt;code&gt;C-p&lt;/code&gt; して &lt;code&gt;C-a&lt;/code&gt; して &lt;code&gt;M-f&lt;/code&gt; して &lt;code&gt;C-f&lt;/code&gt; を2回押して &lt;code&gt;C-t&lt;/code&gt; したらほら元通り。こんな便利な機能を何でみんな使わないのか、いつも不思議に思ってる。いやまぁ、この操作に慣れるのに時間がかかるけど…&lt;/p&gt;
+
+&lt;p&gt;ターミナル上だけでなく、Emacs 上でもこのコマンドを良く使うから、僕は手放せない。という余談でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;zsh-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;zsh の設定&lt;/h2&gt;
+
+&lt;p&gt;以下の記事を参考に以下の設定を追加。zsh 起動時に emacs を daemon で起動する。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/flada_auxv/20121110/1352527081&#34; title=&#34;最近の作業環境とか。TMUX on Emacs - flada_auxvの日記&#34;&gt;最近の作業環境とか。TMUX on Emacs - flada_auxvの日記&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;if pgrep emacs &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then
+    echo &amp;quot;Emacs server is already running...&amp;quot;
+  else
+    `emacs --daemon`
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;おわり:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;おわり&lt;/h2&gt;
+
+&lt;p&gt;ssh で接続した先で tmux 起動してると、コピペがうまくできないのよね。。何か良い設定ないかな…&lt;/p&gt;
+
+&lt;p&gt;あと、Mac で iTerm2 を使ってメタキーを Command にしたいなら、ここを見ること（じぶんあて）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/blog/2013/01/04/setup-iterm2/&#34; title=&#34;Setup iTerm2 - status code 51&#34;&gt;Setup iTerm2 - status code 51&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

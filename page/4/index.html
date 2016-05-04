@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jpindex.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+
+
+<main id="index" role="main">
+  
+  
+    <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/">install ruby on mac </a></h1>
+  <div class="meta">
+    Feb 3, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  <p>Ruby 1.9.3-p374 を Mac にインストールしようとしたら一発でできなかったのでメモ。</p>
+
+<ul>
+<li>OS: OSX 10.8.2 (moutain lion)</li>
+<li>rvm: 1.18.5</li>
+</ul>
+
+<p>3行でまとめると、</p>
+
+<ul>
+<li>MacPorts をアンインストール</li>
+<li>Homebrew に完全移行</li>
+<li><code>rm -rf ~/.rvm/usr</code> (不要な rvm pkg をアンインストール)</li>
+</ul>
+
+<p>という事になる。</p>
+
+<p>最新の Ruby のインストールは、Homebrew のライブラリが相性が良いのかなーという印象。正しいかどうかは分からない。</p>
+
+<p>以後、長いけれども、作業メモ。</p>
+
+  <a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
+  <div class="meta">
+    Jan 31, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。 原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。 Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。 自分が触った範囲で違うところをまとめる。 assertion メソッドのmessage引数 ここは大きな違い。 Ruby標準ライブラリ to_s に反応するものなら何でもOK gemのtest-unit nil String Proc AssertionMessage だけしか受け付けない 出力系 Test::Unit:::UI::Console::TestRunner 辺り #output 出力の為のメソッド。いろんな所で使われている。 とる引数が違うので、オーバーライドしてると大変。 ``` ruby Ruby 標準ライブラリ def output(something, level=NORMAL) ``` ruby gem 版 test-unit def output(something, color=nil, level=nil) #add_fault &rdquo;&hellip;F..F.E.&rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（@show_detail_immediatelyの値によって変わる）。 ``` ruby Ruby 標準ライブラリ def add_fault(fault) @faults &lt;&lt; fault output_single(fault.single_character_display, PROGRESS_ONLY) @already_outputted = true end ``` ruby gem 版 test-unit def add_fault(fault) @faults &lt;&lt; fault output_progress(fault.single_character_display, fault_color(fault)) output_progress_in_detail(fault) if @show_detail_immediately @already_outputted = true if fault.critical?
+  <a href="http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/07/uninstall_rvm/">uninstall_rvm </a></h1>
+  <div class="meta">
+    Jan 7, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  rvm のアンインストール方法にちょっとはまったのでメモ。 やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。 方法 $ sudo rvm implode したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。 $ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh このあと、 ログアウト→ログイン をすること。 その後、 $ \curl -L https://get.rvm.io | bash -s stable --ruby すればおｋ。 sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。 参考 ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM -
+  <a href="http://blog.tanaka51.jp/2013/01/07/uninstall_rvm/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/07/%E5%88%9D%E5%9B%9E%E6%99%82%E3%81%AEyum%E3%81%AE%E8%A8%AD%E5%AE%9A/">初回時のyumの設定 </a></h1>
+  <div class="meta">
+    Jan 7, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  CentOS 導入したら、まず yum を強くするのだ！！ yum をはやくする % sudo yum -y install yum-fastestmirror 開発用ツール % sudo yum groupinstall &quot;Development Tools&quot; パッケージ管理のリポジトリ追加 rpmforge, epel, remi の３つを入れておけば、大体なんとかなるらしい。 rpmforge % sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt % sudo rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm epel % sudo rpm --import http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/RPM-GPG-KEY-EPEL-6 % sudo rpm -ivh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm remi % sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi % sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm Development Tools を入れれば一応入るとおもわれるが、以下をやっておくと安心 % sudo yum install -y gcc-c++ gcc-c make patch readline
+  <a href="http://blog.tanaka51.jp/2013/01/07/%E5%88%9D%E5%9B%9E%E6%99%82%E3%81%AEyum%E3%81%AE%E8%A8%AD%E5%AE%9A/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">postgresql の使い方 </a></h1>
+  <div class="meta">
+    Jan 4, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  普段 MySQL ばっかりなので、ポスグレは分からない… SHOW databases; \l SHOW tables; \d 大文字について もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。 select * from &quot;SCHEMA&quot;.users; select * from &quot;PREFIX_users&quot;; スキーマを指定 「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。 set search_path=&quot;SCHEMA&quot;, &quot;SCHEMA2&quot;, public
+  <a href="http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/" class="read-on">続きを読む → </a>
+</div>
+
+  
+</main>
+
+
+
+<nav>
+  
+  
+    
+    <ul class="pagination">
+        
+        <li>
+            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li
+        >
+        <a href="/page/3/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        <li
+        ><a href="/">1</a></li>
+        
+        <li
+        ><a href="/page/2/">2</a></li>
+        
+        <li
+        ><a href="/page/3/">3</a></li>
+        
+        <li
+        class="active"><a href="/page/4/">4</a></li>
+        
+        <li
+        ><a href="/page/5/">5</a></li>
+        
+        <li
+        ><a href="/page/6/">6</a></li>
+        
+        <li
+        >
+        <a href="/page/5/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+        <li>
+            <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
