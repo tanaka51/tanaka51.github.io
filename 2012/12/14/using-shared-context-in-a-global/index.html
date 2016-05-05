@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    rspec の shared_context をすべての example に適用する | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jp/index.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/">rspec の shared_context をすべての example に適用する </a></h1>
+  <div class="meta">
+    Dec 14, 2012 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p><a href="https://github.com/tanaka51-jp/clips">clips</a> で <a href="https://github.com/bblimke/webmock">webmock</a> を使って Github API との通信部分をスタブしたのだけど、このスタブ定義をすべての example に適用させた時の記録。または shared_context をすべての example に適用する方法。</p>
+
+<h2 id="参考:db3c23199c45a33dcc98815e5c26b68d">参考</h2>
+
+<ul>
+<li><a href="http://ruby.11.n6.nabble.com/using-shared-context-in-a-global-way-td4678576.html">rspec-users - using shared_context in a global way</a></li>
+</ul>
+
+<h2 id="結果:db3c23199c45a33dcc98815e5c26b68d">結果</h2>
+
+<ul>
+<li><a href="https://github.com/tanaka51-jp/clips/blob/master/spec/spec_helper.rb#48" title="clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub">clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub</a></li>
+<li><a href="https://github.com/tanaka51-jp/clips/blob/master/spec/support/stub_http_request.rb" title="clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub">clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub</a></li>
+</ul>
+
+<h2 id="やり方:db3c23199c45a33dcc98815e5c26b68d">やり方</h2>
+
+<p>（というかほぼ参考にしたページの日本語約）</p>
+
+<p>まず、&rsquo;RSpec.configure&rsquo; 内で、すべての example に適用させる before を定義できる。
+だけど、let だとか RSpec の DSL は &lsquo;RSpec.configure&rsquo; 内では使えない。だから、&rsquo;RSpec::Core::SharedContext&rsquo; を extend した module をつくって、configure 内ではその自作 module を include させるようにすると良い。</p>
+
+<p>で、具体例。</p>
+
+<pre><code class="language-ruby"># spec/spec_helper.rb
+RSpec.configure do |config|
+  config.include StubHttpRequest
+end
+</code></pre>
+
+<pre><code class="language-ruby"># spec/support/stub_http_request.rb
+require 'rspec/core/shared_context'
+
+module StubHttpRequest
+  extend RSpec::Core::SharedContext
+
+  before do
+    stub_request(:any, /.*api\.github\.com.*/).
+      to_return(:status =&gt; 200, :body =&gt; &quot;&quot;, :headers =&gt; {})
+  end
+end
+</code></pre>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/" rel="prev">RSpec Best Practice</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/" rel="next">Ruby on Rails で JSON をパースする</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

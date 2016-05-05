@@ -11,10 +11,10 @@
     
     <item>
       <title>Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話</title>
-      <link>http://blog.tanaka51.jp/2013/03/23/octomacs-%E3%82%92-rvm-%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF-emacs-lisp-%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E6%96%B9%E6%B3%95emacs-lisp-%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</link>
+      <link>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</link>
       <pubDate>Sat, 23 Mar 2013 10:19:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2013/03/23/octomacs-%E3%82%92-rvm-%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF-emacs-lisp-%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E6%96%B9%E6%B3%95emacs-lisp-%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</guid>
+      <guid>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</guid>
       <description>
 
 &lt;p&gt;個人ブログ、会社ブログとも Octopress を使っている。&lt;/p&gt;
@@ -27,7 +27,7 @@
 
 &lt;p&gt;以下、奮闘記。暇な人向け。&lt;/p&gt;
 
-&lt;h2 id=&#34;emacs-拡張の選定:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;Emacs 拡張の選定&lt;/h2&gt;
+&lt;h2 id=&#34;emacs-拡張の選定:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;Emacs 拡張の選定&lt;/h2&gt;
 
 &lt;p&gt;Emacs から Octopress をゴニョニョする Emacs 拡張はパッと探した感じ、2つある。&lt;/p&gt;
 
@@ -63,7 +63,7 @@
 
 &lt;p&gt;ということで個人ブログだけを管理する時には octopress-emacs を使ってたけど、会社ブログも Octopress になったし、ちょっと前に Emacs 24 化してパッケージ管理を完全に package.el に以降したから、octomacs を使うことにした。&lt;/p&gt;
 
-&lt;h2 id=&#34;octomacs-設定:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;octomacs 設定&lt;/h2&gt;
+&lt;h2 id=&#34;octomacs-設定:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;octomacs 設定&lt;/h2&gt;
 
 &lt;p&gt;package.el を使って rvm と octomacs をインストールしておく。(Marmalade を登録しておく必要あり)&lt;/p&gt;
 
@@ -92,7 +92,7 @@
 
 &lt;p&gt;無念。&lt;/p&gt;
 
-&lt;h2 id=&#34;失敗する関数を特定したい:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;失敗する関数を特定したい&lt;/h2&gt;
+&lt;h2 id=&#34;失敗する関数を特定したい:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;失敗する関数を特定したい&lt;/h2&gt;
 
 &lt;p&gt;さて、原因を探る。まずやる事は、どの関数で失敗したかを知る事だ。幸い、Emacs にはあるパッケージの呼び出しのプロファイルをとる関数が用意されていたので、それを使ってみる。&lt;/p&gt;
 
@@ -123,7 +123,7 @@ octomacs-shell-escape-string         1           8e-06         8e-06
 
 &lt;p&gt;今回はプロファイル結果に興味はないので、関数名から怪しい所を探しだす。まー怪しい所は &lt;code&gt;octomacs-rake-with-rvm&lt;/code&gt; だろう。関数名上でエンターを押下でその関数定義に飛んでくれた。便利！&lt;/p&gt;
 
-&lt;h2 id=&#34;shell-command-to-string-との出会い:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;shell-command-to-string との出会い&lt;/h2&gt;
+&lt;h2 id=&#34;shell-command-to-string-との出会い:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;shell-command-to-string との出会い&lt;/h2&gt;
 
 &lt;p&gt;こんな関数定義だった。&lt;/p&gt;
 
@@ -194,7 +194,7 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 
 &lt;p&gt;ついにリファレンスを見る時が来たようだ。&lt;/p&gt;
 
-&lt;h2 id=&#34;かいけつ:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;かいけつ！&lt;/h2&gt;
+&lt;h2 id=&#34;かいけつ:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;かいけつ！&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html&#34; title=&#34;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&#34;&gt;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&lt;/a&gt;&lt;/p&gt;
 
@@ -230,7 +230,7 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 
 &lt;p&gt;問題自体はこれで解決したが、残る疑問点を解決しておきたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;emacs-lisp-の勉強:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;Emacs Lisp の勉強&lt;/h2&gt;
+&lt;h2 id=&#34;emacs-lisp-の勉強:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;Emacs Lisp の勉強&lt;/h2&gt;
 
 &lt;p&gt;最後の疑問点はこれだ。&lt;/p&gt;
 
@@ -263,7 +263,7 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 
 &lt;p&gt;終わり。&lt;/p&gt;
 
-&lt;h2 id=&#34;参考:bf66e43538a2d49bc80e08dd58135d0e&#34;&gt;参考&lt;/h2&gt;
+&lt;h2 id=&#34;参考:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;参考&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://dev.ariel-networks.com/articles/software-design-200802/elisp-debug/&#34; title=&#34;Emacs Lisp デバッグ — ありえるえりあ&#34;&gt;Emacs Lisp デバッグ — ありえるえりあ&lt;/a&gt;&lt;/li&gt;

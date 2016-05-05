@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    IRuby を試してみた | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2015/05/12/try-iruby/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jp/index.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2015/05/12/try-iruby/">IRuby を試してみた </a></h1>
+  <div class="meta">
+    May 12, 2015 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>GitHub が IPython なるものをレンダリングできると発表していて、Ruby でも使えるらしいのでやってみた。</p>
+
+<p>環境は Mac OS X 10.10.3</p>
+
+<h2 id="ipython-環境をつくる:5c13f8a788a356277b49a514cfd1dc24">IPython 環境をつくる</h2>
+
+<pre><code class="language-console">$ brew install python3
+$ pip install ipython pyzmq tornado Jinja2 jsonschema
+</code></pre>
+
+<p><code>ipython</code> より後の依存モジュールが無いと動かない</p>
+
+<p><code>ipython</code> とか <code>ipython notebook</code> で動けば :ok_woman:</p>
+
+<p><strong>追記</strong></p>
+
+<pre><code>$ pip install &quot;ipython[notebook]&quot;
+</code></pre>
+
+<p>とすると依存モジュールが全部自動で入るようです。thx @uu59</p>
+
+<h2 id="iruby-環境をつくる:5c13f8a788a356277b49a514cfd1dc24">IRuby 環境をつくる</h2>
+
+<pre><code class="language-console">$ brew install zeromq
+</code></pre>
+
+<p>が必要。参考: <a href="https://github.com/minad/iruby/issues/18#issuecomment-49619447">install problem · Issue #18 · minad/iruby</a></p>
+
+<pre><code class="language-console">$ gem i iruby
+$ iruby
+</code></pre>
+
+<h2 id="書いてみる:5c13f8a788a356277b49a514cfd1dc24">書いてみる</h2>
+
+<p><code>$ iruby notebook</code> でブラウザが起動するので、そこで書物をするみたい。右上の &ldquo;New&rdquo; から &ldquo;Python 3&rdquo; を選ぶと、
+IRuby のインタプリタが起動するので、Ruby の式を書いて、上の再生ボタンっぽいのを押すと実行結果がレンダリングされる。
+&ldquo;Python 3&rdquo; となるは何かのアレだと思うので気にしない。
+ローカルには <code>[Filenam].ipynb</code> ができてるので、それを GitHub 上に push するとこんな感じで見れた: <a href="https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb">https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb</a></p>
+
+<p>エラーもそのまま表示されてて若干恥ずかしいけど、あえてそのまま表示させてみた。スマホからは表示されないっぽい。(素の JSON が表示される)</p>
+
+<h2 id="感想:5c13f8a788a356277b49a514cfd1dc24">感想</h2>
+
+<p>今のところ、何が便利なのかあまり分かってない。</p>
+
+<h2 id="参考リンク:5c13f8a788a356277b49a514cfd1dc24">参考リンク</h2>
+
+<ul>
+<li><a href="http://blog.jupyter.org/2015/05/07/rendering-notebooks-on-github/">Rendering IPython notebooks on GitHub</a></li>
+<li><a href="http://ipython.org/install.html">Installing IPython — IPython</a></li>
+<li><a href="http://nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb">nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb</a></li>
+<li><a href="https://github.com/minad/iruby/issues/18#issuecomment-49619447">install problem · Issue #18 · minad/iruby</a></li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2015/04/29/can-not-win-mahjong/" rel="prev">最近、麻雀で勝てない</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2015/08/30/rust-of-us-chapter3/" rel="next">Rust of Us - Chapter 3 に参加してきた</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

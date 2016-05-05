@@ -11,10 +11,10 @@
     
     <item>
       <title>vagrant で SSH authentication failed! とか出た場合の対処法</title>
-      <link>http://blog.tanaka51.jp/2013/03/25/vagrant-%E3%81%A7-ssh-authentication-failed-%E3%81%A8%E3%81%8B%E5%87%BA%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
+      <link>http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/</link>
       <pubDate>Mon, 25 Mar 2013 17:28:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2013/03/25/vagrant-%E3%81%A7-ssh-authentication-failed-%E3%81%A8%E3%81%8B%E5%87%BA%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
+      <guid>http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/</guid>
       <description>
 
 &lt;p&gt;vagrant で&lt;/p&gt;
@@ -36,14 +36,14 @@ the private key path for Vagrant is setup properly as well.
 &lt;li&gt;ゲスト: Ubuntu 10.04.4 LTS&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;やりたいこと:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;やりたいこと&lt;/h2&gt;
+&lt;h2 id=&#34;やりたいこと:f2845af5bd510c062181f433324bf9d4&#34;&gt;やりたいこと&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;vagrant up で起動した VM に ssh を使った password-less ログインしたい&lt;/li&gt;
 &lt;li&gt;vagrant halt に成功したい&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;やっていたこと:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;やっていたこと&lt;/h2&gt;
+&lt;h2 id=&#34;やっていたこと:f2845af5bd510c062181f433324bf9d4&#34;&gt;やっていたこと&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ゲスト側の &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; にホスト側の公開鍵を書いておく&lt;/li&gt;
@@ -51,7 +51,7 @@ the private key path for Vagrant is setup properly as well.
 &lt;li&gt;ホスト側の &lt;code&gt;~/.vagrant.d/insecure_private_key&lt;/code&gt; の権限が (user):staff になっている事を確認&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;解決の仕方:b598d2fcf0295f420ba3aa72ca7cfb64&#34;&gt;解決の仕方&lt;/h2&gt;
+&lt;h2 id=&#34;解決の仕方:f2845af5bd510c062181f433324bf9d4&#34;&gt;解決の仕方&lt;/h2&gt;
 
 &lt;p&gt;以下を参考&lt;/p&gt;
 

@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Emacs と Tmux | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jp/index.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/">Emacs と Tmux </a></h1>
+  <div class="meta">
+    Mar 25, 2013 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>思う所あって、Emacs を CUI で使う事にした。僕は zsh + tmux を使っているので、その上に Emacs を載せる事になる。
+その時のメモ。</p>
+
+<h2 id="理由:d7cfc83c524aab7a4a35bfe405b209d5">理由</h2>
+
+<p>最近、開発は vagrant で VM 立ちあげて sshfs で Mac にマウントしてそのマウントされたファイルに Emacs でアクセスして作業する事が多い。
+この sshfs でマウントした状態っていうのがおそらく問題で、Emacs の git 系の拡張の動きがすこぶる遅い。特に気になるのが helm-ls-git で、起動するのに体感5秒位かかっている状態。この拡張をまともに使えないのはすごくもったいないので、それがかなりストレスになっている。挙げ句の果てには find-file も2秒位かかる状態。ストレスフル。そして、この開発環境の VM 化は今後ずっと続くだろうから（利点の方が大きい）、解決しなくてはいけない。</p>
+
+<p>そもそも git の操作だとか単体テストを流す作業だとかは ssh でゲストマシンに接続してやっていて、つまりマウントしている理由は Mac 側の GUI アプリで操作をしたいだけだった。そうなると、解決策は</p>
+
+<ul>
+<li>trump で ssh 接続する</li>
+<li>Emacs を CUI で使うようにする</li>
+</ul>
+
+<p>の2つある。（他にもあったら教えて下さい）</p>
+
+<p>実は半年位前に trump でやっていたこともあったのだけど、find-file だとか、direx だとかが非常に遅かった。一度読みこめばキャッシュするんだけど、新規にファイル追加する度に読み込み直しで時間がかかるのがかなりストレスだった。（その頃は helm-ls-git を知らなかったから、それについては試してないけど、遅そう。）</p>
+
+<p>で、後者を選択する事にした。CUI で簡潔するのってなんかカッコイイし、git のコミットメッセージを書く度に GUI ウィンドウに移動とか面倒だったし(Emacs からコミットとかをしていないのはどの拡張もしっくりこなかったから…)（それで最近はコミットメッセージは vim で書いていた）（おかげで vim 力は結構あがった）、Emacs さえ入っていればどんな環境でも作業できるっていうのはすごくメリットのある事だと思ったので。</p>
+
+<p>という事で、zsh + tmux + Emacs の環境を構築した。</p>
+
+<h2 id="やったこと:d7cfc83c524aab7a4a35bfe405b209d5">やったこと</h2>
+
+<p>最初にやったことは、もちろん Emacs のインストール。この辺、デフォルトで入ってないのは辛い所な気もする。それで僕の場合は cmigemo も入れる必要がある。</p>
+
+<p>という事で、新しい VM を vagrant up したらまずすることは、</p>
+
+<ul>
+<li>cmigemo のインストール</li>
+<li>Emacs のインストール</li>
+</ul>
+
+<p>になると思う。</p>
+
+<h3 id="cmigemo-のインストール:d7cfc83c524aab7a4a35bfe405b209d5">cmigemo のインストール</h3>
+
+<p>だいたいいつも、どこかのブログを見たり、公式サイトを見たりしてる気がする。</p>
+
+<p>今回はここを参考にした <a href="http://ser1zw.hatenablog.com/entry/20100825/1282663086" title="UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw's blog">UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&rsquo;s blog</a></p>
+
+<h3 id="emacs-のインストール:d7cfc83c524aab7a4a35bfe405b209d5">Emacs のインストール</h3>
+
+<p>今回は対象が Ubuntu 10.0.4 LTS。</p>
+
+<p><a href="http://core.ring.gr.jp/pub/GNU/emacs/" title="Index of /pub/GNU/emacs">Index of /pub/GNU/emacs</a> ここらへんから最新のパッケージをとってきてビルドする。</p>
+
+<p>今回の Emacs のオプションは、</p>
+
+<pre><code>./configure --x-libraries=no --with-x-toolkit=no
+</code></pre>
+
+<p>こんな感じにした。画像関連のライブラリが足りなかったので、それらもインストールしておく。
+後は普通に make &amp;&amp; make install できた。</p>
+
+<p>参考: <a href="http://emacs.tsutomuonoda.com/emacs24-1-ubuntu-install/" title="[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方">[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方</a></p>
+
+<h2 id="emacs-の設定:d7cfc83c524aab7a4a35bfe405b209d5">Emacs の設定</h2>
+
+<p>あまり既存の設定をいじる事なくできた。いじったところは、</p>
+
+<ul>
+<li>redo+ がうまく動かないらしいから消した</li>
+<li>window サイズの設定をまるっと消した</li>
+<li>フォント周りもまるっと消した</li>
+</ul>
+
+<p>位。</p>
+
+<h2 id="tmux-の設定:d7cfc83c524aab7a4a35bfe405b209d5">tmux の設定</h2>
+
+<p>僕はずっとプリフィクスキーを <code>C-x</code> にしていた。Emacs を CUI で使う事はないと思っていたのと、Emacs と似たような操作感が欲しかったから、というのが理由。今度からは Emacs 上でも tmux が操作できないといけないので、欠番キーである <code>C-z</code> を割り当てることにした。</p>
+
+<p>余談だけど <code>C-t</code> に設定してる人が多いのにはビックリしてる。世の中の tmux の設定を見ると大体そんな感じがしてる。Emacs で言えば <code>transpose-chars</code> ってコマンドになるんだけど、これ、ターミナル上でも使えて、かなり便利だと思っている。</p>
+
+<p>例えば、</p>
+
+<pre><code>% git psuh origin master
+</code></pre>
+
+<p>って打ってエンター押すと、</p>
+
+<pre><code>git: 'psuh' is not a git command. See 'git --help'.
+
+Did you mean this?
+        push
+</code></pre>
+
+<p>って怒られるわけです。そしたら即座に <code>C-p</code> して <code>C-a</code> して <code>M-f</code> して <code>C-f</code> を2回押して <code>C-t</code> したらほら元通り。こんな便利な機能を何でみんな使わないのか、いつも不思議に思ってる。いやまぁ、この操作に慣れるのに時間がかかるけど…</p>
+
+<p>ターミナル上だけでなく、Emacs 上でもこのコマンドを良く使うから、僕は手放せない。という余談でした。</p>
+
+<h2 id="zsh-の設定:d7cfc83c524aab7a4a35bfe405b209d5">zsh の設定</h2>
+
+<p>以下の記事を参考に以下の設定を追加。zsh 起動時に emacs を daemon で起動する。</p>
+
+<p><a href="http://d.hatena.ne.jp/flada_auxv/20121110/1352527081" title="最近の作業環境とか。TMUX on Emacs - flada_auxvの日記">最近の作業環境とか。TMUX on Emacs - flada_auxvの日記</a></p>
+
+<pre><code class="language-sh">if pgrep emacs &gt;/dev/null 2&gt;&amp;1; then
+    echo &quot;Emacs server is already running...&quot;
+  else
+    `emacs --daemon`
+fi
+</code></pre>
+
+<h2 id="おわり:d7cfc83c524aab7a4a35bfe405b209d5">おわり</h2>
+
+<p>ssh で接続した先で tmux 起動してると、コピペがうまくできないのよね。。何か良い設定ないかな…</p>
+
+<p>あと、Mac で iTerm2 を使ってメタキーを Command にしたいなら、ここを見ること（じぶんあて）</p>
+
+<p><a href="http://blog.tanaka51.jp/blog/2013/01/04/setup-iterm2/" title="Setup iTerm2 - status code 51">Setup iTerm2 - status code 51</a></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/" rel="prev">vagrant で SSH authentication failed! とか出た場合の対処法</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2014/09/06/memo-with-vim/" rel="next">Vim で memo をとる環境を(漸く)整えた</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

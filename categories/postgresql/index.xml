@@ -11,10 +11,10 @@
     
     <item>
       <title>postgresql の使い方</title>
-      <link>http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <link>http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/</link>
       <pubDate>Fri, 04 Jan 2013 14:10:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2013/01/04/postgresql-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/</guid>
       <description>
 
 &lt;p&gt;普段 MySQL ばっかりなので、ポスグレは分からない…&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;大文字について:2b2d98137e22701e26126c4dfa684922&#34;&gt;大文字について&lt;/h2&gt;
+&lt;h2 id=&#34;大文字について:d6663483d6574b7c1b474b9537eab9db&#34;&gt;大文字について&lt;/h2&gt;
 
 &lt;p&gt;もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。&lt;/p&gt;
 
@@ -41,7 +41,7 @@
 select * from &amp;quot;PREFIX_users&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;スキーマを指定:2b2d98137e22701e26126c4dfa684922&#34;&gt;スキーマを指定&lt;/h2&gt;
+&lt;h2 id=&#34;スキーマを指定:d6663483d6574b7c1b474b9537eab9db&#34;&gt;スキーマを指定&lt;/h2&gt;
 
 &lt;p&gt;「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。&lt;/p&gt;
 

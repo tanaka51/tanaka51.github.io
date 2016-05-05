@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話 | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2013/03/23/use-octomacs/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jp/index.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/03/23/use-octomacs/">Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話 </a></h1>
+  <div class="meta">
+    Mar 23, 2013 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>個人ブログ、会社ブログとも Octopress を使っている。</p>
+
+<p>Octopress を使ってて思うのは「Emacs から記事を作成(する rake タスクを実行)/編集したい！」</p>
+
+<p>それで octomacs を使ったんだけど、rvm と組み合わせて使った時にハマった。</p>
+
+<p>結果だけを先に述べると、octomacs で rvm を使いたい時は、/etc/ 以下のログインシェルの設定に rvm のパスを追加するようにすれば良い。ベストな解決策では無いだろうが、とりあえず動く。</p>
+
+<p>以下、奮闘記。暇な人向け。</p>
+
+<h2 id="emacs-拡張の選定:0cf7f711c3f52eda7c471a70cf2481e6">Emacs 拡張の選定</h2>
+
+<p>Emacs から Octopress をゴニョニョする Emacs 拡張はパッと探した感じ、2つある。</p>
+
+<ul>
+<li><p><a href="https://github.com/jhelwig/octomacs" title="jhelwig/octomacs · GitHub">jhelwig/octomacs · GitHub</a></p>
+
+<ul>
+<li>Marmalade に登録されているので、 package.el で設定できる</li>
+<li>複数の Octopress プロジェクトに対応</li>
+<li>rvm/ido に対応</li>
+<li>使えるは `octomacs-new-post&rsquo; だけ</li>
+<li>結構複雑な事をやっている</li>
+</ul></li>
+
+<li><p><a href="https://github.com/gfreezy/octopress-emacs" title="gfreezy/octopress-emacs · GitHub">gfreezy/octopress-emacs · GitHub</a></p>
+
+<ul>
+<li>very very very simple
+
+<ul>
+<li>ゆえに外から設定とかできない</li>
+<li>コピーして自分で適当に書き換えて配置する必要がある(rvm化、パスの設定など)</li>
+</ul></li>
+<li>一つの Octopress プロジェクトにだけ対応</li>
+<li>rbenv のみに対応</li>
+<li>ひと通りの rake タスクを Emacs から実行できる
+
+<ul>
+<li>が、同期実行だから <code>rake gen_deploy</code> とかするとしばらく固まるし <code>rake preview</code> とか <code>rake watch</code> した日には Emacs 動かなくなる</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>ということで個人ブログだけを管理する時には octopress-emacs を使ってたけど、会社ブログも Octopress になったし、ちょっと前に Emacs 24 化してパッケージ管理を完全に package.el に以降したから、octomacs を使うことにした。</p>
+
+<h2 id="octomacs-設定:0cf7f711c3f52eda7c471a70cf2481e6">octomacs 設定</h2>
+
+<p>package.el を使って rvm と octomacs をインストールしておく。(Marmalade を登録しておく必要あり)</p>
+
+<p>そしたら init.el に</p>
+
+<pre><code class="language-cl">(require 'rvm)
+(require 'octomacs)
+</code></pre>
+
+<p>と書いておく。</p>
+
+<p>プロジェクトの設定は <code>M-x customize-group octomacs</code> で <code>Octomacs Workdir Alist</code> を編集するか、init.el か何かに</p>
+
+<pre><code class="language-cl">(custom-set-variables
+ '(octomacs-workdir-alist
+   ((&quot;my-blog&quot;     . &quot;~/my-blog&quot;)
+    (&quot;kaisha-blog&quot; . &quot;~/kaisha-blog&quot;))))
+</code></pre>
+
+<p>とか書いておけばおｋ。alist は `(プロジェクト選択時に出る名前 . ディレクトリパス) という形。</p>
+
+<p>以上が済んだらおもむろに <code>M-x octomacs-new-post</code> を叩く。プロジェクトを選んで、ポスト名を入力する。良い感じ。だが、無残なメッセージと共にコマンドは失敗する:</p>
+
+<pre><code>Unable to create post: /bin/bash: rvm: command not found
+</code></pre>
+
+<p>無念。</p>
+
+<h2 id="失敗する関数を特定したい:0cf7f711c3f52eda7c471a70cf2481e6">失敗する関数を特定したい</h2>
+
+<p>さて、原因を探る。まずやる事は、どの関数で失敗したかを知る事だ。幸い、Emacs にはあるパッケージの呼び出しのプロファイルをとる関数が用意されていたので、それを使ってみる。</p>
+
+<pre><code>M-x elp-instrument-package octomacs
+</code></pre>
+
+<p>してから、</p>
+
+<pre><code>M-x octomacs-new-post
+</code></pre>
+
+<p>してプロジェクト名を入力、ポスト名を適当に入れて、失敗する事を確認する。その後、</p>
+
+<pre><code>M-x elp-results
+</code></pre>
+
+<p>してやると、octomacs パッケージ内での各関数呼び出しのプロファイルが出てくる</p>
+
+<pre><code>octomacs-new-post                    1           5.199352      5.199352
+octomacs-new-post-interactive        1           3.722928      3.722928
+octomacs-read-project                1           2.010394      2.010394
+octomacs-read-post-name              1           1.712456      1.712456
+octomacs-rake                        1           0.926343      0.926343
+octomacs-rake-with-rvm               1           0.926298      0.926298
+octomacs-format-rake-task-with-args  1           2.7e-05       2.7e-05
+octomacs-shell-escape-string         1           8e-06         8e-06
+</code></pre>
+
+<p>今回はプロファイル結果に興味はないので、関数名から怪しい所を探しだす。まー怪しい所は <code>octomacs-rake-with-rvm</code> だろう。関数名上でエンターを押下でその関数定義に飛んでくれた。便利！</p>
+
+<h2 id="shell-command-to-string-との出会い:0cf7f711c3f52eda7c471a70cf2481e6">shell-command-to-string との出会い</h2>
+
+<p>こんな関数定義だった。</p>
+
+<pre><code class="language-cl">(defun octomacs-rake-with-rvm (directory task &amp;optional arguments)
+  &quot;Run rake task TASK with specified ARGUMENTS in DIRECTORY using rvm&quot;
+  (let* ((default-directory (file-name-as-directory (expand-file-name directory)))
+         (rvmrc-path (rvm--rvmrc-locate directory))
+         (rvmrc-info (if rvmrc-path (rvm--rvmrc-read-version rvmrc-path) nil))
+         (rvm-command (if rvmrc-info
+                          (concat &quot;rvm &quot; (mapconcat 'identity rvmrc-info &quot;@&quot;) &quot; do &quot;)
+                        &quot;&quot;)))
+    (shell-command-to-string (format &quot;%srake %s&quot; rvm-command (octomacs-format-rake-task-with-args task arguments)))))
+</code></pre>
+
+<p>エラーを思い出すと</p>
+
+<pre><code>Unable to create post: /bin/bash: rvm: command not found
+</code></pre>
+
+<p>こんな感じなので、予想としては <code>shell-command-to-string</code> が原因だろうと当たりをつけた。そうすると知りたいのは、この <code>format</code> がどんな文字列を生成しているか。 <code>shell-command-to-string</code> が実行される直前で実行を止めてみてみたい。</p>
+
+<p>Emacs でブレークポイントを貼りたい時は <code>edebug</code> なるものを使うらしい。使い方は、ブレークポイントを貼りたい関数内で <code>C-u C-M-x</code> とする。その後、その関数が評価される時に実行が止まる。知っておくべきコマンドは <code>space</code> でステップ実行、 <code>e</code> で現在のコンテキストでの式の評価、 <code>h</code> でカーソルまで実行、 <code>q</code> でデバッグ終了、位。後は、ステップ実行で式が評価される度にミニバッファに結果を表示していて、実は <code>*Message*</code> バッファにミニバッファの表示がスタックされている事を知っていれば、今回の目的には十分である。</p>
+
+<p>さて、そんなこんなで <code>format</code> が生成している文字列が分かった。こんなの:</p>
+
+<pre><code>&quot;rvm 1.9.3@octopress do rake 'new_post[test]'&quot;
+</code></pre>
+
+<p>こいつを <code>shell-command-to-string</code> に渡してるらしい。</p>
+
+<p>じゃあちょっとスクラッチバッファで実行してみよう。</p>
+
+<pre><code>(shell-command-to-string &quot;rvm 1.9.3@octopress do rake 'new_post[test]'&quot;)
+&quot;rake aborted!
+No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `eval'
+/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `&lt;main&gt;'
+(See full trace by running task with --trace)
+&quot;
+</code></pre>
+
+<p>…うん、実行するディレクトリを指定してないから、どこで実行してるかはわからないけど、 Rakefile が見当たらないのは当たり前だよなぁ。でも、octomacs ではきちんと Rakefile のあるディレクトリに行って実行しているっぽい気がする。じゃないと、他の人がツッコミを入れると思うし、作者もそんな凡ミスしたまま Marmalade にあげないよなぁ。何かそういう仕組みがあるはず。</p>
+
+<p>でもまぁとりあえず、どこで実行してるかは知りたいので、スクラッチバッファで試してみる。</p>
+
+<pre><code>(shell-command-to-string &quot;pwd&quot;)
+&quot;/Users/koichi
+&quot;
+</code></pre>
+
+<p>ホームディレクトリだった。</p>
+
+<p><code>octomacs-rake-with-rvm</code> にブレークポイントを貼って、その中で <code>pwd</code> 実行したらどうなるんだろ。</p>
+
+<pre><code>&quot;/Users/koichi/my-blog\n&quot;
+</code></pre>
+
+<p>うん、やっぱり何か、直接引数に渡さないで、外部からディレクトリを指定する仕組みがあるのね。</p>
+
+<p>で、実はこれまでリファレンスを見ずに来たけど、それは <code>shell-command-to-string</code> って名前から何をするか大体想像がつくから。おそらく、引数の文字列をシェルにコマンドとして渡して、結果の文字列を返すのかなーって感じ。</p>
+
+<p>で、この関数の機能の想像と、渡される引数と、スクラッチバッファでの実行結果を見て2つの疑問点がわいてきた。</p>
+
+<ul>
+<li>実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？</li>
+<li>外部からディレクトリを指定する方法を知りたい</li>
+</ul>
+
+<p>ついにリファレンスを見る時が来たようだ。</p>
+
+<h2 id="かいけつ:0cf7f711c3f52eda7c471a70cf2481e6">かいけつ！</h2>
+
+<p><a href="http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html" title="GNU Emacs Lispリファレンスマニュアル: Synchronous Processes">GNU Emacs Lispリファレンスマニュアル: Synchronous Processes</a></p>
+
+<p>上記リファレンスを見たのだが、</p>
+
+<blockquote>
+<p>Function: shell-command-to-string command
+    この関数は、シェルコマンドとしてcommand（文字列）を実行し、 コマンドの出力を文字列として返す。</p>
+</blockquote>
+
+<p>と書いてあるだけ。全く予想通りだし、それ以上の事も書いて無かった。疑問点は何も解決しない。
+「ついにリファレンスを見る時が来たようだ。」とか意気込んでおいてこの結末、残念すぎる。</p>
+
+<p>こうなったらやることはググったり <code>shell-command-to-string</code> を使ってどんな動作をしているかを確かめるしかない。</p>
+
+<p>とりあえず、</p>
+
+<blockquote>
+<p>実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？</p>
+</blockquote>
+
+<p>はグーグル先生に聞いた所、 <code>shell-command-to-string</code> はログインシェルを使っているらしい事が分かった。で、ログインシェルを確認したら Bash だった。エラーメッセージで、bash が使われている理由が分かった。</p>
+
+<p>僕は普段 zsh を使っているので、bash には rvm の設定をしていない。だったらログインシェルを zsh にすれば解決するだろう、という事で、ログインシェルを zsh にした。が、エラーメッセージは zsh でも command not found だから、問題は別の所にあるのだと考えた。で、次の式をスクラッチバッファで評価してみた。</p>
+
+<pre><code>(shell-command-to-string &quot;echo $PATH&quot;)
+</code></pre>
+
+<p>そうすると <code>~/.zshrc</code> で設定したパスが表示されて<strong>いない</strong>。これで合点した。ホームディレクトリ以下の設定ファイルは読み込まないんだと…</p>
+
+<p>で <code>/etc/zshrc</code> に rvm のパスを設定するようにしたら、見事に動いた！これで解決したと言っても良いだろう。
+ひとまずの解決策として、octomacs で rvm を使いたかったら、/etc/ 以下のログインシェルの設定に、rvm へのパスを追加すれば良い。</p>
+
+<p>問題自体はこれで解決したが、残る疑問点を解決しておきたい。</p>
+
+<h2 id="emacs-lisp-の勉強:0cf7f711c3f52eda7c471a70cf2481e6">Emacs Lisp の勉強</h2>
+
+<p>最後の疑問点はこれだ。</p>
+
+<blockquote>
+<p>外部からディレクトリを指定する方法を知りたい</p>
+</blockquote>
+
+<p>もしこんな指定方法があるとすれば <code>shell-command-to-string</code> を使っている箇所ではどこでも同じ事をしているはず。octomacs を眺めてみたら、ある共通点があった。</p>
+
+<pre><code>* `let` の中で実行されている
+* `let` で `default-directory` を設定している
+</code></pre>
+
+<p>完全に<code>default-directory</code>が怪しすぎる。とりあえず、グーグル先生に聞いてみたら、英語版のリファレンスマニュアルがヒット。</p>
+
+<p><a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html" title="Synchronous Processes - GNU Emacs Lisp Reference Manual">Synchronous Processes - GNU Emacs Lisp Reference Manual</a></p>
+
+<p>そしてこんな記述。</p>
+
+<blockquote>
+<p>The current working directory of the subprocess is default-directory.</p>
+</blockquote>
+
+<p>ビンゴー！まさしくこれだった。
+<code>shell-command-to-string</code> は最終的に <code>call-process</code> を読んでるだろうし、間違いないだろう。</p>
+
+<p>で、イマイチこの辺の理解が曖昧だったのだけれども、どうやら <code>default-directory</code> は「バッファローカル変数」らしい。これは、「デフォルト変数」といういわばグローバル変数をバッファ毎に書き換えられるものらしい。（こんな理解でいいのかな）</p>
+
+<p>ある関数の為に <code>let</code> でスコープを作り、その中で特定の変数に任意の値を束縛して関数の動作を制御するっていうこの Lisp のスタイル、面白いなーと思う。</p>
+
+<p>終わり。</p>
+
+<h2 id="参考:0cf7f711c3f52eda7c471a70cf2481e6">参考</h2>
+
+<ul>
+<li><a href="http://dev.ariel-networks.com/articles/software-design-200802/elisp-debug/" title="Emacs Lisp デバッグ — ありえるえりあ">Emacs Lisp デバッグ — ありえるえりあ</a></li>
+<li><a href="http://d.hatena.ne.jp/rubikitch/20101116/edebug &quot;Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books">Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books))</a>)&ldquo;)</li>
+<li><a href="http://d.hatena.ne.jp/clouder/20090529/1243564128 &quot;emacs lispのshell-command-to-string(">emacs lispのshell-command-to-string() - no strict; no life;</a> - no strict; no life;&ldquo;)</li>
+<li><a href="http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html" title="GNU Emacs Lispリファレンスマニュアル: Synchronous Processes">GNU Emacs Lispリファレンスマニュアル: Synchronous Processes</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html" title="Synchronous Processes - GNU Emacs Lisp Reference Manual">Synchronous Processes - GNU Emacs Lisp Reference Manual</a></li>
+<li><a href="http://haraita9283.blog98.fc2.com/blog-entry-387.html" title="Emacs Lisp メモ: バッファローカル変数 | anobota">Emacs Lisp メモ: バッファローカル変数 | anobota</a></li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/" rel="prev">git blame in Emacs</a></span>
+    
+    
+      <span class="next"><a href="http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/" rel="next">vagrant で SSH authentication failed! とか出た場合の対処法</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

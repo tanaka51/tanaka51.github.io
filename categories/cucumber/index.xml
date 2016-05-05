@@ -11,15 +11,15 @@
     
     <item>
       <title>Cucumberファーストインプレッション</title>
-      <link>http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <link>http://blog.tanaka51.jp/2012/10/01/my-first-cucumber/</link>
       <pubDate>Mon, 01 Oct 2012 23:50:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2012/10/01/cucumber%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <guid>http://blog.tanaka51.jp/2012/10/01/my-first-cucumber/</guid>
       <description>
 
 &lt;p&gt;Cucumberのメモガキ&lt;/p&gt;
 
-&lt;h2 id=&#34;前準備:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;前準備&lt;/h2&gt;
+&lt;h2 id=&#34;前準備:16eedd69854b6154bfb38d0e81e54a9e&#34;&gt;前準備&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;とりあえず Emacs の拡張を入れる
@@ -44,7 +44,7 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;実践:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;実践&lt;/h2&gt;
+&lt;h2 id=&#34;実践:16eedd69854b6154bfb38d0e81e54a9e&#34;&gt;実践&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Guard で自動実行させる&lt;/li&gt;
@@ -101,14 +101,14 @@
 &lt;pre&gt;&lt;code&gt;$ cucumber --profile @wip
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;悩み:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;悩み&lt;/h2&gt;
+&lt;h2 id=&#34;悩み:16eedd69854b6154bfb38d0e81e54a9e&#34;&gt;悩み&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;シナリオの粒度&lt;/li&gt;
 &lt;li&gt;CRUD のような割と定型的なシナリオをどう書くか&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;感想:a89e21cd908232cdfbed8ebdafd0131c&#34;&gt;感想&lt;/h2&gt;
+&lt;h2 id=&#34;感想:16eedd69854b6154bfb38d0e81e54a9e&#34;&gt;感想&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;やはり、日本語が使えるのは大きい気がする&lt;/li&gt;

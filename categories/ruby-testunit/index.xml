@@ -11,10 +11,10 @@
     
     <item>
       <title>Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い</title>
-      <link>http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/</link>
+      <link>http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/</link>
       <pubDate>Thu, 31 Jan 2013 19:18:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/</guid>
+      <guid>http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/</guid>
       <description>
 
 &lt;p&gt;仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。
@@ -23,7 +23,7 @@ Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違�
 
 &lt;p&gt;自分が触った範囲で違うところをまとめる。&lt;/p&gt;
 
-&lt;h2 id=&#34;assertion-メソッドのmessage引数:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;assertion メソッドのmessage引数&lt;/h2&gt;
+&lt;h2 id=&#34;assertion-メソッドのmessage引数:2c4e40669bacfad8bd29b4baee2ccbeb&#34;&gt;assertion メソッドのmessage引数&lt;/h2&gt;
 
 &lt;p&gt;ここは大きな違い。&lt;/p&gt;
 
@@ -41,11 +41,11 @@ Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違�
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;出力系:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;出力系&lt;/h2&gt;
+&lt;h2 id=&#34;出力系:2c4e40669bacfad8bd29b4baee2ccbeb&#34;&gt;出力系&lt;/h2&gt;
 
 &lt;p&gt;Test::Unit:::UI::Console::TestRunner 辺り&lt;/p&gt;
 
-&lt;h3 id=&#34;output:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#output&lt;/h3&gt;
+&lt;h3 id=&#34;output:2c4e40669bacfad8bd29b4baee2ccbeb&#34;&gt;#output&lt;/h3&gt;
 
 &lt;p&gt;出力の為のメソッド。いろんな所で使われている。
 とる引数が違うので、オーバーライドしてると大変。&lt;/p&gt;
@@ -58,7 +58,7 @@ def output(something, level=NORMAL)&lt;/p&gt;
 def output(something, color=nil, level=nil)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;add-fault:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#add_fault&lt;/h3&gt;
+&lt;h3 id=&#34;add-fault:2c4e40669bacfad8bd29b4baee2ccbeb&#34;&gt;#add_fault&lt;/h3&gt;
 
 &lt;p&gt;&amp;rdquo;&amp;hellip;F..F.E.&amp;rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。
 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（&lt;code&gt;@show_detail_immediately&lt;/code&gt;の値によって変わる）。&lt;/p&gt;
@@ -80,7 +80,7 @@ def add_fault(fault)
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;finished:571de662e68b1cdcdf3f8dad45754bda&#34;&gt;#finished&lt;/h3&gt;
+&lt;h3 id=&#34;finished:2c4e40669bacfad8bd29b4baee2ccbeb&#34;&gt;#finished&lt;/h3&gt;
 
 &lt;p&gt;テストが全て終了した後に呼ばれるメソッド。
 標準ライブラリ版は全部のエラー情報をここで表示。gem版はデフォルトだと表示しない（&lt;code&gt;@show_detail_immediately&lt;/code&gt;の値によって変わる）。&lt;/p&gt;

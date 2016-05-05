@@ -17,7 +17,7 @@
       <guid>http://blog.tanaka51.jp/2013/01/04/setup-iterm2/</guid>
       <description>
 
-&lt;h2 id=&#34;iterm2-を-emacs-仕様にする:ba9936f54a2771c3788b80d5028167ea&#34;&gt;iTerm2 を Emacs 仕様にする&lt;/h2&gt;
+&lt;h2 id=&#34;iterm2-を-emacs-仕様にする:8d99cdeb22ba192c79263c67f5a0ab47&#34;&gt;iTerm2 を Emacs 仕様にする&lt;/h2&gt;
 
 &lt;p&gt;Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。&lt;/p&gt;
 

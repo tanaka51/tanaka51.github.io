@@ -11,21 +11,21 @@
     
     <item>
       <title>Ruby on Rails で JSON をパースする</title>
-      <link>http://blog.tanaka51.jp/2012/12/14/ruby-on-rails-%E3%81%A7-json-%E3%82%92%E3%83%91%E3%83%BC%E3%82%B9%E3%81%99%E3%82%8B/</link>
+      <link>http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/</link>
       <pubDate>Fri, 14 Dec 2012 16:05:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2012/12/14/ruby-on-rails-%E3%81%A7-json-%E3%82%92%E3%83%91%E3%83%BC%E3%82%B9%E3%81%99%E3%82%8B/</guid>
+      <guid>http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/</guid>
       <description>
 
-&lt;h2 id=&#34;結論:590d29e19f700813d17452775dca2455&#34;&gt;結論&lt;/h2&gt;
+&lt;h2 id=&#34;結論:c027d6d28e30cea86f83448b838083e1&#34;&gt;結論&lt;/h2&gt;
 
 &lt;p&gt;ActiveSupport::JSON.decode を使う&lt;/p&gt;
 
-&lt;h2 id=&#34;参考:590d29e19f700813d17452775dca2455&#34;&gt;参考&lt;/h2&gt;
+&lt;h2 id=&#34;参考:c027d6d28e30cea86f83448b838083e1&#34;&gt;参考&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/1826727/how-do-i-parse-json-with-ruby-on-rails&#34; title=&#34;How do I parse JSON with Ruby on Rails? - Stack Overflow&#34;&gt;How do I parse JSON with Ruby on Rails? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;実際に使った:590d29e19f700813d17452775dca2455&#34;&gt;実際に使った&lt;/h2&gt;
+&lt;h2 id=&#34;実際に使った:c027d6d28e30cea86f83448b838083e1&#34;&gt;実際に使った&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/tanaka51-jp/clips/blob/master/app/models/user.rb#L26&#34; title=&#34;clips/app/models/user.rb at master · tanaka51-jp/clips · GitHub&#34;&gt;clips/app/models/user.rb at master · tanaka51-jp/clips · GitHub&lt;/a&gt;&lt;/p&gt;
 </description>

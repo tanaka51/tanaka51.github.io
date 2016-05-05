@@ -272,7 +272,7 @@ Removing /Users/koichi/.rvm/rubies/ruby-1.9.3-p374...
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;追記-2013-2-5:72ac6891991cc7b39ae5ac38c6897710&#34;&gt;追記(2013/2/5)&lt;/h3&gt;
+&lt;h3 id=&#34;追記-2013-2-5:36a70b9e94af2f632b03382af88cd20e&#34;&gt;追記(2013/2/5)&lt;/h3&gt;
 
 &lt;p&gt;今まで MacPorts のライブラリや RVM パッケージでインストールしていた Ruby 達は、新たにインストールしなおさないと動かなくなる。&lt;/p&gt;
 
@@ -325,9 +325,9 @@ Use X11 libraries (or use TK_XINCLUDES/TK_XLIBSW information on tkConfig.sh).
 
 &lt;p&gt;``` sh /usr/local/lib/tkConfig.sh 45行目辺り&lt;/p&gt;
 
-&lt;h1 id=&#34;i-switch-es-to-use-to-make-all-of-the-x11-include-files-accessible:72ac6891991cc7b39ae5ac38c6897710&#34;&gt;-I switch(es) to use to make all of the X11 include files accessible:&lt;/h1&gt;
+&lt;h1 id=&#34;i-switch-es-to-use-to-make-all-of-the-x11-include-files-accessible:36a70b9e94af2f632b03382af88cd20e&#34;&gt;-I switch(es) to use to make all of the X11 include files accessible:&lt;/h1&gt;
 
-&lt;h1 id=&#34;tk-xincludes:72ac6891991cc7b39ae5ac38c6897710&#34;&gt;TK_XINCLUDES=&amp;rdquo;&lt;/h1&gt;
+&lt;h1 id=&#34;tk-xincludes:36a70b9e94af2f632b03382af88cd20e&#34;&gt;TK_XINCLUDES=&amp;rdquo;&lt;/h1&gt;
 
 &lt;p&gt;TK_XINCLUDES=&amp;lsquo;-I/opt/X11/include&amp;rsquo;
 ```&lt;/p&gt;

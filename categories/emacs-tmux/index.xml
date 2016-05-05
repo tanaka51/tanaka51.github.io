@@ -11,16 +11,16 @@
     
     <item>
       <title>Emacs と Tmux</title>
-      <link>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</link>
+      <link>http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/</link>
       <pubDate>Mon, 25 Mar 2013 21:46:00 +0000</pubDate>
       
-      <guid>http://blog.tanaka51.jp/2013/03/25/emacs-%E3%81%A8-tmux/</guid>
+      <guid>http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/</guid>
       <description>
 
 &lt;p&gt;思う所あって、Emacs を CUI で使う事にした。僕は zsh + tmux を使っているので、その上に Emacs を載せる事になる。
 その時のメモ。&lt;/p&gt;
 
-&lt;h2 id=&#34;理由:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;理由&lt;/h2&gt;
+&lt;h2 id=&#34;理由:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;理由&lt;/h2&gt;
 
 &lt;p&gt;最近、開発は vagrant で VM 立ちあげて sshfs で Mac にマウントしてそのマウントされたファイルに Emacs でアクセスして作業する事が多い。
 この sshfs でマウントした状態っていうのがおそらく問題で、Emacs の git 系の拡張の動きがすこぶる遅い。特に気になるのが helm-ls-git で、起動するのに体感5秒位かかっている状態。この拡張をまともに使えないのはすごくもったいないので、それがかなりストレスになっている。挙げ句の果てには find-file も2秒位かかる状態。ストレスフル。そして、この開発環境の VM 化は今後ずっと続くだろうから（利点の方が大きい）、解決しなくてはいけない。&lt;/p&gt;
@@ -40,7 +40,7 @@
 
 &lt;p&gt;という事で、zsh + tmux + Emacs の環境を構築した。&lt;/p&gt;
 
-&lt;h2 id=&#34;やったこと:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;やったこと&lt;/h2&gt;
+&lt;h2 id=&#34;やったこと:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;やったこと&lt;/h2&gt;
 
 &lt;p&gt;最初にやったことは、もちろん Emacs のインストール。この辺、デフォルトで入ってないのは辛い所な気もする。それで僕の場合は cmigemo も入れる必要がある。&lt;/p&gt;
 
@@ -53,13 +53,13 @@
 
 &lt;p&gt;になると思う。&lt;/p&gt;
 
-&lt;h3 id=&#34;cmigemo-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;cmigemo のインストール&lt;/h3&gt;
+&lt;h3 id=&#34;cmigemo-のインストール:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;cmigemo のインストール&lt;/h3&gt;
 
 &lt;p&gt;だいたいいつも、どこかのブログを見たり、公式サイトを見たりしてる気がする。&lt;/p&gt;
 
 &lt;p&gt;今回はここを参考にした &lt;a href=&#34;http://ser1zw.hatenablog.com/entry/20100825/1282663086&#34; title=&#34;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&#39;s blog&#34;&gt;UbuntuにC/MigemoをインストールしてEmacsで使う - ser1zw&amp;rsquo;s blog&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;emacs-のインストール:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs のインストール&lt;/h3&gt;
+&lt;h3 id=&#34;emacs-のインストール:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;Emacs のインストール&lt;/h3&gt;
 
 &lt;p&gt;今回は対象が Ubuntu 10.0.4 LTS。&lt;/p&gt;
 
@@ -75,7 +75,7 @@
 
 &lt;p&gt;参考: &lt;a href=&#34;http://emacs.tsutomuonoda.com/emacs24-1-ubuntu-install/&#34; title=&#34;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&#34;&gt;[Emacs]Emacs24.1をUbuntuにインストールする » Emacsのelispインストール・設定・使い方 | Emacsのelispインストール・設定・使い方&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;emacs-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;Emacs の設定&lt;/h2&gt;
+&lt;h2 id=&#34;emacs-の設定:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;Emacs の設定&lt;/h2&gt;
 
 &lt;p&gt;あまり既存の設定をいじる事なくできた。いじったところは、&lt;/p&gt;
 
@@ -87,7 +87,7 @@
 
 &lt;p&gt;位。&lt;/p&gt;
 
-&lt;h2 id=&#34;tmux-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;tmux の設定&lt;/h2&gt;
+&lt;h2 id=&#34;tmux-の設定:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;tmux の設定&lt;/h2&gt;
 
 &lt;p&gt;僕はずっとプリフィクスキーを &lt;code&gt;C-x&lt;/code&gt; にしていた。Emacs を CUI で使う事はないと思っていたのと、Emacs と似たような操作感が欲しかったから、というのが理由。今度からは Emacs 上でも tmux が操作できないといけないので、欠番キーである &lt;code&gt;C-z&lt;/code&gt; を割り当てることにした。&lt;/p&gt;
 
@@ -110,7 +110,7 @@ Did you mean this?
 
 &lt;p&gt;ターミナル上だけでなく、Emacs 上でもこのコマンドを良く使うから、僕は手放せない。という余談でした。&lt;/p&gt;
 
-&lt;h2 id=&#34;zsh-の設定:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;zsh の設定&lt;/h2&gt;
+&lt;h2 id=&#34;zsh-の設定:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;zsh の設定&lt;/h2&gt;
 
 &lt;p&gt;以下の記事を参考に以下の設定を追加。zsh 起動時に emacs を daemon で起動する。&lt;/p&gt;
 
@@ -123,7 +123,7 @@ Did you mean this?
 fi
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;おわり:a52bcc42ddb7bc4f6729cdac4141f540&#34;&gt;おわり&lt;/h2&gt;
+&lt;h2 id=&#34;おわり:d7cfc83c524aab7a4a35bfe405b209d5&#34;&gt;おわり&lt;/h2&gt;
 
 &lt;p&gt;ssh で接続した先で tmux 起動してると、コピペがうまくできないのよね。。何か良い設定ないかな…&lt;/p&gt;
 

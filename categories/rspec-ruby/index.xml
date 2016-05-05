@@ -46,7 +46,7 @@
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;ポイント:838bb363fb560aa47691a63c7186a8fa&#34;&gt;ポイント&lt;/h2&gt;
+&lt;h2 id=&#34;ポイント:ef80913da24c69fd06250a65cd08d772&#34;&gt;ポイント&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;describe と context を明確に使い分ける&lt;/li&gt;
@@ -113,7 +113,7 @@ end
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;結論:838bb363fb560aa47691a63c7186a8fa&#34;&gt;結論&lt;/h2&gt;
+&lt;h2 id=&#34;結論:ef80913da24c69fd06250a65cd08d772&#34;&gt;結論&lt;/h2&gt;
 
 &lt;p&gt;RSpec 最大の魅力は let という遅延評価される変数を用意した事であると思っている。これを最大限に生かしたスペックをかければ、DRY かつ見通しのよいスペックが書けると思う。&lt;/p&gt;
 </description>

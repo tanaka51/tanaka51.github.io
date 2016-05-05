@@ -63,7 +63,7 @@
     
       <div class="summary">
   <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
+  <h1><a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
   <div class="meta">
     Jan 31, 2013 &nbsp;
     
@@ -71,7 +71,7 @@
 </div>
 
   仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。 原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。 Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。 自分が触った範囲で違うところをまとめる。 assertion メソッドのmessage引数 ここは大きな違い。 Ruby標準ライブラリ to_s に反応するものなら何でもOK gemのtest-unit nil String Proc AssertionMessage だけしか受け付けない 出力系 Test::Unit:::UI::Console::TestRunner 辺り #output 出力の為のメソッド。いろんな所で使われている。 とる引数が違うので、オーバーライドしてると大変。 ``` ruby Ruby 標準ライブラリ def output(something, level=NORMAL) ``` ruby gem 版 test-unit def output(something, color=nil, level=nil) #add_fault &rdquo;&hellip;F..F.E.&rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（@show_detail_immediatelyの値によって変わる）。 ``` ruby Ruby 標準ライブラリ def add_fault(fault) @faults &lt;&lt; fault output_single(fault.single_character_display, PROGRESS_ONLY) @already_outputted = true end ``` ruby gem 版 test-unit def add_fault(fault) @faults &lt;&lt; fault output_progress(fault.single_character_display, fault_color(fault)) output_progress_in_detail(fault) if @show_detail_immediately @already_outputted = true if fault.critical?
-  <a href="http://blog.tanaka51.jp/2013/01/31/ruby%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AEtestunit%E3%81%A8gem%E3%81%AEtest-unit%E3%81%AE%E9%81%95%E3%81%84/" class="read-on">続きを読む → </a>
+  <a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/" class="read-on">続きを読む → </a>
 </div>
 
     
