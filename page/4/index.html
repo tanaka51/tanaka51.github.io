@@ -64,6 +64,29 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/03/23/use-octomacs/">Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話 </a></h1>
+  <div class="meta">
+    Mar 23, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  <p>個人ブログ、会社ブログとも Octopress を使っている。</p>
+
+<p>Octopress を使ってて思うのは「Emacs から記事を作成(する rake タスクを実行)/編集したい！」</p>
+
+<p>それで octomacs を使ったんだけど、rvm と組み合わせて使った時にハマった。</p>
+
+<p>結果だけを先に述べると、octomacs で rvm を使いたい時は、/etc/ 以下のログインシェルの設定に rvm のパスを追加するようにすれば良い。ベストな解決策では無いだろうが、とりあえず動く。</p>
+
+<p>以下、奮闘記。暇な人向け。</p>
+
+  <a href="http://blog.tanaka51.jp/2013/03/23/use-octomacs/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/">git blame in Emacs </a></h1>
   <div class="meta">
     Mar 22, 2013 &nbsp;
@@ -141,20 +164,6 @@
 </div>
 
   
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/">uninstall_rvm </a></h1>
-  <div class="meta">
-    Jan 7, 2013 &nbsp;
-    
-  </div>
-</div>
-
-  rvm のアンインストール方法にちょっとはまったのでメモ。 やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。 方法 $ sudo rvm implode したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。 $ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh このあと、 ログアウト→ログイン をすること。 その後、 $ \curl -L https://get.rvm.io | bash -s stable --ruby すればおｋ。 sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。 参考 ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM -
-  <a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/" class="read-on">続きを読む → </a>
-</div>
-
-  
 </main>
 
 
@@ -193,12 +202,15 @@
         ><a href="/page/6/">6</a></li>
         
         <li
+        ><a href="/page/7/">7</a></li>
+        
+        <li
         >
         <a href="/page/5/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
-            <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            <a href="/page/7/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
         </li>
         
     </ul>

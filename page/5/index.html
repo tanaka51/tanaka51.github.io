@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/">uninstall_rvm </a></h1>
+  <div class="meta">
+    Jan 7, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  rvm のアンインストール方法にちょっとはまったのでメモ。 やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。 方法 $ sudo rvm implode したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。 $ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh このあと、 ログアウト→ログイン をすること。 その後、 $ \curl -L https://get.rvm.io | bash -s stable --ruby すればおｋ。 sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。 参考 ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM -
+  <a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/">初回時のyumの設定 </a></h1>
   <div class="meta">
     Jan 7, 2013 &nbsp;
@@ -118,20 +132,6 @@
 </div>
 
   
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/">rspec の shared_context をすべての example に適用する </a></h1>
-  <div class="meta">
-    Dec 14, 2012 &nbsp;
-    
-  </div>
-</div>
-
-  clips で webmock を使って Github API との通信部分をスタブしたのだけど、このスタブ定義をすべての example に適用させた時の記録。または shared_context をすべての example に適用する方法。 参考 rspec-users - using shared_context in a global way 結果 clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub やり方 （というかほぼ参考にしたページの日本語約） まず、&rsquo;RSpec.configure&rsquo; 内で、すべての example に適用させる before を定義できる。 だけど、let だとか RSpec の DSL は &lsquo;RSpec.configure&rsquo; 内では使えない。だから、&rsquo;RSpec::Core::SharedContext&rsquo; を extend した module をつくって、configure 内ではその自作 module を include させるようにすると良い。 で、具体例。 # spec/spec_helper.rb RSpec.configure do |config| config.include StubHttpRequest end # spec/support/stub_http_request.rb require 'rspec/core/shared_context' module StubHttpRequest extend RSpec::Core::SharedContext before do stub_request(:any, /.*api\.github\.com.*/).
-  <a href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/" class="read-on">続きを読む → </a>
-</div>
-
-  
 </main>
 
 
@@ -170,12 +170,15 @@
         ><a href="/page/6/">6</a></li>
         
         <li
+        ><a href="/page/7/">7</a></li>
+        
+        <li
         >
         <a href="/page/6/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
-            <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            <a href="/page/7/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
         </li>
         
     </ul>

@@ -6,8 +6,33 @@
     <description>Recent content in Posts on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 May 2016 20:32:51 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 May 2016 00:47:14 +0900</lastBuildDate>
     <atom:link href="http://blog.tanaka51.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>公録と聖地巡礼の旅</title>
+      <link>http://blog.tanaka51.jp/2016/05/20/trip-at-2016-05-16-17/</link>
+      <pubDate>Fri, 20 May 2016 00:47:14 +0900</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2016/05/20/trip-at-2016-05-16-17/</guid>
+      <description>&lt;p&gt;2016/05/15,16 と1泊2日で旅行した。目的は大阪にゆりゆららららゆるゆり放送局の公録を見に行くのと、富山にゆるゆりの聖地巡礼に行くこと。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.msng.info/archives/2015/04/hokuriku_shinkansen.php&#34;&gt;漫画で学ぶ「大阪-東京往復ならほぼ同料金で北陸新幹線にも乗れて金沢へも行けるよ」 - 頭ん中&lt;/a&gt;
+これを参考に乗車券・特急券を買って、あとは大阪の安めのビジネスホテルをとった。&lt;/p&gt;
+
+&lt;p&gt;日曜9時半東京発の新幹線にのって大阪は松原に13時位につき、イベント見て最高な気持ちで20時位に大阪駅近くのビジネスホテルにチェックインしてすぐに飲みに行って、24時位にホテルに戻った。
+次の日の朝7時発のサンダーバードに乗らなければいけない所、7時半発と勘違いして乗れず。金沢を経由して富山は新高岡についたら、レンタカーを借りてイオンでゆるゆりミュージアムを見て、HMVで特典もらって、聖地巡礼に向かう。パスタ食べて、高岡駅を見て、井波の町並みを見て、銭湯を見て、閑乗寺公園に行って、最高だった。黒部ダムもついでに見たろ、と向かうも立山駅から先は車で行けずに、断念。立山の大自然を堪能して新高岡に戻って、駅前に唯一あった居酒屋で乾杯して20時半発の新幹線に乗って上野まで帰った。文字通り弾丸ツアーで疲労がすごかったけど、全体的に最高な体験だった。&lt;/p&gt;
+
+&lt;p&gt;一人じゃ行かなかったと思うし、誘ってくれた @flada_auxv に圧倒的感謝 :pray:&lt;/p&gt;
+
+&lt;p&gt;あと、行き帰りの新幹線で @ohtsuka_t に借りたマネーボールを読んで、この本が最高に面白かった。新幹線は途中で電波が入らない事も多くて、アナログなやつは旅のお供にちょうどよかった。
+(そして次はビッグデータ・ベースボールを借りてて、こちらはまだ読み始めてないけど読むのが楽しみ)&lt;/p&gt;
+
+&lt;p&gt;今回の旅には、今年の1月位に買ったカメラを持参していった。せっかくなので flickr にあげた。カメラ、難しいね。もうちっとうまくなりたいもんだ。立山駅近辺で出会った謎の生き物、あれはなんだったんだろう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; data-header=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/tanaka51/albums/72157668307100651&#34; title=&#34;2016/05/15-16 in Osaka and Toyama&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7182/26841647690_ca142f5867_z.jpg&#34; width=&#34;640&#34; height=&#34;427&#34; alt=&#34;2016/05/15-16 in Osaka and Toyama&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ifttt連携テスト</title>
@@ -818,273 +843,6 @@ end
 &lt;p&gt;念のためホスト側の &lt;code&gt;~/.ssh/id_rsa.pub&lt;/code&gt; をゲスト側の &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; にコピーしなおしたら、password-less ログインも vagrant halt もうまくいった。&lt;/p&gt;
 
 &lt;p&gt;めでたしめでたし。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話</title>
-      <link>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</link>
-      <pubDate>Sat, 23 Mar 2013 10:19:00 +0000</pubDate>
-      
-      <guid>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</guid>
-      <description>
-
-&lt;p&gt;個人ブログ、会社ブログとも Octopress を使っている。&lt;/p&gt;
-
-&lt;p&gt;Octopress を使ってて思うのは「Emacs から記事を作成(する rake タスクを実行)/編集したい！」&lt;/p&gt;
-
-&lt;p&gt;それで octomacs を使ったんだけど、rvm と組み合わせて使った時にハマった。&lt;/p&gt;
-
-&lt;p&gt;結果だけを先に述べると、octomacs で rvm を使いたい時は、/etc/ 以下のログインシェルの設定に rvm のパスを追加するようにすれば良い。ベストな解決策では無いだろうが、とりあえず動く。&lt;/p&gt;
-
-&lt;p&gt;以下、奮闘記。暇な人向け。&lt;/p&gt;
-
-&lt;h2 id=&#34;emacs-拡張の選定:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;Emacs 拡張の選定&lt;/h2&gt;
-
-&lt;p&gt;Emacs から Octopress をゴニョニョする Emacs 拡張はパッと探した感じ、2つある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jhelwig/octomacs&#34; title=&#34;jhelwig/octomacs · GitHub&#34;&gt;jhelwig/octomacs · GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Marmalade に登録されているので、 package.el で設定できる&lt;/li&gt;
-&lt;li&gt;複数の Octopress プロジェクトに対応&lt;/li&gt;
-&lt;li&gt;rvm/ido に対応&lt;/li&gt;
-&lt;li&gt;使えるは `octomacs-new-post&amp;rsquo; だけ&lt;/li&gt;
-&lt;li&gt;結構複雑な事をやっている&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/gfreezy/octopress-emacs&#34; title=&#34;gfreezy/octopress-emacs · GitHub&#34;&gt;gfreezy/octopress-emacs · GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;very very very simple
-
-&lt;ul&gt;
-&lt;li&gt;ゆえに外から設定とかできない&lt;/li&gt;
-&lt;li&gt;コピーして自分で適当に書き換えて配置する必要がある(rvm化、パスの設定など)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;一つの Octopress プロジェクトにだけ対応&lt;/li&gt;
-&lt;li&gt;rbenv のみに対応&lt;/li&gt;
-&lt;li&gt;ひと通りの rake タスクを Emacs から実行できる
-
-&lt;ul&gt;
-&lt;li&gt;が、同期実行だから &lt;code&gt;rake gen_deploy&lt;/code&gt; とかするとしばらく固まるし &lt;code&gt;rake preview&lt;/code&gt; とか &lt;code&gt;rake watch&lt;/code&gt; した日には Emacs 動かなくなる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ということで個人ブログだけを管理する時には octopress-emacs を使ってたけど、会社ブログも Octopress になったし、ちょっと前に Emacs 24 化してパッケージ管理を完全に package.el に以降したから、octomacs を使うことにした。&lt;/p&gt;
-
-&lt;h2 id=&#34;octomacs-設定:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;octomacs 設定&lt;/h2&gt;
-
-&lt;p&gt;package.el を使って rvm と octomacs をインストールしておく。(Marmalade を登録しておく必要あり)&lt;/p&gt;
-
-&lt;p&gt;そしたら init.el に&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(require &#39;rvm)
-(require &#39;octomacs)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;と書いておく。&lt;/p&gt;
-
-&lt;p&gt;プロジェクトの設定は &lt;code&gt;M-x customize-group octomacs&lt;/code&gt; で &lt;code&gt;Octomacs Workdir Alist&lt;/code&gt; を編集するか、init.el か何かに&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(custom-set-variables
- &#39;(octomacs-workdir-alist
-   ((&amp;quot;my-blog&amp;quot;     . &amp;quot;~/my-blog&amp;quot;)
-    (&amp;quot;kaisha-blog&amp;quot; . &amp;quot;~/kaisha-blog&amp;quot;))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とか書いておけばおｋ。alist は `(プロジェクト選択時に出る名前 . ディレクトリパス) という形。&lt;/p&gt;
-
-&lt;p&gt;以上が済んだらおもむろに &lt;code&gt;M-x octomacs-new-post&lt;/code&gt; を叩く。プロジェクトを選んで、ポスト名を入力する。良い感じ。だが、無残なメッセージと共にコマンドは失敗する:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Unable to create post: /bin/bash: rvm: command not found
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;無念。&lt;/p&gt;
-
-&lt;h2 id=&#34;失敗する関数を特定したい:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;失敗する関数を特定したい&lt;/h2&gt;
-
-&lt;p&gt;さて、原因を探る。まずやる事は、どの関数で失敗したかを知る事だ。幸い、Emacs にはあるパッケージの呼び出しのプロファイルをとる関数が用意されていたので、それを使ってみる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;M-x elp-instrument-package octomacs
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;してから、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;M-x octomacs-new-post
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;してプロジェクト名を入力、ポスト名を適当に入れて、失敗する事を確認する。その後、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;M-x elp-results
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;してやると、octomacs パッケージ内での各関数呼び出しのプロファイルが出てくる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;octomacs-new-post                    1           5.199352      5.199352
-octomacs-new-post-interactive        1           3.722928      3.722928
-octomacs-read-project                1           2.010394      2.010394
-octomacs-read-post-name              1           1.712456      1.712456
-octomacs-rake                        1           0.926343      0.926343
-octomacs-rake-with-rvm               1           0.926298      0.926298
-octomacs-format-rake-task-with-args  1           2.7e-05       2.7e-05
-octomacs-shell-escape-string         1           8e-06         8e-06
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;今回はプロファイル結果に興味はないので、関数名から怪しい所を探しだす。まー怪しい所は &lt;code&gt;octomacs-rake-with-rvm&lt;/code&gt; だろう。関数名上でエンターを押下でその関数定義に飛んでくれた。便利！&lt;/p&gt;
-
-&lt;h2 id=&#34;shell-command-to-string-との出会い:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;shell-command-to-string との出会い&lt;/h2&gt;
-
-&lt;p&gt;こんな関数定義だった。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cl&#34;&gt;(defun octomacs-rake-with-rvm (directory task &amp;amp;optional arguments)
-  &amp;quot;Run rake task TASK with specified ARGUMENTS in DIRECTORY using rvm&amp;quot;
-  (let* ((default-directory (file-name-as-directory (expand-file-name directory)))
-         (rvmrc-path (rvm--rvmrc-locate directory))
-         (rvmrc-info (if rvmrc-path (rvm--rvmrc-read-version rvmrc-path) nil))
-         (rvm-command (if rvmrc-info
-                          (concat &amp;quot;rvm &amp;quot; (mapconcat &#39;identity rvmrc-info &amp;quot;@&amp;quot;) &amp;quot; do &amp;quot;)
-                        &amp;quot;&amp;quot;)))
-    (shell-command-to-string (format &amp;quot;%srake %s&amp;quot; rvm-command (octomacs-format-rake-task-with-args task arguments)))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;エラーを思い出すと&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Unable to create post: /bin/bash: rvm: command not found
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じなので、予想としては &lt;code&gt;shell-command-to-string&lt;/code&gt; が原因だろうと当たりをつけた。そうすると知りたいのは、この &lt;code&gt;format&lt;/code&gt; がどんな文字列を生成しているか。 &lt;code&gt;shell-command-to-string&lt;/code&gt; が実行される直前で実行を止めてみてみたい。&lt;/p&gt;
-
-&lt;p&gt;Emacs でブレークポイントを貼りたい時は &lt;code&gt;edebug&lt;/code&gt; なるものを使うらしい。使い方は、ブレークポイントを貼りたい関数内で &lt;code&gt;C-u C-M-x&lt;/code&gt; とする。その後、その関数が評価される時に実行が止まる。知っておくべきコマンドは &lt;code&gt;space&lt;/code&gt; でステップ実行、 &lt;code&gt;e&lt;/code&gt; で現在のコンテキストでの式の評価、 &lt;code&gt;h&lt;/code&gt; でカーソルまで実行、 &lt;code&gt;q&lt;/code&gt; でデバッグ終了、位。後は、ステップ実行で式が評価される度にミニバッファに結果を表示していて、実は &lt;code&gt;*Message*&lt;/code&gt; バッファにミニバッファの表示がスタックされている事を知っていれば、今回の目的には十分である。&lt;/p&gt;
-
-&lt;p&gt;さて、そんなこんなで &lt;code&gt;format&lt;/code&gt; が生成している文字列が分かった。こんなの:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;rvm 1.9.3@octopress do rake &#39;new_post[test]&#39;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こいつを &lt;code&gt;shell-command-to-string&lt;/code&gt; に渡してるらしい。&lt;/p&gt;
-
-&lt;p&gt;じゃあちょっとスクラッチバッファで実行してみよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;rvm 1.9.3@octopress do rake &#39;new_post[test]&#39;&amp;quot;)
-&amp;quot;rake aborted!
-No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
-/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `eval&#39;
-/Users/koichi/.rvm/gems/ruby-1.9.3-p392@octopress/bin/ruby_noexec_wrapper:14:in `&amp;lt;main&amp;gt;&#39;
-(See full trace by running task with --trace)
-&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;…うん、実行するディレクトリを指定してないから、どこで実行してるかはわからないけど、 Rakefile が見当たらないのは当たり前だよなぁ。でも、octomacs ではきちんと Rakefile のあるディレクトリに行って実行しているっぽい気がする。じゃないと、他の人がツッコミを入れると思うし、作者もそんな凡ミスしたまま Marmalade にあげないよなぁ。何かそういう仕組みがあるはず。&lt;/p&gt;
-
-&lt;p&gt;でもまぁとりあえず、どこで実行してるかは知りたいので、スクラッチバッファで試してみる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;pwd&amp;quot;)
-&amp;quot;/Users/koichi
-&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ホームディレクトリだった。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;octomacs-rake-with-rvm&lt;/code&gt; にブレークポイントを貼って、その中で &lt;code&gt;pwd&lt;/code&gt; 実行したらどうなるんだろ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;/Users/koichi/my-blog\n&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;うん、やっぱり何か、直接引数に渡さないで、外部からディレクトリを指定する仕組みがあるのね。&lt;/p&gt;
-
-&lt;p&gt;で、実はこれまでリファレンスを見ずに来たけど、それは &lt;code&gt;shell-command-to-string&lt;/code&gt; って名前から何をするか大体想像がつくから。おそらく、引数の文字列をシェルにコマンドとして渡して、結果の文字列を返すのかなーって感じ。&lt;/p&gt;
-
-&lt;p&gt;で、この関数の機能の想像と、渡される引数と、スクラッチバッファでの実行結果を見て2つの疑問点がわいてきた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？&lt;/li&gt;
-&lt;li&gt;外部からディレクトリを指定する方法を知りたい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ついにリファレンスを見る時が来たようだ。&lt;/p&gt;
-
-&lt;h2 id=&#34;かいけつ:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;かいけつ！&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html&#34; title=&#34;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&#34;&gt;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;上記リファレンスを見たのだが、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Function: shell-command-to-string command
-    この関数は、シェルコマンドとしてcommand（文字列）を実行し、 コマンドの出力を文字列として返す。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と書いてあるだけ。全く予想通りだし、それ以上の事も書いて無かった。疑問点は何も解決しない。
-「ついにリファレンスを見る時が来たようだ。」とか意気込んでおいてこの結末、残念すぎる。&lt;/p&gt;
-
-&lt;p&gt;こうなったらやることはググったり &lt;code&gt;shell-command-to-string&lt;/code&gt; を使ってどんな動作をしているかを確かめるしかない。&lt;/p&gt;
-
-&lt;p&gt;とりあえず、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;実行時にはどのシェルを使っていて、そのシェルの設定はどこから読み込んでるの？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;はグーグル先生に聞いた所、 &lt;code&gt;shell-command-to-string&lt;/code&gt; はログインシェルを使っているらしい事が分かった。で、ログインシェルを確認したら Bash だった。エラーメッセージで、bash が使われている理由が分かった。&lt;/p&gt;
-
-&lt;p&gt;僕は普段 zsh を使っているので、bash には rvm の設定をしていない。だったらログインシェルを zsh にすれば解決するだろう、という事で、ログインシェルを zsh にした。が、エラーメッセージは zsh でも command not found だから、問題は別の所にあるのだと考えた。で、次の式をスクラッチバッファで評価してみた。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(shell-command-to-string &amp;quot;echo $PATH&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そうすると &lt;code&gt;~/.zshrc&lt;/code&gt; で設定したパスが表示されて&lt;strong&gt;いない&lt;/strong&gt;。これで合点した。ホームディレクトリ以下の設定ファイルは読み込まないんだと…&lt;/p&gt;
-
-&lt;p&gt;で &lt;code&gt;/etc/zshrc&lt;/code&gt; に rvm のパスを設定するようにしたら、見事に動いた！これで解決したと言っても良いだろう。
-ひとまずの解決策として、octomacs で rvm を使いたかったら、/etc/ 以下のログインシェルの設定に、rvm へのパスを追加すれば良い。&lt;/p&gt;
-
-&lt;p&gt;問題自体はこれで解決したが、残る疑問点を解決しておきたい。&lt;/p&gt;
-
-&lt;h2 id=&#34;emacs-lisp-の勉強:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;Emacs Lisp の勉強&lt;/h2&gt;
-
-&lt;p&gt;最後の疑問点はこれだ。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;外部からディレクトリを指定する方法を知りたい&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;もしこんな指定方法があるとすれば &lt;code&gt;shell-command-to-string&lt;/code&gt; を使っている箇所ではどこでも同じ事をしているはず。octomacs を眺めてみたら、ある共通点があった。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* `let` の中で実行されている
-* `let` で `default-directory` を設定している
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;完全に&lt;code&gt;default-directory&lt;/code&gt;が怪しすぎる。とりあえず、グーグル先生に聞いてみたら、英語版のリファレンスマニュアルがヒット。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html&#34; title=&#34;Synchronous Processes - GNU Emacs Lisp Reference Manual&#34;&gt;Synchronous Processes - GNU Emacs Lisp Reference Manual&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そしてこんな記述。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The current working directory of the subprocess is default-directory.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ビンゴー！まさしくこれだった。
-&lt;code&gt;shell-command-to-string&lt;/code&gt; は最終的に &lt;code&gt;call-process&lt;/code&gt; を読んでるだろうし、間違いないだろう。&lt;/p&gt;
-
-&lt;p&gt;で、イマイチこの辺の理解が曖昧だったのだけれども、どうやら &lt;code&gt;default-directory&lt;/code&gt; は「バッファローカル変数」らしい。これは、「デフォルト変数」といういわばグローバル変数をバッファ毎に書き換えられるものらしい。（こんな理解でいいのかな）&lt;/p&gt;
-
-&lt;p&gt;ある関数の為に &lt;code&gt;let&lt;/code&gt; でスコープを作り、その中で特定の変数に任意の値を束縛して関数の動作を制御するっていうこの Lisp のスタイル、面白いなーと思う。&lt;/p&gt;
-
-&lt;p&gt;終わり。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考:0cf7f711c3f52eda7c471a70cf2481e6&#34;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://dev.ariel-networks.com/articles/software-design-200802/elisp-debug/&#34; title=&#34;Emacs Lisp デバッグ — ありえるえりあ&#34;&gt;Emacs Lisp デバッグ — ありえるえりあ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/rubikitch/20101116/edebug &amp;quot;Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books&#34;&gt;Emacs Lispのソースコードデバッガ edebug を使う - (rubikitch loves (Emacs Ruby CUI Books))&lt;/a&gt;)&amp;ldquo;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/clouder/20090529/1243564128 &amp;quot;emacs lispのshell-command-to-string(&#34;&gt;emacs lispのshell-command-to-string() - no strict; no life;&lt;/a&gt; - no strict; no life;&amp;ldquo;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.geocities.co.jp/SiliconValley-Bay/9285/ELISP-JA/elisp_584.html&#34; title=&#34;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&#34;&gt;GNU Emacs Lispリファレンスマニュアル: Synchronous Processes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.gnu.org/software/emacs/manual/html_node/elisp/Synchronous-Processes.html&#34; title=&#34;Synchronous Processes - GNU Emacs Lisp Reference Manual&#34;&gt;Synchronous Processes - GNU Emacs Lisp Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://haraita9283.blog98.fc2.com/blog-entry-387.html&#34; title=&#34;Emacs Lisp メモ: バッファローカル変数 | anobota&#34;&gt;Emacs Lisp メモ: バッファローカル変数 | anobota&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

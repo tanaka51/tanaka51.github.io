@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/">rspec の shared_context をすべての example に適用する </a></h1>
+  <div class="meta">
+    Dec 14, 2012 &nbsp;
+    
+  </div>
+</div>
+
+  clips で webmock を使って Github API との通信部分をスタブしたのだけど、このスタブ定義をすべての example に適用させた時の記録。または shared_context をすべての example に適用する方法。 参考 rspec-users - using shared_context in a global way 結果 clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub やり方 （というかほぼ参考にしたページの日本語約） まず、&rsquo;RSpec.configure&rsquo; 内で、すべての example に適用させる before を定義できる。 だけど、let だとか RSpec の DSL は &lsquo;RSpec.configure&rsquo; 内では使えない。だから、&rsquo;RSpec::Core::SharedContext&rsquo; を extend した module をつくって、configure 内ではその自作 module を include させるようにすると良い。 で、具体例。 # spec/spec_helper.rb RSpec.configure do |config| config.include StubHttpRequest end # spec/support/stub_http_request.rb require 'rspec/core/shared_context' module StubHttpRequest extend RSpec::Core::SharedContext before do stub_request(:any, /.*api\.github\.com.*/).
+  <a href="http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/">RSpec Best Practice </a></h1>
   <div class="meta">
     Dec 14, 2012 &nbsp;
@@ -118,20 +132,6 @@
 </div>
 
   
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/">他の PC で Octopress をセットアップする </a></h1>
-  <div class="meta">
-    Sep 7, 2012 &nbsp;
-    
-  </div>
-</div>
-
-  他の PC で octopress の記事をポストしたいときの手順 前提条件 Github Pages を使っている どこかで setup が終了している やり方 git@github.com:username/username.github.com からクローン source ブランチをチェックアウト $ git checkout -b source origin/source master ブランチはいらないので消す $ git branch -D master bundle インストール RVM やらの設定もやっておく $ bundle install 重要 rake setup_github_pages を必ず実行する これは新しくクローンしたリポジトリでは毎回実行すること この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される やらないとデプロイできないので注意 $ rake setup_github_pages 後はいつもと同じ手順でポスト可能
-  <a href="http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/" class="read-on">続きを読む → </a>
-</div>
-
-  
 </main>
 
 
@@ -170,12 +170,15 @@
         class="active"><a href="/page/6/">6</a></li>
         
         <li
-        class="disabled">
-        <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        ><a href="/page/7/">7</a></li>
+        
+        <li
+        >
+        <a href="/page/7/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
-            <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            <a href="/page/7/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
         </li>
         
     </ul>
