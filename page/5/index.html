@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
+  <div class="meta">
+    Jan 31, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。 原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。 Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。 自分が触った範囲で違うところをまとめる。 assertion メソッドのmessage引数 ここは大きな違い。 Ruby標準ライブラリ to_s に反応するものなら何でもOK gemのtest-unit nil String Proc AssertionMessage だけしか受け付けない 出力系 Test::Unit:::UI::Console::TestRunner 辺り #output 出力の為のメソッド。いろんな所で使われている。 とる引数が違うので、オーバーライドしてると大変。 ``` ruby Ruby 標準ライブラリ def output(something, level=NORMAL) ``` ruby gem 版 test-unit def output(something, color=nil, level=nil) #add_fault &rdquo;&hellip;F..F.E.&rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（@show_detail_immediatelyの値によって変わる）。 ``` ruby Ruby 標準ライブラリ def add_fault(fault) @faults &lt;&lt; fault output_single(fault.single_character_display, PROGRESS_ONLY) @already_outputted = true end ``` ruby gem 版 test-unit def add_fault(fault) @faults &lt;&lt; fault output_progress(fault.single_character_display, fault_color(fault)) output_progress_in_detail(fault) if @show_detail_immediately @already_outputted = true if fault.critical?
+  <a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/">uninstall_rvm </a></h1>
   <div class="meta">
     Jan 7, 2013 &nbsp;
@@ -115,20 +129,6 @@
 
   iTerm2 を Emacs 仕様にする Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。 iTerm -&gt; Preferences&hellip; で設定画面を開く Profiles -&gt; Keys の下段の Left Option を +ESC にチェックする Keys タブの Remap Modifier Keys の Left command key と Right command key をLeft Option に変える Keys タブの Global Shortcut Keys の + をクリック、Action から Do Not Remap Modifires を選択、Command + Tab と Command + Space を登録する(必要があれば他のキーも登録する) これで、tmux の Emacs モードも快適に使える:)
   <a href="http://blog.tanaka51.jp/2013/01/04/setup-iterm2/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/">Ruby on Rails で JSON をパースする </a></h1>
-  <div class="meta">
-    Dec 14, 2012 &nbsp;
-    
-  </div>
-</div>
-
-  結論 ActiveSupport::JSON.decode を使う 参考 How do I parse JSON with Ruby on Rails? - Stack Overflow 実際に使った clips/app/models/user.rb at master · tanaka51-jp/clips · GitHub
-  <a href="http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/" class="read-on">続きを読む → </a>
 </div>
 
   
