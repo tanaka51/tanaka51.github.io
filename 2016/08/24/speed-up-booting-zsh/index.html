@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    zsh の起動が3倍速くなった。 | status code 51
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.tanaka51.jp/2016/08/24/speed-up-booting-zsh/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://blog.tanaka51.jpindex.xml" rel="alternate" type="application/rss+xml" title="status code 51" />
+  <link href="http://blog.tanaka51.jpindex.xml" rel="feed" type="application/rss+xml" title="status code 51" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blog.tanaka51.jp">status code 51</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/tanaka51" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/tanaka51" target="_blank">GitHub</a></li>
+          <li><a href="http://blog.tanaka51.jp/index.xml" type="application/rss+xml" target="_blank">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2016/08/24/speed-up-booting-zsh/">zsh の起動が3倍速くなった。 </a></h1>
+  <div class="meta">
+    Aug 24, 2016 &nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      
+
+<p>zsh が重いので高速化したはなし。 結論: anyenv でそこそこ速くなる</p>
+
+<p>明らかに nvm を入れたら重くなったからなんとかしたい。 <a href="http://blog.uu59.org/2014-01-06-fast-rbenv.html">http://blog.uu59.org/2014-01-06-fast-rbenv.html</a> を参考にボトルネックを探りながら良い感じにしていく</p>
+
+<p>自分の CPU のスペックを晒しておく</p>
+
+<pre><code class="language-zsh">tanaka51$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    2
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 61
+Model name:            Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
+Stepping:              4
+CPU MHz:               1323.953
+CPU max MHz:           2700.0000
+CPU min MHz:           500.0000
+BogoMIPS:              4389.67
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              3072K
+NUMA node0 CPU(s):     0-3
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt dtherm ida arat pln pts
+</code></pre>
+
+<pre><code class="language-zsh">tanaka51$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        3.6G        9.4G        828M        2.5G         10G
+Swap:           15G          0B         15G
+</code></pre>
+
+<h1 id="計測:ab47b90db48cd9735c093499bbc77889">計測</h1>
+
+<h2 id="今の状態:ab47b90db48cd9735c093499bbc77889">今の状態</h2>
+
+<pre><code class="language-zsh">tanaka51$ time ( zsh -i -c exit  )
+( zsh -i -c exit;  )  0.77s user 0.17s system 78% cpu 1.196 total
+</code></pre>
+
+<p>何回か実行してみたけど、 0.7 秒代後半っぽい。とにかく重い、自宅の Ubuntu でも 会社の Mac でも重い。</p>
+
+<h2 id="設定ファイルが空の状態:ab47b90db48cd9735c093499bbc77889">設定ファイルが空の状態</h2>
+
+<pre><code class="language-zsh">tanaka51$ : &gt; /tmp/.zshrc &amp;&amp; time ( ZDOTDIR=/tmp  zsh -i -c exit )
+( ZDOTDIR=/tmp zsh -i -c exit; )  0.04s user 0.01s system 92% cpu 0.048 total
+</code></pre>
+
+<p>3~4msあたりの模様</p>
+
+<h2 id="env-系をコメントアウト:ab47b90db48cd9735c093499bbc77889">env 系をコメントアウト</h2>
+
+<pre><code class="language-diff">tanaka51$ g d
+diff --git a/zshrc b/zshrc
+index 49c5506..d1a8b62 100644
+--- a/zshrc
++++ b/zshrc
+@@ -81,23 +81,23 @@ export GOPATH=$HOME
+ export PATH=&quot;$GOPATH/bin:$PATH&quot;
+ export PATH=&quot;$PATH:/usr/local/go/bin&quot; # install golang on /usr/local/go
+
+-# rbenv
+-export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
+-export PATH=&quot;$HOME/.rbenv/shims:$PATH&quot;
+-eval &quot;$(rbenv init -)&quot;
+-
+-# pyenv
+-export PYENV_ROOT=&quot;$HOME/.pyenv&quot;
+-export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
+-eval &quot;$(pyenv init -)&quot;
+-
+-# virtualenvwrapper
+-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+-source $(which virtualenvwrapper.sh)
+-
+-# nvm
+-export NVM_DIR=&quot;/home/tanaka51/.nvm&quot;
+-[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
++# # rbenv
++# export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
++# export PATH=&quot;$HOME/.rbenv/shims:$PATH&quot;
++# eval &quot;$(rbenv init -)&quot;
++#
++# # pyenv
++# export PYENV_ROOT=&quot;$HOME/.pyenv&quot;
++# export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
++# eval &quot;$(pyenv init -)&quot;
++#
++# # virtualenvwrapper
++# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
++# source $(which virtualenvwrapper.sh)
++#
++# # nvm
++# export NVM_DIR=&quot;/home/tanaka51/.nvm&quot;
++# [ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
+
+ export PATH=&quot;./bin:./mybin:/usr/local/bin:$PATH&quot;
+ # rust
+</code></pre>
+
+<pre><code class="language-zsh">tanaka51$ time ( zsh -i -c exit )
+( zsh -i -c exit; )  0.07s user 0.02s system 91% cpu 0.100 total
+</code></pre>
+
+<p>だいたい 7ms ということは大雑把に見てもこいつらで 0.6 秒かかっているらしい</p>
+
+<h2 id="anyenv-を使う:ab47b90db48cd9735c093499bbc77889">anyenv を使う</h2>
+
+<p>env 系多いし anyenv をいれる事を思いついた。余計な設定を消して計測してみる</p>
+
+<pre><code class="language-diff">tanaka51$ g d
+diff --git a/zshrc b/zshrc
+index 49c5506..1b99763 100644
+--- a/zshrc
++++ b/zshrc
+@@ -80,25 +80,6 @@ export GOPATH=$HOME
+
+ export PATH=&quot;$GOPATH/bin:$PATH&quot;
+ export PATH=&quot;$PATH:/usr/local/go/bin&quot; # install golang on /usr/local/go
+-
+-# rbenv
+-export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
+-export PATH=&quot;$HOME/.rbenv/shims:$PATH&quot;
+-eval &quot;$(rbenv init -)&quot;
+-
+-# pyenv
+-export PYENV_ROOT=&quot;$HOME/.pyenv&quot;
+-export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
+-eval &quot;$(pyenv init -)&quot;
+-
+-# virtualenvwrapper
+-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+-source $(which virtualenvwrapper.sh)
+-
+-# nvm
+-export NVM_DIR=&quot;/home/tanaka51/.nvm&quot;
+-[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
+-
+ export PATH=&quot;./bin:./mybin:/usr/local/bin:$PATH&quot;
+ # rust
+ export PATH=&quot;$HOME/.cargo/bin:$PATH&quot;
+@@ -130,8 +111,13 @@ function tmux-attach-peco () {
+ zle -N tmux-attach-peco
+ bindkey '^[t' tmux-attach-peco
+
+-# OPAM configuration
+-. $HOME/.opam/opam-init/init.zsh &gt; /dev/null 2&gt; /dev/null || true
+-
+ ### Added by the Heroku Toolbelt
+ export PATH=&quot;/usr/local/heroku/bin:$PATH&quot;
++
++# anyenv
++export PATH=&quot;$HOME/.anyenv/bin:$PATH&quot;
++eval &quot;$(anyenv init -)&quot;
++
++# virtualenvwrapper
++export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
++source $(which virtualenvwrapper.sh)
+</code></pre>
+
+<pre><code class="language-zsh">tanaka51$ time ( zsh -i -c exit  )
+( zsh -i -c exit;  )  0.26s user 0.05s system 69% cpu 0.446 total
+</code></pre>
+
+<p>当初より3倍くらいはやくなった。</p>
+
+<h1 id="おわり:ab47b90db48cd9735c093499bbc77889">おわり</h1>
+
+<p>python の virtualenvwrapper を消すと 0.1s くらいになった。けどしばらくはこれでいいや。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blog.tanaka51.jp/2016/08/23/tenshoku/" rel="prev">転職メモ</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Koichi Tanaka
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-38154427-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

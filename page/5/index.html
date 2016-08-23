@@ -64,6 +64,40 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/">install ruby on mac </a></h1>
+  <div class="meta">
+    Feb 3, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  <p>Ruby 1.9.3-p374 を Mac にインストールしようとしたら一発でできなかったのでメモ。</p>
+
+<ul>
+<li>OS: OSX 10.8.2 (moutain lion)</li>
+<li>rvm: 1.18.5</li>
+</ul>
+
+<p>3行でまとめると、</p>
+
+<ul>
+<li>MacPorts をアンインストール</li>
+<li>Homebrew に完全移行</li>
+<li><code>rm -rf ~/.rvm/usr</code> (不要な rvm pkg をアンインストール)</li>
+</ul>
+
+<p>という事になる。</p>
+
+<p>最新の Ruby のインストールは、Homebrew のライブラリが相性が良いのかなーという印象。正しいかどうかは分からない。</p>
+
+<p>以後、長いけれども、作業メモ。</p>
+
+  <a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
   <div class="meta">
     Jan 31, 2013 &nbsp;
@@ -115,20 +149,6 @@
 
   普段 MySQL ばっかりなので、ポスグレは分からない… SHOW databases; \l SHOW tables; \d 大文字について もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。 select * from &quot;SCHEMA&quot;.users; select * from &quot;PREFIX_users&quot;; スキーマを指定 「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。 set search_path=&quot;SCHEMA&quot;, &quot;SCHEMA2&quot;, public
   <a href="http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/04/setup-iterm2/">Setup iTerm2 </a></h1>
-  <div class="meta">
-    Jan 4, 2013 &nbsp;
-    
-  </div>
-</div>
-
-  iTerm2 を Emacs 仕様にする Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。 iTerm -&gt; Preferences&hellip; で設定画面を開く Profiles -&gt; Keys の下段の Left Option を +ESC にチェックする Keys タブの Remap Modifier Keys の Left command key と Right command key をLeft Option に変える Keys タブの Global Shortcut Keys の + をクリック、Action から Do Not Remap Modifires を選択、Command + Tab と Command + Space を登録する(必要があれば他のキーも登録する) これで、tmux の Emacs モードも快適に使える:)
-  <a href="http://blog.tanaka51.jp/2013/01/04/setup-iterm2/" class="read-on">続きを読む → </a>
 </div>
 
   
