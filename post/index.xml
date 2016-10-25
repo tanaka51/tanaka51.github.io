@@ -6,8 +6,42 @@
     <description>Recent content in Posts on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Aug 2016 00:49:48 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Oct 2016 03:14:27 +0900</lastBuildDate>
     <atom:link href="http://blog.tanaka51.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>入力メソッドを切り替えるキー</title>
+      <link>http://blog.tanaka51.jp/2016/10/26/the-key-changing-input-method/</link>
+      <pubDate>Wed, 26 Oct 2016 03:14:27 +0900</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2016/10/26/the-key-changing-input-method/</guid>
+      <description>&lt;p&gt;自宅では Ubuntu を使っていて、日本語・英語の切り替えに悩んでいた。というのも、 会社では Mac を使っていて、
+カラビナを使って左コマンドで英語、右コマンドで日本語に切り替えるようにしていて、これを Ubuntu でもやりたかった。&lt;/p&gt;
+
+&lt;p&gt;んだけど、 Fcitx で右/左 alt キーだけの入力メソッドの切り替えというのが出来ないっぽくて、ひとまず苦し紛れに &lt;code&gt;ctrl-;&lt;/code&gt; と &lt;code&gt;ctrl-/&lt;/code&gt; なんかを設定していた。
+ちなみに &lt;code&gt;ctrl-Space&lt;/code&gt; で切り替えたくないのは、 Emacs のバインディングとかぶるから。 Vim でも良い感じの何かに割り当てたりするし、これを潰したくない気持ちがある。&lt;/p&gt;
+
+&lt;p&gt;で、またなんか良いキーがないかと探していた所、 &lt;code&gt;End&lt;/code&gt; と&lt;code&gt;PageDown&lt;/code&gt; というキーが空いてる事に気付いたのだった。僕は普段キーボードとしては
+Kinesis を使っているんだけど、何故かこの2つのキーは完全に使っていないのであった。というわけで、特等席にいながら何もしてなかったこやつらに仕事を割り振れて、ちょっとうれしくなったのでブログに残しておく。&lt;/p&gt;
+
+&lt;p&gt;というわけで、現状の Kinesis のキー配列を書いておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Left side&amp;gt;
+      | Ctrl   |  Super
+------|--------|---------
+Back  | Delete |   Alt
+Space |        |---------
+      |        | English
+
+&amp;lt;Right side&amp;gt;
+   Super  |  Ctrl |
+----------|-------|-------
+    Alt   | Enter | Space
+----------|       |
+ Japanese |       |
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>zsh の起動が3倍速くなった。</title>
@@ -850,41 +884,6 @@ let g:ctrlp_tjump_only_silent = 1
 知らない関数に出くわして &lt;code&gt;ctrl-]&lt;/code&gt; して、タグ一覧が出た時に &lt;code&gt;src/unix/xxx&lt;/code&gt; &lt;code&gt;src/windows/xxx&lt;/code&gt; と出ると「あーこれは互換性のために分岐してあるコードだ」というのが一発で分かって嬉しい。&lt;/p&gt;
 
 &lt;p&gt;一番下の設定を入れておくと、定義が一つだけの時は選択ウィンドウ(?)が出ないですぐに飛ぶので便利。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Vim で memo をとる環境を(漸く)整えた</title>
-      <link>http://blog.tanaka51.jp/2014/09/06/memo-with-vim/</link>
-      <pubDate>Sat, 06 Sep 2014 12:32:00 +0000</pubDate>
-      
-      <guid>http://blog.tanaka51.jp/2014/09/06/memo-with-vim/</guid>
-      <description>
-
-&lt;p&gt;ブログのデザインを新しくしたら更新するんだ、と思って早1年と半年。
-漸く重い腰をあげて Octopress 用のテーマを探しにいったら、&lt;a href=&#34;https://github.com/tlvince/leanpress&#34;&gt;良い感じにシンプルなやつ&lt;/a&gt; があったので、これだ！とブログをいじりはじめたのでした。&lt;/p&gt;
-
-&lt;p&gt;そして久しぶりの更新。&lt;/p&gt;
-
-&lt;p&gt;最後の記事が Emacs の記事、今では Vim を使う毎日なのであった。&lt;br /&gt;
-半年前から使い始めた Vim で memo をとる環境を(漸く)整えた整えたのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;memolist-vim-ctrlp:7fbb2083690ca1cfd00aa521ebf563ce&#34;&gt;memolist.vim + ctrlp&lt;/h2&gt;
-
-&lt;p&gt;基本的にはこれを参考に設定しただけ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://mattn.kaoriya.net/software/vim/20120328183428.htm&#34;&gt;Big Sky :: 2012年のVimメモ取り環境はmemolistとctrlpに決まりだ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;合わせて、memo を Dropbox 経由で同期したいので以下の設定を追加。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;let g:memolist_path = &amp;quot;~/Dropbox/memo&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;memo 開くのとか、memo から grep するのとか、memo 一覧から fuzzy 検索するのとか、便利。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;久しぶりの blog なので、こんなメモ程度で終わり。もっと駄文を増やしていきたい気持ち。&lt;/p&gt;
 </description>
     </item>
     

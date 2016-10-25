@@ -64,6 +64,23 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/">sample test unit with mocha and shoulda </a></h1>
+  <div class="meta">
+    Feb 14, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  <p>最近、Test::Unit + mocha + Shoulda の構成の Rails アプリを扱っている。</p>
+
+<p>参考になるコードが欲しくて Github で <code>gem shoulda gem mocha</code> で検索したものから、良さ気なものをリストアップ</p>
+
+  <a href="http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/">install ruby on mac </a></h1>
   <div class="meta">
     Feb 3, 2013 &nbsp;
@@ -135,20 +152,6 @@
 
   CentOS 導入したら、まず yum を強くするのだ！！ yum をはやくする % sudo yum -y install yum-fastestmirror 開発用ツール % sudo yum groupinstall &quot;Development Tools&quot; パッケージ管理のリポジトリ追加 rpmforge, epel, remi の３つを入れておけば、大体なんとかなるらしい。 rpmforge % sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt % sudo rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm epel % sudo rpm --import http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/RPM-GPG-KEY-EPEL-6 % sudo rpm -ivh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm remi % sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi % sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm Development Tools を入れれば一応入るとおもわれるが、以下をやっておくと安心 % sudo yum install -y gcc-c++ gcc-c make patch readline
   <a href="http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/">postgresql の使い方 </a></h1>
-  <div class="meta">
-    Jan 4, 2013 &nbsp;
-    
-  </div>
-</div>
-
-  普段 MySQL ばっかりなので、ポスグレは分からない… SHOW databases; \l SHOW tables; \d 大文字について もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。 select * from &quot;SCHEMA&quot;.users; select * from &quot;PREFIX_users&quot;; スキーマを指定 「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。 set search_path=&quot;SCHEMA&quot;, &quot;SCHEMA2&quot;, public
-  <a href="http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/" class="read-on">続きを読む → </a>
 </div>
 
   
