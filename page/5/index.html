@@ -64,6 +64,20 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/">git blame in Emacs </a></h1>
+  <div class="meta">
+    Mar 22, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  あなたは Emacs でコードを読んでいる最中に、git blame したくなったことはありませんか？ コードの意図が知りたい時、この素晴らしいコードを書いた人を知りたい時 …そんな時、お気に入りのシェルに移動して、 git blame -L ええと何行目だったけかな、そうそう 72 行目だった、でももうちょっと前から見たいから 70 位にしてそれでええとファイル名は…なんてやっていた事はないでしょうか。私はよくあります。 さて、あなたが使っているエディタは何でしたっけ？ …そう、Emacs ですね。Emacs なら、この問題に対する素敵なソリューションが標準で存在します。 もう git blame の為にシェルに戻る時、脳内スタックに行数とファイル名を追加する必要はありません。 さてその方法ですが、Git 管理下のファイルで以下のコマンドを優しく叩いてください。 C-x v g もしくは M-x git-annotate そうすると、新しくバッファを開いて git blame の結果を表示します。 git-annotate したポイントを中心に表示してくれるのでかなり便利です。 このバッファは q で閉じる事ができます。 popup.el と組み合わせると更に良い感じになります。 これであの素敵なコードを書いた人を調べる作業が高速にかつ快適にできるようになりました:)
+  <a href="http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/">sample test unit with mocha and shoulda </a></h1>
   <div class="meta">
     Feb 14, 2013 &nbsp;
@@ -138,20 +152,6 @@
 
   rvm のアンインストール方法にちょっとはまったのでメモ。 やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。 方法 $ sudo rvm implode したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。 $ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh このあと、 ログアウト→ログイン をすること。 その後、 $ \curl -L https://get.rvm.io | bash -s stable --ruby すればおｋ。 sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。 参考 ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM -
   <a href="http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/">初回時のyumの設定 </a></h1>
-  <div class="meta">
-    Jan 7, 2013 &nbsp;
-    
-  </div>
-</div>
-
-  CentOS 導入したら、まず yum を強くするのだ！！ yum をはやくする % sudo yum -y install yum-fastestmirror 開発用ツール % sudo yum groupinstall &quot;Development Tools&quot; パッケージ管理のリポジトリ追加 rpmforge, epel, remi の３つを入れておけば、大体なんとかなるらしい。 rpmforge % sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt % sudo rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm epel % sudo rpm --import http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/RPM-GPG-KEY-EPEL-6 % sudo rpm -ivh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm remi % sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi % sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm Development Tools を入れれば一応入るとおもわれるが、以下をやっておくと安心 % sudo yum install -y gcc-c++ gcc-c make patch readline
-  <a href="http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/" class="read-on">続きを読む → </a>
 </div>
 
   

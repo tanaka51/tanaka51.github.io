@@ -6,8 +6,56 @@
     <description>Recent content in Posts on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 26 Oct 2016 03:14:27 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2016 04:00:48 +0900</lastBuildDate>
     <atom:link href="http://blog.tanaka51.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iBus Mozc と xcape</title>
+      <link>http://blog.tanaka51.jp/2016/11/01/ibus-mozc-and-xcape/</link>
+      <pubDate>Tue, 01 Nov 2016 04:00:48 +0900</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2016/11/01/ibus-mozc-and-xcape/</guid>
+      <description>&lt;p&gt;ここ最近、というか &lt;a href=&#34;http://blog.tanaka51.jp/2016/10/26/the-key-changing-input-method/&#34;&gt;一個前に書いた&lt;/a&gt; 新しいキーマップを設定してすぐくらいから fcitx が不調でインライン入力が全然できなくなってた。ので iBus を使う事にしたのと、 xcape を使って入力モードを左 ALT でアルファベット、右 ALT で日本語、と切り替えるようにした。とても快適なので、設定をメモがてらブログに残しておく。&lt;/p&gt;
+
+&lt;p&gt;環境は Ubuntu 16.04&lt;/p&gt;
+
+&lt;p&gt;そもそも発端は fcitx の不調を twitter でつぶやいていたら @ursm さんが ibus なら問題ないと教えてくれた事にある。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/tanaka51&#34;&gt;@tanaka51&lt;/a&gt; Gnome デフォルトの ibus 使ってますが、気付くとステータスバーのインジケータが消えてる以外は問題ないです&lt;/p&gt;&amp;mdash; Keita Urashima (@ursm) &lt;a href=&#34;https://twitter.com/ursm/status/793141658896392192&#34;&gt;2016年10月31日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;そしてこの一個前の記事を書いた時に xcape の存在も教わっていた。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/tanaka51&#34;&gt;@tanaka51&lt;/a&gt; xcape を使うと Karabiner みたいな動きにできて便利です &lt;a href=&#34;https://t.co/aCFjzBiV7N&#34;&gt;https://t.co/aCFjzBiV7N&lt;/a&gt;&lt;/p&gt;&amp;mdash; Keita Urashima (@ursm) &lt;a href=&#34;https://twitter.com/ursm/status/791036604198465537&#34;&gt;2016年10月25日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;で、今回 iBus に変えたらインライン入力も調子良いし、ついでに xcape も設定して快適な文字入力環境が整った。&lt;/p&gt;
+
+&lt;p&gt;やったことは&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iBus の設定で Mozc だけを使うようにする&lt;/li&gt;
+&lt;li&gt;Mozc のキー設定で、 &lt;code&gt;Hankaku/Zenkaku&lt;/code&gt; -&amp;gt; &lt;code&gt;Ctrl End&lt;/code&gt; / &lt;code&gt;Hiragana&lt;/code&gt; -&amp;gt; &lt;code&gt;Ctrl PageDown&lt;/code&gt; と設定&lt;/li&gt;
+&lt;li&gt;起動してるアプリケーションを再起動して入力モードがうまく変わる事を確認&lt;/li&gt;
+&lt;li&gt;xcape を clone して build する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xcape -d -e &#39;Alt_L=Control_L|End;Alt_R=Control_R|Next&#39;&lt;/code&gt; を実行して望みのキーコードが発行されてるか確認&lt;/li&gt;
+&lt;li&gt;上記コマンドから &lt;code&gt;-d&lt;/code&gt; を抜いて ~/.zshrc に書く&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな感じで書いた&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if [ -x $(command -v xcape)  ] &amp;amp;&amp;amp; [ -z $(pgrep xcape | head -1)  ]; then
+  xcape -e &#39;Alt_L=Control_L|End;Alt_R=Control_R|Next&#39;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最初、後ろの部分の条件入れてなくて zsh をいくつか立ち上げたら xcape の動作が微妙になった。重複起動してると動作おかしくなるっぽい。何にせよいくつも起動させるのも気持ち悪いので必要だと思う。&lt;/p&gt;
+
+&lt;p&gt;(で、これを設定するためには左右 ALT が存在しないといけなくて、そのためには Kinesis は PC モードである必要があり、そうすると Super キーが存在せず、Ubuntu の Unity のショートカットがいくつか使えなくなった。が、文字入力の快適さには代えられないからそっちは諦めた。そのうち WM も変えよう…)&lt;/p&gt;
+
+&lt;p&gt;以上で、左 ALT でアルファベット、右 ALT で日本語入力とできるようになった。 Mac で Karabiner 使って文字入力設定したのと同じ感じにできた。便利。 @ursm さんありがとうございました!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>入力メソッドを切り替えるキー</title>
@@ -823,67 +871,6 @@ CI だけ落ちるテストとかあったりして闇が深くなりがち。�
 &lt;h2 id=&#34;オチ:60acec8a09bb0f478d825ea429dcd419&#34;&gt;オチ&lt;/h2&gt;
 
 &lt;p&gt;特に無い&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Vim でコードリーディングする環境を整えた</title>
-      <link>http://blog.tanaka51.jp/2014/09/07/code-reading-on-vim/</link>
-      <pubDate>Sun, 07 Sep 2014 15:02:00 +0000</pubDate>
-      
-      <guid>http://blog.tanaka51.jp/2014/09/07/code-reading-on-vim/</guid>
-      <description>
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;なんか急に nginx と仲良くなりたい気持ちになってきた&lt;/p&gt;&amp;mdash; Koichi Tanaka (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/507893426637897729&#34;&gt;2014, 9月 5&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;ので nginx のソースコードを読むために Vim で環境を整えたのでメモ。&lt;/p&gt;
-
-&lt;p&gt;と言っても特別な事をしたのではなくて、ctags を vim でどう使うか、という話。環境は Mac。&lt;/p&gt;
-
-&lt;p&gt;(普段仕事では Rails で開発していて &lt;a href=&#34;https://github.com/tpope/vim-rails&#34;&gt;tpope/vim-rails&lt;/a&gt; を使ってたり &lt;a href=&#34;https://github.com/hibariya/reditor&#34;&gt;hibariya/reditor&lt;/a&gt; を使ってて、 ctags が欲しいと思う事があまりなかった)&lt;/p&gt;
-
-&lt;h2 id=&#34;用意する:49f5dd78279dcef6b8f22b821fa2aef5&#34;&gt;用意する&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ctags&lt;/li&gt;
-&lt;li&gt;vim-ctrlp-tjump&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ctags:49f5dd78279dcef6b8f22b821fa2aef5&#34;&gt;ctags&lt;/h2&gt;
-
-&lt;p&gt;いろんなサイトで解説されてるけど、Homebrew で入れた Exuberant Ctags を使うと Ruby とかでも使えて便利らしい。&lt;/p&gt;
-
-&lt;p&gt;インストールしたらコマンド一発叩くだけ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;ctags -R
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;make 後に生成した方が、環境ごとの定数とかが含まれて良い感じ。&lt;/p&gt;
-
-&lt;h3 id=&#34;git-hook-に仕込む-ついでに:49f5dd78279dcef6b8f22b821fa2aef5&#34;&gt;git hook に仕込む(ついでに)&lt;/h3&gt;
-
-&lt;p&gt;nginx は mercurial なので関係ないけど、ついでなので git の hook を仕込んでおく。&lt;/p&gt;
-
-&lt;p&gt;ここを参考にした: &lt;a href=&#34;http://qiita.com/soramugi/items/9a3687bb81ce35e3f99a&#34;&gt;ctags - gitのhookでtags作成 - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;mercurial の使いかた、覚えた方が良いのだろうか&lt;/p&gt;
-
-&lt;h2 id=&#34;vim-ctrlp-tjump:49f5dd78279dcef6b8f22b821fa2aef5&#34;&gt;vim-ctrlp-tjump&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/2014/09/06/memo-with-vim/&#34;&gt;前回の記事&lt;/a&gt;で ctrlp を入れていたのだけど、このインターフェースで tagjump できるように、以下の拡張を入れた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ivalkeen/vim-ctrlp-tjump&#34;&gt;ivalkeen/vim-ctrlp-tjump&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;nnoremap &amp;lt;c-]&amp;gt; :CtrlPtjump&amp;lt;CR&amp;gt;
-vnoremap &amp;lt;c-]&amp;gt; :CtrlPtjumpVisual&amp;lt;CR&amp;gt;
-let g:ctrlp_tjump_only_silent = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Unix/Windows 両対応の C のプロジェクトってコンパイルオプションで関数を切り分けると思うけど(少なくとも nginx はそうだった)、
-知らない関数に出くわして &lt;code&gt;ctrl-]&lt;/code&gt; して、タグ一覧が出た時に &lt;code&gt;src/unix/xxx&lt;/code&gt; &lt;code&gt;src/windows/xxx&lt;/code&gt; と出ると「あーこれは互換性のために分岐してあるコードだ」というのが一発で分かって嬉しい。&lt;/p&gt;
-
-&lt;p&gt;一番下の設定を入れておくと、定義が一つだけの時は選択ウィンドウ(?)が出ないですぐに飛ぶので便利。&lt;/p&gt;
 </description>
     </item>
     
