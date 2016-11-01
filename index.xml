@@ -67,6 +67,12 @@ fi
 
 &lt;p&gt;&lt;strong&gt;ここまで追記&lt;/strong&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;ここから追記2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;更に @ursm さんに教えてもらって、 &lt;code&gt;~/.zshrc&lt;/code&gt; に書いた xcape を起動する処理を &lt;code&gt;~/.xprofile&lt;/code&gt; に移した。 zsh 起動するたびに無駄な処理が走らなくて良い。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ここまで追記2&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;以上で、左 ALT でアルファベット、右 ALT で日本語入力とできるようになった。 Mac で Karabiner 使って文字入力設定したのと同じ感じにできた。便利。 @ursm さんありがとうございました!&lt;/p&gt;
 </description>
     </item>
