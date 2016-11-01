@@ -98,7 +98,7 @@
 
 <p>こんな感じで書いた</p>
 
-<pre><code>if [ -x $(command -v xcape)  ] &amp;&amp; [ -z $(pgrep xcape | head -1)  ]; then
+<pre><code>if [ -x $(command -v xcape)  ] &amp;&amp; [ -z $(pgrep xcape | head -1) ]; then
   xcape -e 'Alt_L=Control_L|End;Alt_R=Control_R|Next'
 fi
 </code></pre>
@@ -106,6 +106,20 @@ fi
 <p>最初、後ろの部分の条件入れてなくて zsh をいくつか立ち上げたら xcape の動作が微妙になった。重複起動してると動作おかしくなるっぽい。何にせよいくつも起動させるのも気持ち悪いので必要だと思う。</p>
 
 <p>(で、これを設定するためには左右 ALT が存在しないといけなくて、そのためには Kinesis は PC モードである必要があり、そうすると Super キーが存在せず、Ubuntu の Unity のショートカットがいくつか使えなくなった。が、文字入力の快適さには代えられないからそっちは諦めた。そのうち WM も変えよう…)</p>
+
+<p><strong>ここから追記</strong></p>
+
+<p>これまた @ursm さんに教えてもらったのだが、 Keypad mode の PrintScr に Super がいた。以下の順で押すと設定できる。(keypad キーを押すタイミングがあまり直感的ではない気がする)</p>
+
+<ol>
+<li>keypad</li>
+<li>Program + F12</li>
+<li>keypad</li>
+<li>PrintScr</li>
+<li>置き換えたいキー</li>
+</ol>
+
+<p><strong>ここまで追記</strong></p>
 
 <p>以上で、左 ALT でアルファベット、右 ALT で日本語入力とできるようになった。 Mac で Karabiner 使って文字入力設定したのと同じ感じにできた。便利。 @ursm さんありがとうございました!</p>
 
