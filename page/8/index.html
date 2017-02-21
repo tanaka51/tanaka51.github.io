@@ -64,79 +64,15 @@
   
     <div class="summary">
   <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2016/05/20/trip-at-2016-05-16-17/">公録と聖地巡礼の旅 </a></h1>
+  <h1><a href="http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/">他の PC で Octopress をセットアップする </a></h1>
   <div class="meta">
-    May 20, 2016 &nbsp;
-    
-      #<a href="/tags/%E6%97%A5%E8%A8%98">日記</a>&nbsp;
+    Sep 7, 2012 &nbsp;
     
   </div>
 </div>
 
-  <p>2016/05/15,16 と1泊2日で旅行した。目的は大阪でのゆりゆららららゆるゆり放送局の公録と、富山でゆるゆりの聖地巡礼。</p>
-
-  <a href="http://blog.tanaka51.jp/2016/05/20/trip-at-2016-05-16-17/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2016/05/04/ifttt/">ifttt連携テスト </a></h1>
-  <div class="meta">
-    May 4, 2016 &nbsp;
-    
-  </div>
-</div>
-
-  <p>新規投稿したら tweet されるはず</p>
-
-  <a href="http://blog.tanaka51.jp/2016/05/04/ifttt/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2016/05/04/renewal-with-hugo/">hugoに移行した </a></h1>
-  <div class="meta">
-    May 4, 2016 &nbsp;
-    
-  </div>
-</div>
-
-  <p>ちょっと時間ができたのでしばらく手を付けてなかったこのブログのジェネレータを <a href="https://gohugo.io/">hugo</a> に移行した。世の中 golang プロダクトで溢れてきた感がある。
-デザインは <a href="https://github.com/tanksuzuki/angels-ladder">tanksuzuki/angels</a> を元にちょっといじったものを使っている。(<a href="https://github.com/tanaka51/angels-ladder">tanaka51/angels</a>)</p>
-
-  <a href="http://blog.tanaka51.jp/2016/05/04/renewal-with-hugo/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2015/08/30/rust-of-us-chapter3/">Rust of Us - Chapter 3 に参加してきた </a></h1>
-  <div class="meta">
-    Aug 30, 2015 &nbsp;
-    
-  </div>
-</div>
-
-  <p><a href="https://rust-of-us.doorkeeper.jp/events/28471">Rust of Us - Chapter 3 - Rust of Us | Doorkeeper</a> に参加してきた。</p>
-
-  <a href="http://blog.tanaka51.jp/2015/08/30/rust-of-us-chapter3/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2015/05/12/try-iruby/">IRuby を試してみた </a></h1>
-  <div class="meta">
-    May 12, 2015 &nbsp;
-    
-  </div>
-</div>
-
-  <p>GitHub が IPython なるものをレンダリングできると発表していて、Ruby でも使えるらしいのでやってみた。</p>
-
-  <a href="http://blog.tanaka51.jp/2015/05/12/try-iruby/" class="read-on">続きを読む → </a>
+  他の PC で octopress の記事をポストしたいときの手順 前提条件 Github Pages を使っている どこかで setup が終了している やり方 git@github.com:username/username.github.com からクローン source ブランチをチェックアウト $ git checkout -b source origin/source master ブランチはいらないので消す $ git branch -D master bundle インストール RVM やらの設定もやっておく $ bundle install 重要 rake setup_github_pages を必ず実行する これは新しくクローンしたリポジトリでは毎回実行すること この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される やらないとデプロイできないので注意 $ rake setup_github_pages 後はいつもと同じ手順でポスト可能
+  <a href="http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/" class="read-on">続きを読む → </a>
 </div>
 
   
@@ -156,14 +92,14 @@
         
         <li
         >
-        <a href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        <a href="/page/7/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
         </li>
         
         <li
         ><a href="/">1</a></li>
         
         <li
-        class="active"><a href="/page/2/">2</a></li>
+        ><a href="/page/2/">2</a></li>
         
         <li
         ><a href="/page/3/">3</a></li>
@@ -181,11 +117,11 @@
         ><a href="/page/7/">7</a></li>
         
         <li
-        ><a href="/page/8/">8</a></li>
+        class="active"><a href="/page/8/">8</a></li>
         
         <li
-        >
-        <a href="/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        class="disabled">
+        <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
