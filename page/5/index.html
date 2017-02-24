@@ -64,6 +64,38 @@
   
     <div class="summary">
   <div class="article-header">
+  <h1><a href="http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/">vagrant で SSH authentication failed! とか出た場合の対処法 </a></h1>
+  <div class="meta">
+    Mar 25, 2013 &nbsp;
+    
+  </div>
+</div>
+
+  <p>vagrant で</p>
+
+<pre><code>$ vagrant halt
+[default] Attempting graceful shutdown of VM...
+SSH authentication failed! This is typically caused by the public/private
+keypair for the SSH user not being properly set on the guest VM. Please
+verify that the guest VM is setup with the proper public key, and that
+the private key path for Vagrant is setup properly as well.
+</code></pre>
+
+<p>こんなエラーが出た時の対処方。</p>
+
+<p>環境は</p>
+
+<ul>
+<li>ホスト: Mac (OSX 10.8.3)</li>
+<li>ゲスト: Ubuntu 10.04.4 LTS</li>
+</ul>
+
+  <a href="http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/" class="read-on">続きを読む → </a>
+</div>
+
+  
+    <div class="summary">
+  <div class="article-header">
   <h1><a href="http://blog.tanaka51.jp/2013/03/23/use-octomacs/">Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話 </a></h1>
   <div class="meta">
     Mar 23, 2013 &nbsp;
@@ -147,20 +179,6 @@
 <p>以後、長いけれども、作業メモ。</p>
 
   <a href="http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/" class="read-on">続きを読む → </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/">Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い </a></h1>
-  <div class="meta">
-    Jan 31, 2013 &nbsp;
-    
-  </div>
-</div>
-
-  仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。 原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。 Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。 自分が触った範囲で違うところをまとめる。 assertion メソッドのmessage引数 ここは大きな違い。 Ruby標準ライブラリ to_s に反応するものなら何でもOK gemのtest-unit nil String Proc AssertionMessage だけしか受け付けない 出力系 Test::Unit:::UI::Console::TestRunner 辺り #output 出力の為のメソッド。いろんな所で使われている。 とる引数が違うので、オーバーライドしてると大変。 ``` ruby Ruby 標準ライブラリ def output(something, level=NORMAL) ``` ruby gem 版 test-unit def output(something, color=nil, level=nil) #add_fault &rdquo;&hellip;F..F.E.&rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（@show_detail_immediatelyの値によって変わる）。 ``` ruby Ruby 標準ライブラリ def add_fault(fault) @faults &lt;&lt; fault output_single(fault.single_character_display, PROGRESS_ONLY) @already_outputted = true end ``` ruby gem 版 test-unit def add_fault(fault) @faults &lt;&lt; fault output_progress(fault.single_character_display, fault_color(fault)) output_progress_in_detail(fault) if @show_detail_immediately @already_outputted = true if fault.critical?
-  <a href="http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/" class="read-on">続きを読む → </a>
 </div>
 
   
