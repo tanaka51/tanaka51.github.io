@@ -6,8 +6,11 @@
     <description>Recent content in Iterm2 Mac on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>Koichi Tanaka</copyright>
     <lastBuildDate>Fri, 04 Jan 2013 11:51:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.tanaka51.jp/categories/iterm2-mac/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.tanaka51.jp/categories/iterm2-mac/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Setup iTerm2</title>
@@ -15,21 +18,8 @@
       <pubDate>Fri, 04 Jan 2013 11:51:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2013/01/04/setup-iterm2/</guid>
-      <description>
-
-&lt;h2 id=&#34;iterm2-を-emacs-仕様にする:8d99cdeb22ba192c79263c67f5a0ab47&#34;&gt;iTerm2 を Emacs 仕様にする&lt;/h2&gt;
-
-&lt;p&gt;Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;iTerm -&amp;gt; Preferences&amp;hellip; で設定画面を開く&lt;/li&gt;
-&lt;li&gt;Profiles -&amp;gt; Keys の下段の Left Option を +ESC にチェックする&lt;/li&gt;
-&lt;li&gt;Keys タブの Remap Modifier Keys の Left command key と Right command key をLeft Option に変える&lt;/li&gt;
-&lt;li&gt;Keys タブの Global Shortcut Keys の + をクリック、Action から Do Not Remap Modifires を選択、Command + Tab と Command + Space を登録する(必要があれば他のキーも登録する)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これで、tmux の Emacs モードも快適に使える:)&lt;/p&gt;
-</description>
+      <description>iTerm2 を Emacs 仕様にする Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。
+ iTerm -&amp;gt; Preferences&amp;hellip; で設定画面を開く Profiles -&amp;gt; Keys の下段の Left Option を +ESC にチェックする Keys タブの Remap Modifier Keys の Left command key と Right command key をLeft Option に変える Keys タブの Global Shortcut Keys の + をクリック、Action から Do Not Remap Modifires を選択、Command + Tab と Command + Space を登録する(必要があれば他のキーも登録する)  これで、tmux の Emacs モードも快適に使える:)</description>
     </item>
     
   </channel>

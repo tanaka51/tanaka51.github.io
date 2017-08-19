@@ -6,8 +6,11 @@
     <description>Recent content in Rvm Ruby on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>Koichi Tanaka</copyright>
     <lastBuildDate>Mon, 07 Jan 2013 17:25:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.tanaka51.jp/categories/rvm-ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.tanaka51.jp/categories/rvm-ruby/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>uninstall_rvm</title>
@@ -15,43 +18,14 @@
       <pubDate>Mon, 07 Jan 2013 17:25:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/</guid>
-      <description>
-
-&lt;p&gt;rvm のアンインストール方法にちょっとはまったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;やりたいこと:3fc63103d791692df9100b95b717275e&#34;&gt;やりたいこと&lt;/h2&gt;
-
-&lt;p&gt;Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。&lt;/p&gt;
-
-&lt;h2 id=&#34;方法:3fc63103d791692df9100b95b717275e&#34;&gt;方法&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo rvm implode
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo rm -rf /usr/local/rvm
-$ suod rm /etc/profile.d/rvm.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このあと、 &lt;strong&gt;ログアウト→ログイン&lt;/strong&gt; をすること。&lt;/p&gt;
-
-&lt;p&gt;その後、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ \curl -L https://get.rvm.io | bash -s stable --ruby
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;すればおｋ。&lt;/p&gt;
-
-&lt;p&gt;sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考:3fc63103d791692df9100b95b717275e&#34;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/9932125/made-a-mistake-installing-rvm-with-sudo-how-to-reverse&#34; title=&#34;ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow&#34;&gt;ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/3950260/howto-uninstall-rvm&#34; title=&#34;ruby - Howto Uninstall RVM - Stack Overflow&#34;&gt;ruby - Howto Uninstall RVM - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description> rvm のアンインストール方法にちょっとはまったのでメモ。
+やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。
+方法 $ sudo rvm implode  したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。
+$ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh  このあと、 ログアウト→ログイン をすること。
+その後、
+$ \curl -L https://get.rvm.io | bash -s stable --ruby  すればおｋ。
+sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。
+参考  ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM - Stack Overflow  </description>
     </item>
     
   </channel>

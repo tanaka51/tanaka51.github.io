@@ -6,8 +6,34 @@
     <description>Recent content in Posts on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Feb 2017 01:39:13 +0900</lastBuildDate>
-    <atom:link href="http://blog.tanaka51.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Koichi Tanaka</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 17:36:57 +0900</lastBuildDate>
+    
+	<atom:link href="http://blog.tanaka51.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>スマートドライブに転職した</title>
+      <link>http://blog.tanaka51.jp/2017/08/19/work-on-smart-drive/</link>
+      <pubDate>Sat, 19 Aug 2017 17:36:57 +0900</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2017/08/19/work-on-smart-drive/</guid>
+      <description>8&amp;frasl;6 から、株式会社スマートドライブで働いてる。
+新しい職場でもサーバサイドのエンジニアとして働いている。 技術的には AWS + Go + Rails という感じで、ぼちぼちと Golang の勉強をしている。 Quipper ではサーバサイド+フロント、という感じだったけど、スマートドライブではフロント専門のエンジニアがいるので、もうちょっとサーバ色が強くなりそうな予感。
+終わってみると、 Quipper は1年と1ヶ月と割りと短めで終わった。 転職した理由はまぁ色々とあるけど、あまり興味のなかった教育より前から好きだった車に関われるでそこが楽しみ。
+話は変わって近況的な、日記的な話。
+ダイビング 転職するのに1週間程度の休みがあって、奥さんのすすめもあってダイビングのライセンスをとりにいった。 これが想像以上に楽しかった。 スポーツは自分の技術をあげてそれで対戦したりスコアを伸ばしてくものだけど、ダイビングにも技術はあるけど、一度覚えたらひたすら自分が楽しむために使うだけなので、それがまた良いのかもしれない。
+今のライセンスは 18m までも潜れるやつだけど、それ以上に潜れるライセンスをとりに行く予定。
+沈没船とか見に行きたい。
+車 スバルのフォレスターを買うことになった。 納車は9月上旬くらいになりそう。 すごく楽しみ。
+ポーカー ここ1週間位？の話だけど、テキサスホールデムを始めた。 これが麻雀みたいで面白い。麻雀よりも気軽にゲームをはじめたり終われたりできるのが気楽で良さげ。 もうちょっと本読んだりネットの情報みつつオンラインポーカーでやって強くなっていきたい。
+ゴルフ なかなかうまくならない。この前はちょっとむずかしいコースで150以上を叩き出してしまった… きちんとコーチに見てもらって練習しないといけない。
+あと体力めっちゃ重要。ランニング・・・するの・・・？
+マラソン まったくやっていない
+TOEIC (というか英語)
+まったくやっていない
+ダイエット また過去最高の体重を記録していた・・・やっていかないといけない・・・</description>
+    </item>
     
     <item>
       <title>今年に入ってから読んだ本(2017年2月版)</title>
@@ -17,74 +43,7 @@
       <guid>http://blog.tanaka51.jp/2017/02/25/the-books-i-have-read-feb-2017/</guid>
       <description>&lt;p&gt;今年に入ってから読んだ本をダンプしておこうかと思ったのでしておく。&lt;/p&gt;
 
-&lt;p&gt;順不同。
-あと Amazon のアフィリエイトリンクってやつを使ってみたかったので、以下のリンクは全部アフィリエイト。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B015S5545W/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015S5545W&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=c5ab37adc511ed10b9d03a0395ece5fe&#34;&gt;シリコンバレー式 自分を変える最強の食事&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B015S5545W&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;この本は同僚に勧められて読んだ&lt;/li&gt;
-&lt;li&gt;文体が謎の自身にあふれていて気持ち悪さがあるけど謎の説得力があるので、実践中&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B014VS54DO/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B014VS54DO&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=dc54c0f7401bc705c2cc0364973ce3ad&#34;&gt;誰もいわなかったゴルフの基本　本当に必要なことはたったコレだけ！！&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B014VS54DO&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;こういう本は(何かを始める時に)一番最初に読んでおきたい、と思った&lt;/li&gt;
-&lt;li&gt;まだクラブも無いので、家で壁に頭付けて胸を振っている最近&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B009KYCFD2/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B009KYCFD2&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=392dfa0b04dccd071cfa21e6791ec116&#34;&gt;グラゼニ（１） (モーニングコミックス)&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B009KYCFD2&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;リアルさとギャグっぽさが良い感じにミックスされてて、野球好きなら間違いなく面白いと感じるはず&lt;/li&gt;
-&lt;li&gt;金欠につき、15巻位でストップしてる…はやく続きを読みたい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B01L6ATETA/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B01L6ATETA&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=ba90e9afde0f46ab3a85f078909c5e47&#34;&gt;昭和元禄落語心中【アマゾン限定描き下ろし購入特典ペーパー付き】（１０） (ＩＴＡＮコミックス)&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B01L6ATETA&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;最終巻、大変良かった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/4844336355/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4844336355&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=a903c2c706a982ca55d8d817233b8012&#34;&gt;Web制作者のためのCSS設計の教科書 モダンWeb開発に欠かせない「修正しやすいCSS」の設計手法&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=4844336355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;何かで例のリストからいただいた本をようやく読んだ&lt;/li&gt;
-&lt;li&gt;思想から実際のコード例まで載ってて大変良かった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B00I5BNXTQ/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00I5BNXTQ&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=3d61bb904cd6ba44795f213735bf8650&#34;&gt;無職転生 ～異世界行ったら本気だす～ 1&amp;lt;無職転生 ～異世界行ったら本気だす～&amp;gt; (MFブックス)&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B00I5BNXTQ&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Amazon のリンク貼りつつ、僕が読んだのはなろう版&lt;/li&gt;
-&lt;li&gt;友人になろうで面白い奴くれって言って出てきたやつで、これのせいで寝不足になった。&lt;/li&gt;
-&lt;li&gt;剣と魔法の世界って良いですね&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B00FANGPUQ/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00FANGPUQ&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=67f96ddd0e2c8ee6a782d42dfdc3fc59&#34;&gt;大東京トイボックス (10) (バーズコミックス)&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B00FANGPUQ&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;一気にガッと全巻買って読んだ&lt;/li&gt;
-&lt;li&gt;最後の盛り上がりがすごい良かったが、仕様はなるべく変更しないでほしい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/B01BDB1LIE/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B01BDB1LIE&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=d6baa08e94dd3a3d4eb086d99255d456&#34;&gt;疲れない脳をつくる生活習慣&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=B01BDB1LIE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Kindle に眠ってたのを読んだ。読み始めたらこれ多分昔にも一回読んでた気がする。&lt;/li&gt;
-&lt;li&gt;瞑想のやり方とか参考になった。すっきり軽く読める。&lt;/li&gt;
-&lt;li&gt;この本では睡眠は必ず7時間以上とれ6時間じゃダメだって言ってて、シリコンバレーでは睡眠時間は6時間で十分と書かれていた。コンフリクトした。んだけど、その後に年代別に必要な睡眠時間も書かれていて、年とるほど睡眠時間が短くなっていくらしく、シリコンバレーの著者は6時間睡眠で大丈夫な年代だったので、すべて納得した。若い私はしっかり7時間寝る事にする。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://www.amazon.co.jp/gp/product/4262163636/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4262163636&amp;linkCode=as2&amp;tag=tanaka51-22&amp;linkId=31334966d5fd053efcef01d43c7e4afb&#34;&gt;完走チャレンジ! 自己ベスト更新! マラソンの教科書 (池田書店のスポーツ練習メニューシリーズ)&lt;/a&gt;&lt;img src=&#34;//ir-jp.amazon-adsystem.com/e/ir?t=tanaka51-22&amp;l=am2&amp;o=9&amp;a=4262163636&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;これも昔読んだけど放置してて、先日フルマラソン完走できなかったので改めて読んだ&lt;/li&gt;
-&lt;li&gt;これしっかりやれれば確実に完走できるんだろうけど、ちょっと全部やるのは厳しいので良い感じに良い所だけやっていきたい&lt;/li&gt;
-&lt;li&gt;トレーニングは来月辺りからやっていこう・・・次のレースも決めないとなぁ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;あげてみたら、思ったよりも少なかったけど、まぁこんなもんかね。&lt;/p&gt;
-
-&lt;p&gt;しかし、この後読む本は特に決まってないんだよな。リゼロがついに更新されはじめたので、それは見るつもりだけど。ひとまずは積んでる本を消化していくのが良いのかな。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -93,9 +52,7 @@
       <pubDate>Tue, 21 Feb 2017 10:08:06 +0900</pubDate>
       
       <guid>http://blog.tanaka51.jp/2017/02/21/latest-update-on-feb-2017/</guid>
-      <description>
-
-&lt;p&gt;ちょうどビッグイベントが終わったので、ここ最近の事をメモとして書いておく。あと今年の目標もなんとなく決まったので、最後に書いておく。&lt;/p&gt;
+      <description>&lt;p&gt;ちょうどビッグイベントが終わったので、ここ最近の事をメモとして書いておく。あと今年の目標もなんとなく決まったので、最後に書いておく。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ゴルフを始めた&lt;/li&gt;
@@ -106,89 +63,7 @@
 &lt;li&gt;今年の目標&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;ゴルフ:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;ゴルフ&lt;/h2&gt;
-
-&lt;p&gt;最近、ゴルフを始めた。麻雀仲間数人が始める中で、元から興味があったので自分も一緒にやり始めた感じ。今までで、打ちっぱなしに10回位、ショートコース(新都民)に1回行った。&lt;/p&gt;
-
-&lt;p&gt;元から運動神経が良くないので、周りがうまくなる中、自分の上達速度は全然良くないんだけど、それでもアドバイスもらいつつ、うまくなっていく実感があるので楽しい。&lt;/p&gt;
-
-&lt;p&gt;プロのスイング動画を YouTube で見たり(特に松山くんのを見てるけど、ベテラン経験者にその事を話したら、「彼は体を鍛えてる人なので、初心者には参考になりづらい、どっちかというと女子プロのを見た方が良い」
-、と言われた。けど、松山くんのスイングは見てて気持ちいいので、つい見てしまう。)、 中井学先生の本を買ったりして勉強中。インターネッツには色んなスイングの情報が溢れてるけど、今の所、グリップをしっかりする事、脱力する事、の2つが大事という感触。&lt;/p&gt;
-
-&lt;p&gt;今年のボーナスが出たらクラブセット買いたいと思っている。&lt;/p&gt;
-
-&lt;p&gt;目標としては、今年中に本コース出て100切りたい。&lt;/p&gt;
-
-&lt;h2 id=&#34;toeic:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;TOEIC&lt;/h2&gt;
-
-&lt;p&gt;2017/01/29 に TOEIC を受けた。以下、結果（括弧内は前回値）:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Listening: 345(320)
-Reading:   335(255)
-Total:     680(575)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;今回のテストは確実に前回より良く理解できたぞ、という気持ちがしていたので、この結果は素直に嬉しい。反面、ボキャブラリ不足を確実に感じた。&lt;/p&gt;
-
-&lt;p&gt;勉強については TOEIC に向けて特別な何かは特にしてなくて、瞬間英作文をちょろっとやりつつ、一億人の英文法を少しずつ読み進めていた感じ。勉強していた事は Reading にしっかりと反映されていたようで、これも嬉しい。&lt;/p&gt;
-
-&lt;p&gt;今後の英語勉強について考えていること、ダーッと書いてみる。&lt;/p&gt;
-
-&lt;p&gt;瞬間英作文の Android アプリを購入して、これがかなり良いので、今後はアプリで瞬間英作文をやりつつ、一億人の英文法を読み終わりたい。また、平行して発音の練習に取り組んでいきたい。発音については本を買う所から。
-その後にボキャブラリを増やしていけると良いかな、と考えている。目標は今年中に5000語。語彙力については、どこかのサイトで語彙力を測ったら3000語位（高校入試レベル）と言われて、確かに僕の勉強のピークは高校入試までだったのでなるほどな、となった。&lt;/p&gt;
-
-&lt;p&gt;ここまでくればきっと TOEIC 800 点超えられると信じている。&lt;/p&gt;
-
-&lt;p&gt;そして来年辺りから、オンライン英会話を再開して、ボキャブラリも1万語辺りを目標にできると良いのかなぁとぼんやり考えている。(オンライン英会話は去年の6月頃にやったけど、聞き取りは頑張ればできるものの、圧倒的ボキャブラリ不足で言いたい事が全然言えなかったので、基礎が出来てから再開したいと考えていた。)&lt;/p&gt;
-
-&lt;h2 id=&#34;引っ越し:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;引っ越し&lt;/h2&gt;
-
-&lt;p&gt;秋葉原に住んでいたけど、家賃高すぎ問題があったので引っ越しした。&lt;/p&gt;
-
-&lt;p&gt;新居はいわゆる分譲賃貸。ファミリー向けのマンションで、部屋数も増えたし広くもなった。そして家賃も下がった。周りも閑静な住宅街という感じで、今の所かなり気に入っている。&lt;/p&gt;
-
-&lt;p&gt;今後、車を持つ予定があり、それを含めると月額支払い的には結局トントンくらいな感じではあるのだけど、値段据え置きで家が広くなって車も持てると考えたらまぁ良いか、と考えている。&lt;/p&gt;
-
-&lt;h2 id=&#34;ダイエット始めた:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;ダイエット始めた&lt;/h2&gt;
-
-&lt;p&gt;結婚式に向けてダイエットしてた時期があったけど、終わった後はひたすら飲んで食っての生活してたらついに体重が過去最高記録を更新したので、ダイエットの機運が高まっていた。ちょうどそのくらいの時に、同僚に例のバターコーヒーで完全無欠な感じの本を勧められたので、購入して読んで、実践している。&lt;/p&gt;
-
-&lt;p&gt;この本のダイエットパートの肝は、断続的ファスティングをする事、その補助としてバターコーヒーが良い、と受け取ったので、以下の感じで実践中。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;朝、バターコーヒーを飲む&lt;/li&gt;
-&lt;li&gt;多めに作ってタンブラーに入れて持って行き、昼飯まではそれを飲んでやりすごす&lt;/li&gt;
-&lt;li&gt;昼飯は前日の夜ご飯から15時間以上あける&lt;/li&gt;
-&lt;li&gt;昼飯に炭水化物をとらない&lt;/li&gt;
-&lt;li&gt;夜飯はいつ食べても良い&lt;/li&gt;
-&lt;li&gt;夜飯に白ご飯を食べても良いが、お茶碗一杯までとする&lt;/li&gt;
-&lt;li&gt;昼-夜の間食は、ストレス感じる位なら食べる&lt;/li&gt;
-&lt;li&gt;なるべく野菜を多く食べる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;とこれを先週の月曜日から始めて、確かに効果は感じたものの、週末の沖縄旅行で全部パーになったので、また今週からはじめる。&lt;/p&gt;
-
-&lt;h2 id=&#34;沖縄マラソン:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;沖縄マラソン&lt;/h2&gt;
-
-&lt;p&gt;参加した。ノー練習で行った。完全になめてて、まったく完走できる気がしなかった。 10km まで走ったけど体は痛いし体力も尽きたしで、その後 10km 歩いた時点でリタイア。そして左膝を痛めて、次の日は一日痛かった。&lt;/p&gt;
-
-&lt;p&gt;マラソンリタイア後のオリオンビールが最高だった。あと一緒に参加した友人とマラソン後に温泉入ったり飲みに行けたのが楽しかった。その時の話を聞いた所、練習すれば完走できそうだ、という気持ちになったので、今年中にフルマラソン完走したい気持ちでいる。&lt;/p&gt;
-
-&lt;p&gt;そして沖縄マラソン前後の旅行は最高だった(食べ過ぎて太ったけど)。&lt;/p&gt;
-
-&lt;h2 id=&#34;今年の目標:e047f7bbdd3100cc0bd5ce08219e4775&#34;&gt;今年の目標&lt;/h2&gt;
-
-&lt;p&gt;というわけで今年の目標がようやく決まった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;フルマラソン完走&lt;/li&gt;
-&lt;li&gt;TOEIC 800 点超え&lt;/li&gt;
-&lt;li&gt;ゴルフ 100 切り&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ちょっと背伸びな感じはあるけど、頑張ってみたい。
-ダイエットについては特に目標を決めてそれを達成する、という形ではなくて、日常的にやっていく感じにしたい。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -199,64 +74,7 @@ Total:     680(575)
       <guid>http://blog.tanaka51.jp/2016/11/01/ibus-mozc-and-xcape/</guid>
       <description>&lt;p&gt;ここ最近、というか &lt;a href=&#34;http://blog.tanaka51.jp/2016/10/26/the-key-changing-input-method/&#34;&gt;一個前に書いた&lt;/a&gt; 新しいキーマップを設定してすぐくらいから fcitx が不調でインライン入力が全然できなくなってた。ので iBus を使う事にしたのと、 xcape を使って入力モードを左 ALT でアルファベット、右 ALT で日本語、と切り替えるようにした。とても快適なので、設定をメモがてらブログに残しておく。&lt;/p&gt;
 
-&lt;p&gt;環境は Ubuntu 16.04&lt;/p&gt;
-
-&lt;p&gt;そもそも発端は fcitx の不調を twitter でつぶやいていたら @ursm さんが ibus なら問題ないと教えてくれた事にある。&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/tanaka51&#34;&gt;@tanaka51&lt;/a&gt; Gnome デフォルトの ibus 使ってますが、気付くとステータスバーのインジケータが消えてる以外は問題ないです&lt;/p&gt;&amp;mdash; Keita Urashima (@ursm) &lt;a href=&#34;https://twitter.com/ursm/status/793141658896392192&#34;&gt;2016年10月31日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;そしてこの一個前の記事を書いた時に xcape の存在も教わっていた。&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/tanaka51&#34;&gt;@tanaka51&lt;/a&gt; xcape を使うと Karabiner みたいな動きにできて便利です &lt;a href=&#34;https://t.co/aCFjzBiV7N&#34;&gt;https://t.co/aCFjzBiV7N&lt;/a&gt;&lt;/p&gt;&amp;mdash; Keita Urashima (@ursm) &lt;a href=&#34;https://twitter.com/ursm/status/791036604198465537&#34;&gt;2016年10月25日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;で、今回 iBus に変えたらインライン入力も調子良いし、ついでに xcape も設定して快適な文字入力環境が整った。&lt;/p&gt;
-
-&lt;p&gt;やったことは&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;iBus の設定で Mozc だけを使うようにする&lt;/li&gt;
-&lt;li&gt;Mozc のキー設定で、 &lt;code&gt;Hankaku/Zenkaku&lt;/code&gt; -&amp;gt; &lt;code&gt;Ctrl End&lt;/code&gt; / &lt;code&gt;Hiragana&lt;/code&gt; -&amp;gt; &lt;code&gt;Ctrl PageDown&lt;/code&gt; と設定&lt;/li&gt;
-&lt;li&gt;起動してるアプリケーションを再起動して入力モードがうまく変わる事を確認&lt;/li&gt;
-&lt;li&gt;xcape を clone して build する&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;xcape -d -e &#39;Alt_L=Control_L|End;Alt_R=Control_R|Next&#39;&lt;/code&gt; を実行して望みのキーコードが発行されてるか確認&lt;/li&gt;
-&lt;li&gt;上記コマンドから &lt;code&gt;-d&lt;/code&gt; を抜いて ~/.zshrc に書く&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こんな感じで書いた&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if [ -x $(command -v xcape)  ] &amp;amp;&amp;amp; [ -z $(pgrep xcape | head -1) ]; then
-  xcape -e &#39;Alt_L=Control_L|End;Alt_R=Control_R|Next&#39;
-fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最初、後ろの部分の条件入れてなくて zsh をいくつか立ち上げたら xcape の動作が微妙になった。重複起動してると動作おかしくなるっぽい。何にせよいくつも起動させるのも気持ち悪いので必要だと思う。&lt;/p&gt;
-
-&lt;p&gt;(で、これを設定するためには左右 ALT が存在しないといけなくて、そのためには Kinesis は PC モードである必要があり、そうすると Super キーが存在せず、Ubuntu の Unity のショートカットがいくつか使えなくなった。が、文字入力の快適さには代えられないからそっちは諦めた。そのうち WM も変えよう…)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ここから追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;これまた @ursm さんに教えてもらったのだが、 Keypad mode の PrintScr に Super がいた。以下の順で押すと設定できる。(keypad キーを押すタイミングがあまり直感的ではない気がする)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;keypad&lt;/li&gt;
-&lt;li&gt;Program + F12&lt;/li&gt;
-&lt;li&gt;keypad&lt;/li&gt;
-&lt;li&gt;PrintScr&lt;/li&gt;
-&lt;li&gt;置き換えたいキー&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;ここまで追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ここから追記2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;更に @ursm さんに教えてもらって、 &lt;code&gt;~/.zshrc&lt;/code&gt; に書いた xcape を起動する処理を &lt;code&gt;~/.xprofile&lt;/code&gt; に移した。 zsh 起動するたびに無駄な処理が走らなくて良い。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ここまで追記2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;以上で、左 ALT でアルファベット、右 ALT で日本語入力とできるようになった。 Mac で Karabiner 使って文字入力設定したのと同じ感じにできた。便利。 @ursm さんありがとうございました!&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -268,29 +86,7 @@ fi
       <description>&lt;p&gt;自宅では Ubuntu を使っていて、日本語・英語の切り替えに悩んでいた。というのも、 会社では Mac を使っていて、
 カラビナを使って左コマンドで英語、右コマンドで日本語に切り替えるようにしていて、これを Ubuntu でもやりたかった。&lt;/p&gt;
 
-&lt;p&gt;んだけど、 Fcitx で右/左 alt キーだけの入力メソッドの切り替えというのが出来ないっぽくて、ひとまず苦し紛れに &lt;code&gt;ctrl-;&lt;/code&gt; と &lt;code&gt;ctrl-/&lt;/code&gt; なんかを設定していた。
-ちなみに &lt;code&gt;ctrl-Space&lt;/code&gt; で切り替えたくないのは、 Emacs のバインディングとかぶるから。 Vim でも良い感じの何かに割り当てたりするし、これを潰したくない気持ちがある。&lt;/p&gt;
-
-&lt;p&gt;で、またなんか良いキーがないかと探していた所、 &lt;code&gt;End&lt;/code&gt; と&lt;code&gt;PageDown&lt;/code&gt; というキーが空いてる事に気付いたのだった。僕は普段キーボードとしては
-Kinesis を使っているんだけど、何故かこの2つのキーは完全に使っていないのであった。というわけで、特等席にいながら何もしてなかったこやつらに仕事を割り振れて、ちょっとうれしくなったのでブログに残しておく。&lt;/p&gt;
-
-&lt;p&gt;というわけで、現状の Kinesis のキー配列を書いておく。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;Left side&amp;gt;
-      | Ctrl   |  Super
-------|--------|---------
-Back  | Delete |   Alt
-Space |        |---------
-      |        | English
-
-&amp;lt;Right side&amp;gt;
-   Super  |  Ctrl |
-----------|-------|-------
-    Alt   | Enter | Space
-----------|       |
- Japanese |       |
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -299,186 +95,9 @@ Space |        |---------
       <pubDate>Wed, 24 Aug 2016 00:49:48 +0900</pubDate>
       
       <guid>http://blog.tanaka51.jp/2016/08/24/speed-up-booting-zsh/</guid>
-      <description>
+      <description>&lt;p&gt;zsh が重いので高速化したはなし。 結論: anyenv でそこそこ速くなる&lt;/p&gt;
 
-&lt;p&gt;zsh が重いので高速化したはなし。 結論: anyenv でそこそこ速くなる&lt;/p&gt;
-
-&lt;p&gt;明らかに nvm を入れたら重くなったからなんとかしたい。 &lt;a href=&#34;http://blog.uu59.org/2014-01-06-fast-rbenv.html&#34;&gt;http://blog.uu59.org/2014-01-06-fast-rbenv.html&lt;/a&gt; を参考にボトルネックを探りながら良い感じにしていく&lt;/p&gt;
-
-&lt;p&gt;自分の CPU のスペックを晒しておく&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ lscpu
-Architecture:          x86_64
-CPU op-mode(s):        32-bit, 64-bit
-Byte Order:            Little Endian
-CPU(s):                4
-On-line CPU(s) list:   0-3
-Thread(s) per core:    2
-Core(s) per socket:    2
-Socket(s):             1
-NUMA node(s):          1
-Vendor ID:             GenuineIntel
-CPU family:            6
-Model:                 61
-Model name:            Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
-Stepping:              4
-CPU MHz:               1323.953
-CPU max MHz:           2700.0000
-CPU min MHz:           500.0000
-BogoMIPS:              4389.67
-Virtualization:        VT-x
-L1d cache:             32K
-L1i cache:             32K
-L2 cache:              256K
-L3 cache:              3072K
-NUMA node0 CPU(s):     0-3
-Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt dtherm ida arat pln pts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ free -h
-              total        used        free      shared  buff/cache   available
-Mem:            15G        3.6G        9.4G        828M        2.5G         10G
-Swap:           15G          0B         15G
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;計測:ab47b90db48cd9735c093499bbc77889&#34;&gt;計測&lt;/h1&gt;
-
-&lt;h2 id=&#34;今の状態:ab47b90db48cd9735c093499bbc77889&#34;&gt;今の状態&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ time ( zsh -i -c exit  )
-( zsh -i -c exit;  )  0.77s user 0.17s system 78% cpu 1.196 total
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;何回か実行してみたけど、 0.7 秒代後半っぽい。とにかく重い、自宅の Ubuntu でも 会社の Mac でも重い。&lt;/p&gt;
-
-&lt;h2 id=&#34;設定ファイルが空の状態:ab47b90db48cd9735c093499bbc77889&#34;&gt;設定ファイルが空の状態&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ : &amp;gt; /tmp/.zshrc &amp;amp;&amp;amp; time ( ZDOTDIR=/tmp  zsh -i -c exit )
-( ZDOTDIR=/tmp zsh -i -c exit; )  0.04s user 0.01s system 92% cpu 0.048 total
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;3~4msあたりの模様&lt;/p&gt;
-
-&lt;h2 id=&#34;env-系をコメントアウト:ab47b90db48cd9735c093499bbc77889&#34;&gt;env 系をコメントアウト&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;tanaka51$ g d
-diff --git a/zshrc b/zshrc
-index 49c5506..d1a8b62 100644
---- a/zshrc
-+++ b/zshrc
-@@ -81,23 +81,23 @@ export GOPATH=$HOME
- export PATH=&amp;quot;$GOPATH/bin:$PATH&amp;quot;
- export PATH=&amp;quot;$PATH:/usr/local/go/bin&amp;quot; # install golang on /usr/local/go
-
--# rbenv
--export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;
--export PATH=&amp;quot;$HOME/.rbenv/shims:$PATH&amp;quot;
--eval &amp;quot;$(rbenv init -)&amp;quot;
--
--# pyenv
--export PYENV_ROOT=&amp;quot;$HOME/.pyenv&amp;quot;
--export PATH=&amp;quot;$PYENV_ROOT/bin:$PATH&amp;quot;
--eval &amp;quot;$(pyenv init -)&amp;quot;
--
--# virtualenvwrapper
--export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
--source $(which virtualenvwrapper.sh)
--
--# nvm
--export NVM_DIR=&amp;quot;/home/tanaka51/.nvm&amp;quot;
--[ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; . &amp;quot;$NVM_DIR/nvm.sh&amp;quot;  # This loads nvm
-+# # rbenv
-+# export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;
-+# export PATH=&amp;quot;$HOME/.rbenv/shims:$PATH&amp;quot;
-+# eval &amp;quot;$(rbenv init -)&amp;quot;
-+#
-+# # pyenv
-+# export PYENV_ROOT=&amp;quot;$HOME/.pyenv&amp;quot;
-+# export PATH=&amp;quot;$PYENV_ROOT/bin:$PATH&amp;quot;
-+# eval &amp;quot;$(pyenv init -)&amp;quot;
-+#
-+# # virtualenvwrapper
-+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-+# source $(which virtualenvwrapper.sh)
-+#
-+# # nvm
-+# export NVM_DIR=&amp;quot;/home/tanaka51/.nvm&amp;quot;
-+# [ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; . &amp;quot;$NVM_DIR/nvm.sh&amp;quot;  # This loads nvm
-
- export PATH=&amp;quot;./bin:./mybin:/usr/local/bin:$PATH&amp;quot;
- # rust
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ time ( zsh -i -c exit )
-( zsh -i -c exit; )  0.07s user 0.02s system 91% cpu 0.100 total
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;だいたい 7ms ということは大雑把に見てもこいつらで 0.6 秒かかっているらしい&lt;/p&gt;
-
-&lt;h2 id=&#34;anyenv-を使う:ab47b90db48cd9735c093499bbc77889&#34;&gt;anyenv を使う&lt;/h2&gt;
-
-&lt;p&gt;env 系多いし anyenv をいれる事を思いついた。余計な設定を消して計測してみる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;tanaka51$ g d
-diff --git a/zshrc b/zshrc
-index 49c5506..1b99763 100644
---- a/zshrc
-+++ b/zshrc
-@@ -80,25 +80,6 @@ export GOPATH=$HOME
-
- export PATH=&amp;quot;$GOPATH/bin:$PATH&amp;quot;
- export PATH=&amp;quot;$PATH:/usr/local/go/bin&amp;quot; # install golang on /usr/local/go
--
--# rbenv
--export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;
--export PATH=&amp;quot;$HOME/.rbenv/shims:$PATH&amp;quot;
--eval &amp;quot;$(rbenv init -)&amp;quot;
--
--# pyenv
--export PYENV_ROOT=&amp;quot;$HOME/.pyenv&amp;quot;
--export PATH=&amp;quot;$PYENV_ROOT/bin:$PATH&amp;quot;
--eval &amp;quot;$(pyenv init -)&amp;quot;
--
--# virtualenvwrapper
--export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
--source $(which virtualenvwrapper.sh)
--
--# nvm
--export NVM_DIR=&amp;quot;/home/tanaka51/.nvm&amp;quot;
--[ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; . &amp;quot;$NVM_DIR/nvm.sh&amp;quot;  # This loads nvm
--
- export PATH=&amp;quot;./bin:./mybin:/usr/local/bin:$PATH&amp;quot;
- # rust
- export PATH=&amp;quot;$HOME/.cargo/bin:$PATH&amp;quot;
-@@ -130,8 +111,13 @@ function tmux-attach-peco () {
- zle -N tmux-attach-peco
- bindkey &#39;^[t&#39; tmux-attach-peco
-
--# OPAM configuration
--. $HOME/.opam/opam-init/init.zsh &amp;gt; /dev/null 2&amp;gt; /dev/null || true
--
- ### Added by the Heroku Toolbelt
- export PATH=&amp;quot;/usr/local/heroku/bin:$PATH&amp;quot;
-+
-+# anyenv
-+export PATH=&amp;quot;$HOME/.anyenv/bin:$PATH&amp;quot;
-+eval &amp;quot;$(anyenv init -)&amp;quot;
-+
-+# virtualenvwrapper
-+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-+source $(which virtualenvwrapper.sh)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tanaka51$ time ( zsh -i -c exit  )
-( zsh -i -c exit;  )  0.26s user 0.05s system 69% cpu 0.446 total
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;当初より3倍くらいはやくなった。&lt;/p&gt;
-
-&lt;h1 id=&#34;おわり:ab47b90db48cd9735c093499bbc77889&#34;&gt;おわり&lt;/h1&gt;
-
-&lt;p&gt;python の virtualenvwrapper を消すと 0.1s くらいになった。けどしばらくはこれでいいや。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -489,37 +108,7 @@ index 49c5506..1b99763 100644
       <guid>http://blog.tanaka51.jp/2016/08/23/tenshoku/</guid>
       <description>&lt;p&gt;6月1日に Quipper に転職してた。転職して思ったことを忘れないようにメモしておく。&lt;/p&gt;
 
-&lt;p&gt;思いついた順に書いていってるので、まとまりはない。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;給与支払い日の関係でまるまる一ヶ月給料がない状態だった、以外にしんどかった&lt;/li&gt;
-&lt;li&gt;受託開発からサービス開発になったけど、現職の方が、良い意味でも悪い意味でも時間にしばられないで働く人が多い、気がしている&lt;/li&gt;
-&lt;li&gt;コアタイムが12時なのが最高すぎる&lt;/li&gt;
-&lt;li&gt;12時頃に出社するとランチタイムでランチいけなくてお店がやってない、という罠がある(ヤエチカに行くといつでもやってる)&lt;/li&gt;
-&lt;li&gt;GitHub 上とか日本人以外がいる環境では英語でのコミュニケーションしなきゃいけなくて、それが結構な負荷になっていると自覚してきた(それを望んで入ったけど、想像してたより負荷が高い感じ)&lt;/li&gt;
-&lt;li&gt;改善の速度が速くてすごい、無駄な事をしたくない雰囲気があって良い
-
-&lt;ul&gt;
-&lt;li&gt;入って2週間目くらいでミーティングが多いって言ったら週3くらいあったやつが週1になった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;biz と dev という感じで分かれてて、 biz はいわゆるプロマネとかプロダクトオーナーとかそういう役割の人たちなんだけど、開発以外のすべてをやってくれている感じで、すごい開発に集中できる、これすごい
-
-&lt;ul&gt;
-&lt;li&gt;もうちょいオフィスが開発に集中できると良いなぁとは思うけど、流石にわがままかな、とは思っている&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;engineering チームがすごい、インフラをさっと用意してくれる、すごい&lt;/li&gt;
-&lt;li&gt;アプリケーションに関しては歴史的経緯のつまった感じのをいじってて、それはたまに辛い事もある&lt;/li&gt;
-&lt;li&gt;Rails/Mongo(mongo mapper)/PostgreSQL/CoffeeScript/Backbone+Marionette&lt;/li&gt;
-&lt;li&gt;最近、 mongo mapper -&amp;gt; mongoid とか Backbone+Marionette -&amp;gt; React+Redux とかって移行プロジェクトが動いてる&lt;/li&gt;
-&lt;li&gt;オフィスが東京駅近く、というのは住む場所の選択肢がすごく広がって良いなぁと思った&lt;/li&gt;
-&lt;li&gt;面接で教育に興味があるわけじゃないけど大丈夫かって聞いたら、むしろそのほうが良いよってニュアンスな事を言われて入ったものの、まだ本当にそれで良いのかは分かってない&lt;/li&gt;
-&lt;li&gt;今のところ、これまで培ってきた技術でなぐってく、みたいな感じで毎日過ごしてて、漠然と不安になる事がある&lt;/li&gt;
-&lt;li&gt;Skype 英会話の補助があって、それを就業時間中にセッティングしてたけど、開発に全然集中できない事に気付いてからやめた&lt;/li&gt;
-&lt;li&gt;基本出社する雰囲気だけど、わりとカジュアルにリモートでもやっていて良い&lt;/li&gt;
-&lt;li&gt;面接前に技術課題があったけど、好評だったみたいで、それは素直に嬉しかった&lt;/li&gt;
-&lt;li&gt;転職後も前職の人と野球見に行ったり飲みに行ったりしてる、それ用の slack チームを作ったのが良かった&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -530,25 +119,7 @@ index 49c5506..1b99763 100644
       <guid>http://blog.tanaka51.jp/2016/05/20/trip-at-2016-05-16-17/</guid>
       <description>&lt;p&gt;2016/05/15,16 と1泊2日で旅行した。目的は大阪でのゆりゆららららゆるゆり放送局の公録と、富山でゆるゆりの聖地巡礼。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.msng.info/archives/2015/04/hokuriku_shinkansen.php&#34;&gt;漫画で学ぶ「大阪-東京往復ならほぼ同料金で北陸新幹線にも乗れて金沢へも行けるよ」 - 頭ん中&lt;/a&gt;
-これを参考に乗車券・特急券を買って、あとは大阪の安めのビジネスホテルをとった。&lt;/p&gt;
-
-&lt;p&gt;日曜9時半東京発の新幹線にのって大阪は松原に13時位につき、公録見て最高な気持ちで20時位に大阪駅近くのビジネスホテルにチェックインしてすぐに飲みに行って、24時位にホテルに戻った。
-次の日の朝7時発のサンダーバードの指定席を7時半発と勘違いして乗れず、40分発の自由席に乗った。金沢を経由して富山は新高岡についたら、レンタカーを借りてイオンでゆるゆりミュージアムを見て、HMVで特典もらって、聖地巡礼に向かう。パスタ食べて、高岡駅を見て、井波の町並みを見て、銭湯を見て、閑乗寺公園に行って、最高だった。黒部ダムもついでに見たろ、と向かうも立山駅から先は車で行けずに、断念。立山の大自然を堪能して新高岡に戻って、駅前に唯一あった居酒屋で乾杯して20時半発の新幹線に乗って上野まで帰った。文字通り弾丸ツアーで疲労がすごかったけど、全体的に最高な体験だった。&lt;/p&gt;
-
-&lt;p&gt;一人じゃ行かなかったと思うし、誘ってくれた @flada_auxv に圧倒的感謝 :pray:&lt;/p&gt;
-
-&lt;p&gt;あと、行き帰りの新幹線で @ohtsuka_t に借りたマネーボールを読んで、この本が最高に面白かった。新幹線は途中で電波が入らない事も多くて、アナログなやつは旅のお供にちょうどよかった。
-(そして次はビッグデータ・ベースボールを借りてて、こちらはまだ読み始めてないけど読むのが楽しみ)&lt;/p&gt;
-
-&lt;p&gt;今回の旅には、今年の1月位に買ったカメラを持参していった。せっかくなので flickr にあげた。カメラ、難しいね。もうちっとうまくなりたいもんだ。立山駅近辺で出会った謎の生き物、あれはなんだったんだろう。&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; data-header=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/tanaka51/albums/72157668307100651&#34; title=&#34;2016/05/15-16 in Osaka and Toyama&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7182/26841647690_ca142f5867_z.jpg&#34; width=&#34;640&#34; height=&#34;427&#34; alt=&#34;2016/05/15-16 in Osaka and Toyama&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;追記: 奥さんの勧めで Lightroom で写真を編集した。こういう処理をする事を念頭に入れて写真を撮ると良いらしい。深い。&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; data-header=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/tanaka51/albums/72157668588233306&#34; title=&#34;2016/05/16&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7503/26872022070_57c732d90f_z.jpg&#34; width=&#34;640&#34; height=&#34;427&#34; alt=&#34;2016/05/16&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -559,11 +130,7 @@ index 49c5506..1b99763 100644
       <guid>http://blog.tanaka51.jp/2016/05/04/ifttt/</guid>
       <description>&lt;p&gt;新規投稿したら tweet されるはず&lt;/p&gt;
 
-&lt;p&gt;追記: 投稿された模様&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;記事を書きました: ifttt連携テスト &lt;a href=&#34;https://t.co/nR5OYjYzFf&#34;&gt;https://t.co/nR5OYjYzFf&lt;/a&gt;&lt;/p&gt;&amp;mdash; 現場(71.05) (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/727829095409696768&#34;&gt;2016年5月4日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -575,12 +142,7 @@ index 49c5506..1b99763 100644
       <description>&lt;p&gt;ちょっと時間ができたのでしばらく手を付けてなかったこのブログのジェネレータを &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; に移行した。世の中 golang プロダクトで溢れてきた感がある。
 デザインは &lt;a href=&#34;https://github.com/tanksuzuki/angels-ladder&#34;&gt;tanksuzuki/angels&lt;/a&gt; を元にちょっといじったものを使っている。(&lt;a href=&#34;https://github.com/tanaka51/angels-ladder&#34;&gt;tanaka51/angels&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Octopress から hugo への移行は特に難しい事はなくて、テーマの選定・ CSS の調整に時間がかかった。ちょっと困った事として、いくつか記事の URL が変わってしまったんだけど、 hugo のドキュメント見ながら修正するが面倒なので、このままにしておく。&lt;/p&gt;
-
-&lt;p&gt;追記: よく見たら特に面倒でもなかったので、昔の URL と同じになるように設定した。具体的には、 &lt;code&gt;config.yml&lt;/code&gt; の &lt;code&gt;permalinks/post&lt;/code&gt; を &lt;code&gt;/:year/:month/:day/:filename&lt;/code&gt; にして、 &lt;code&gt;content/post&lt;/code&gt; 以下のファイル名から日付をとった。昨日までは &lt;code&gt;/:year/:month?:day/:title&lt;/code&gt; にしていた。&lt;/p&gt;
-
-&lt;p&gt;はてさて、今年はどのくらいブログを更新するんだろうか。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -591,24 +153,7 @@ index 49c5506..1b99763 100644
       <guid>http://blog.tanaka51.jp/2015/08/30/rust-of-us-chapter3/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rust-of-us.doorkeeper.jp/events/28471&#34;&gt;Rust of Us - Chapter 3 - Rust of Us | Doorkeeper&lt;/a&gt; に参加してきた。&lt;/p&gt;
 
-&lt;p&gt;今日で2回目の参加。今回は参加者が &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/&#34;&gt;The Rust Programming Language&lt;/a&gt; から好きな所をまとめて発表するスタイル。
-僕は &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/ownership.html&#34;&gt;Ownership&lt;/a&gt; を担当した。時間が若干あまったから
-&lt;a href=&#34;https://doc.rust-lang.org/nightly/book/references-and-borrowing.html&#34;&gt;References and Borrowing&lt;/a&gt; も駆け足でスライドに足した。
-(が、結構ボロボロな発表になってしまったのでちょっと反省。)
-スライドをパブリックにする約束があったような気がしたので、帰宅後にガシガシ修正してた。
-そして @katsuyoshi さん担当の &lt;a href=&#34;https://doc.rust-lang.org/nightly/book/lifetimes.html&#34;&gt;Lifetimes&lt;/a&gt; も入れておきたいと思って、そこも追加したりした。&lt;/p&gt;
-
-&lt;p&gt;スライドはこちら: &lt;a href=&#34;http://blog.tanaka51.jp/rust_ownership_slide/#1&#34;&gt;Ownership of Rust | Rust of Us - Chapter 3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;人数も少なく、他の人の発表もつっこみつつ聞けて、深く理解できたような、気がする。&lt;/p&gt;
-
-&lt;p&gt;印象に残ったのは、Rust は RFC ベースでオープンに開発が進んでいるので、開発の経緯を追いかけやすい、という話。
-力技で実装されてる部分を綺麗にするのに RFC 出して実装する、という流れがあって、意外と汚い実装が残ってたりするんだなぁとか、
-なんかオープンソースに対してお硬いイメージを持ってたけど、ちょっと親近感がわいた・・・ような気がした。良かった。&lt;/p&gt;
-
-&lt;p&gt;第二外国語的に Rust 力をつけたいなぁと思っているので、これからも定期的に参加していきたい。
-次回は String について調べてまとめたいと考えてるけど、それまでになにがしかの実装もしたいなぁ。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -617,62 +162,9 @@ index 49c5506..1b99763 100644
       <pubDate>Tue, 12 May 2015 08:27:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2015/05/12/try-iruby/</guid>
-      <description>
+      <description>&lt;p&gt;GitHub が IPython なるものをレンダリングできると発表していて、Ruby でも使えるらしいのでやってみた。&lt;/p&gt;
 
-&lt;p&gt;GitHub が IPython なるものをレンダリングできると発表していて、Ruby でも使えるらしいのでやってみた。&lt;/p&gt;
-
-&lt;p&gt;環境は Mac OS X 10.10.3&lt;/p&gt;
-
-&lt;h2 id=&#34;ipython-環境をつくる:5c13f8a788a356277b49a514cfd1dc24&#34;&gt;IPython 環境をつくる&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ brew install python3
-$ pip install ipython pyzmq tornado Jinja2 jsonschema
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ipython&lt;/code&gt; より後の依存モジュールが無いと動かない&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ipython&lt;/code&gt; とか &lt;code&gt;ipython notebook&lt;/code&gt; で動けば :ok_woman:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pip install &amp;quot;ipython[notebook]&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とすると依存モジュールが全部自動で入るようです。thx @uu59&lt;/p&gt;
-
-&lt;h2 id=&#34;iruby-環境をつくる:5c13f8a788a356277b49a514cfd1dc24&#34;&gt;IRuby 環境をつくる&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ brew install zeromq
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;が必要。参考: &lt;a href=&#34;https://github.com/minad/iruby/issues/18#issuecomment-49619447&#34;&gt;install problem · Issue #18 · minad/iruby&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-console&#34;&gt;$ gem i iruby
-$ iruby
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;書いてみる:5c13f8a788a356277b49a514cfd1dc24&#34;&gt;書いてみる&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;$ iruby notebook&lt;/code&gt; でブラウザが起動するので、そこで書物をするみたい。右上の &amp;ldquo;New&amp;rdquo; から &amp;ldquo;Python 3&amp;rdquo; を選ぶと、
-IRuby のインタプリタが起動するので、Ruby の式を書いて、上の再生ボタンっぽいのを押すと実行結果がレンダリングされる。
-&amp;ldquo;Python 3&amp;rdquo; となるは何かのアレだと思うので気にしない。
-ローカルには &lt;code&gt;[Filenam].ipynb&lt;/code&gt; ができてるので、それを GitHub 上に push するとこんな感じで見れた: &lt;a href=&#34;https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb&#34;&gt;https://github.com/tanaka51/iruby-test/blob/master/ruby.ipynb&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;エラーもそのまま表示されてて若干恥ずかしいけど、あえてそのまま表示させてみた。スマホからは表示されないっぽい。(素の JSON が表示される)&lt;/p&gt;
-
-&lt;h2 id=&#34;感想:5c13f8a788a356277b49a514cfd1dc24&#34;&gt;感想&lt;/h2&gt;
-
-&lt;p&gt;今のところ、何が便利なのかあまり分かってない。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考リンク:5c13f8a788a356277b49a514cfd1dc24&#34;&gt;参考リンク&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.jupyter.org/2015/05/07/rendering-notebooks-on-github/&#34;&gt;Rendering IPython notebooks on GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ipython.org/install.html&#34;&gt;Installing IPython — IPython&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb&#34;&gt;nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/minad/iruby/issues/18#issuecomment-49619447&#34;&gt;install problem · Issue #18 · minad/iruby&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -687,26 +179,7 @@ IRuby のインタプリタが起動するので、Ruby の式を書いて、上
 こともあって、悔しさと恥ずかしさとなんかその他色々な感情が入り混じっている
 状態である。それで一応、負け続けてる理由を考えたのでダンプしておきたかった。&lt;/p&gt;
 
-&lt;p&gt;結論から言えば、周りのみんなが強くなっただけ、という事だと思っている。
-そもそも集まったメンバーは手作りのレベルとかオリのレベルとか、
-そこら辺は多分同じくらいのところにあると思っていて、その上で
-自分がやっていたのは近代の麻雀のセオリーである即リーベタオリくらいで、
-それを実践するだけで勝ってた状態。で、打ち終わった後の飲み会とかで
-気を付けてる事を聞かれたら基本的にはテンパイ即リー、ベタオリの徹底してる
-だけだよ〜とかって話したり、後は各々勉強を始めたりとかしてて、
-グループ自体のレベルが上がってきたんだなぁって。やっぱり打ち続けてれば
-強くなるんですなぁ。感慨深い。もう一つの要因としては、最近常連になってた
-メンバーのレベルの高さもあるかなぁと。まぁそんな感じで、平均レベルがあがった
-結果、まったく成長してない自分は相対的に負け続けるのも納得なのであった。&lt;/p&gt;
-
-&lt;p&gt;で、負け続けるのも悔しいから、本腰入れて勉強せねばなぁと思っているわけである。
-手始めに積ん読になっていた近代麻雀技術論を読み始めた。最近はじめたエアロバイク
-のお供として読み進めようかなぁと。さっき少し読み進めたけど、自分が当たり前に思って
-やってた事が7割位で間違っていたのであった。ショックな反面、逆に負けているのが
-運じゃじゃくて実力だった事が分かったのは良かった。基礎をしっかりと身に付ければ、
-今より強くなれる余地がある事は嬉しい。というわけで、麻雀の勉強をしていこうと
-思っているのであった。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -715,87 +188,9 @@ IRuby のインタプリタが起動するので、Ruby の式を書いて、上
       <pubDate>Tue, 24 Feb 2015 23:36:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2015/02/24/vue-tsurai/</guid>
-      <description>
+      <description>&lt;p&gt;Vue.js が辛くなってきた。&lt;/p&gt;
 
-&lt;p&gt;Vue.js が辛くなってきた。&lt;/p&gt;
-
-&lt;h1 id=&#34;ひとまず現状の辛さをダンプ:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;ひとまず現状の辛さをダンプ&lt;/h1&gt;
-
-&lt;p&gt;今日チームで改めて話し合って辛さがハッキリしてきたので、それをつらつらと書いてく。&lt;/p&gt;
-
-&lt;p&gt;(今のチームは僕を含めて Rails プログラマが多くて、フロントエンドを専門にやってる人はいない。)&lt;/p&gt;
-
-&lt;h2 id=&#34;グローバル変数大量問題-もしくはイベント地獄問題:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;グローバル変数大量問題(もしくはイベント地獄問題)&lt;/h2&gt;
-
-&lt;p&gt;たくさんの状態(変数)が必要 &amp;amp;&amp;amp; 複数 DOM にまたがるレンダリングがしたい。&lt;/p&gt;
-
-&lt;p&gt;今は、左ペインで選択して右ペインに出す、みたいな事をしている。
-左ペインはタブで様々な種類の項目を選べて、選択したものを右側でリスト化して表示している。&lt;/p&gt;
-
-&lt;p&gt;これをやろうとするにあたって、方向性が２つあると思っていて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;左ペインと右ペインでコンポーネントを分けて、親玉 ViewModel に変更を通知して親玉がレンダリング制御する
-
-&lt;ul&gt;
-&lt;li&gt;-&amp;gt; イベント地獄&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;左ペインと右ペインの上位の親玉 ViewModel をつくって全ての変数を定義
-
-&lt;ul&gt;
-&lt;li&gt;-&amp;gt; これがグローバル変数のようなもので、それが大量につくられる&lt;/li&gt;
-&lt;li&gt;(現状はイベント地獄よりはマシだと思ってこっちを採用している)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;jquery-plugin-との合わせ技の辛さ:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;jQuery(plugin) との合わせ技の辛さ&lt;/h2&gt;
-
-&lt;p&gt;最初に jQuery で頑張っていた名残もあって、jQuery プラグインをいくつか使っている。
-それを Vue.js と強調動作させるためにクラスをいくつか作っているけど、割りと見通しが悪い。&lt;/p&gt;
-
-&lt;p&gt;あとは jQuery のイベントハンドリングが便利で使っていて、それも辛さを増す原因になっている。
-なんで jQuery を使っているかというと、グローバルなイベントをハンドリングする仕組みが Vue.js にないから(たぶん)。&lt;/p&gt;
-
-&lt;p&gt;具体的には、 左ペインで入力/選択したら右ペインでハイライトする、みたいなのをしたいと思った時に、
-左ペインの入力/選択した要素はそれぞれモデルの property になってるんだけど、それらに対してまとめてイベントをリッスンして何かするって事がすっきり書けない。
-そこで jQuery で &lt;code&gt;$(&#39;#left-pain input&#39;).on(&#39;change&#39;, function(e) { vm.highlight(e) }&lt;/code&gt; のようにするんだけど、
-こういうのが増えていくと、ViewModel 内でのイベントと jQuery でのイベントとが合わさって予期せぬ挙動をする事があって辛くなってくる（きた）。&lt;/p&gt;
-
-&lt;h2 id=&#34;vue-js-が力技で動く:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;Vue.js が力技で動く&lt;/h2&gt;
-
-&lt;p&gt;これは Vue.js の利点でもあるんだけど、割りと雑に書いてもそれなりに動く。
-そういうのもあって上述したような辛さが増していく。
-これはまぁプログラマの責任なんだけど、いかんせんフロントエンドに対する知見が無いので、どうしよう、という感じ。&lt;/p&gt;
-
-&lt;h2 id=&#34;vue-js-の知見が-web-上に少ない:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;Vue.js の知見が Web 上に少ない&lt;/h2&gt;
-
-&lt;p&gt;Vue.js で困ったことがあった時に頼れるものが少ない。手探り状態。
-もっと流行ってくれればよかったのに、世の中 React.js で盛り上がっててもう誰も Vue.js 見てないんじゃないか感があって寂しさがある。&lt;/p&gt;
-
-&lt;h1 id=&#34;vue-js-自体は良いライブラリだと思う:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;Vue.js 自体は良いライブラリだと思う&lt;/h1&gt;
-
-&lt;p&gt;例えば管理画面でユーザのテーブルを表示していて、項目名をクリックして並び替える、みたいな事をするのには
-Vue.js だと割りと楽に実装できるし、便利。
-IE 9 まで対応してるのも良い。
-HTML もほぼそのままの形で書けるので、デザイナーフレンドリーだと思う。&lt;/p&gt;
-
-&lt;p&gt;なので、使いドコロだと思っている。今回のプロジェクトに Vue.js を使うにはちょっと非力だったのかなぁ、という感じ。
-Vue.js が提供しているのは ViewModel だけで、その他の部分を考え始めると辛くなってくるのかなぁというのが今の感想。&lt;/p&gt;
-
-&lt;h1 id=&#34;というわけで次の一手を探している:5c6e2f1ac1dcf7ac84c2887210cd05a3&#34;&gt;というわけで次の一手を探している&lt;/h1&gt;
-
-&lt;p&gt;正直 Vue.js (or フロントエンド)に精通している人からしたら、もっと工夫の余地はあると言われると思う。
-けど、Vue.js に拘る必要姓は無いと考えているし、卒業しようと考えている。&lt;/p&gt;
-
-&lt;p&gt;最近はやりの React.js に乗り換えるか、と考えていたけど、どうやら React.js は足回り担当のようで、
-その上のフレームワークのようなものを何にするか、が重要だという事までわかった。&lt;/p&gt;
-
-&lt;p&gt;個人的には、React.js + Bacon.js で FRP と呼ばれる思想に則ってやるが良いのかなぁとボンヤリ思っている。
-React.js + Flux 系フレームワークも気になっている。
-Web 上の知見が多そうなのは後者なのかなぁ。&lt;/p&gt;
-
-&lt;p&gt;ということで終わり。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -804,72 +199,9 @@ Web 上の知見が多そうなのは後者なのかなぁ。&lt;/p&gt;
       <pubDate>Mon, 01 Dec 2014 15:56:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2014/12/01/why-vuejs/</guid>
-      <description>
+      <description>&lt;p&gt;直近の開発案件で Vue.js を使うことに決めた。&lt;/p&gt;
 
-&lt;p&gt;直近の開発案件で Vue.js を使うことに決めた。&lt;/p&gt;
-
-&lt;h2 id=&#34;背景:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;背景&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;サーバは Rails&lt;/li&gt;
-&lt;li&gt;今後、開発チームに Rails エンジニアが JOIN する可能性が高い&lt;/li&gt;
-&lt;li&gt;一部分だけ UI をリッチにしたい&lt;/li&gt;
-&lt;li&gt;ある程度まで素の JS + jQuery で実装してたけど、辛くなってきた&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;要件:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;要件&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;学習コストはできるだけ低い方が良さそう(Rails エンジニアがすぐに適応できる位)&lt;/li&gt;
-&lt;li&gt;JS ライブラリには最低限データバインディングができると嬉しそう&lt;/li&gt;
-&lt;li&gt;ルーティングは(現状)いらない&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;vue-js-選定理由:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;Vue.js 選定理由&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;学習コストが低い&lt;/li&gt;
-&lt;li&gt;手軽に使える&lt;/li&gt;
-&lt;li&gt;データバインディングある&lt;/li&gt;
-&lt;li&gt;ルーティングない&lt;/li&gt;
-&lt;li&gt;弊社内の他案件で導入実績がある
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/fluent/fluentd-ui&#34;&gt;fluent/fluentd-ui&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;他を選ばなかった理由:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;他を選ばなかった理由&lt;/h2&gt;
-
-&lt;h3 id=&#34;angular-js-ember-js:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;Angular.js/Ember.js&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;やりたい事に対して機能が多い&lt;/li&gt;
-&lt;li&gt;学習コスト高い&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;react-js:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;React.js&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;del&gt;データバインディングない?&lt;/del&gt;
-
-&lt;ul&gt;
-&lt;li&gt;すみませんありました。単方向データバインディング的な感じらしい。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;仮想 DOM という新しい概念&lt;/li&gt;
-&lt;li&gt;Rails と一緒に使いづらそう&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;backbone-js:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;backbone.js&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;機能が少ない&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;その他:2c9af97d9239dcc883cfb057ca600eb7&#34;&gt;その他&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.tanaka51.jp/2014/10/01/10day-diet/&#34;&gt;これのその後&lt;/a&gt; についてはまた後日書きます。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -889,18 +221,366 @@ Web 上の知見が多そうなのは後者なのかなぁ。&lt;/p&gt;
 
 &lt;p&gt;すごい！！！！！おめでとう！！！！！！&lt;/p&gt;
 
-&lt;p&gt;で、結局、下腹は &lt;strong&gt;凹まなかった&lt;/strong&gt; けど、以下のような効果があった。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>最近麻雀で負けていないので、何をやってるか書いておく</title>
+      <link>http://blog.tanaka51.jp/2014/09/16/mahjong/</link>
+      <pubDate>Tue, 16 Sep 2014 07:31:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/16/mahjong/</guid>
+      <description>&lt;p&gt;最近、麻雀でほとんど負けていない。&lt;/p&gt;
 
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;10日で下腹を凹ます本、やり終えた！結果、腹回り実測変化無し！筋肉はついてるっぽい雰囲気を感じる！体重は2.4kg減！体脂肪率は1.2%減！明日からもう一周する！&lt;/p&gt;&amp;mdash; Koichi Tanaka (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/516938977455001600&#34;&gt;2014, 9月 30&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;せっかくだから何を意識して打ってるのか、書いておこうと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>feature spec</title>
+      <link>http://blog.tanaka51.jp/2014/09/08/feature-spec/</link>
+      <pubDate>Mon, 08 Sep 2014 00:11:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/08/feature-spec/</guid>
+      <description>&lt;p&gt;Rails の話。&lt;/p&gt;
+
+&lt;p&gt;最近では model のスペックをあまり書かなくなってきた。ほとんど feature spec で済ませている。&lt;/p&gt;
+
+&lt;p&gt;feature spec に対する思いをダンプしたくなったのでしておく。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vim でコードリーディングする環境を整えた</title>
+      <link>http://blog.tanaka51.jp/2014/09/07/code-reading-on-vim/</link>
+      <pubDate>Sun, 07 Sep 2014 15:02:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/07/code-reading-on-vim/</guid>
+      <description>&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;なんか急に nginx と仲良くなりたい気持ちになってきた&lt;/p&gt;&amp;mdash; Koichi Tanaka (@tanaka51) &lt;a href=&#34;https://twitter.com/tanaka51/status/507893426637897729&#34;&gt;2014, 9月 5&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;ツイートしている通り、腹回りは実測的には変化していないけど、皮下脂肪の下に筋肉がいる感じはある。体重/体脂肪率は微減。
-あと、昨日のランチで「最初の3週間は筋肉がつく。その後に脂肪が減っていく。」と教えてもらったので、
-そこに期待しつつ、2周目3週目と続けていきたい。 本によると、10日で効果がでなくても、
-確実に下腹が凹む体質に変化してるので2,3日様子を見て、と書いてあったけど、 まぁトレーニングを続けた方が確実だと思うのでやる。&lt;/p&gt;
+&lt;p&gt;ので nginx のソースコードを読むために Vim で環境を整えたのでメモ。&lt;/p&gt;
 
-&lt;p&gt;また10日間のトレーニングを終える事ができたら自分を褒め称えつつ、どんな効果があったか記事にしようと思う。&lt;/p&gt;
-</description>
+&lt;p&gt;と言っても特別な事をしたのではなくて、ctags を vim でどう使うか、という話。環境は Mac。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vim で memo をとる環境を(漸く)整えた</title>
+      <link>http://blog.tanaka51.jp/2014/09/06/memo-with-vim/</link>
+      <pubDate>Sat, 06 Sep 2014 12:32:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2014/09/06/memo-with-vim/</guid>
+      <description>&lt;p&gt;ブログのデザインを新しくしたら更新するんだ、と思って早1年と半年。
+漸く重い腰をあげて Octopress 用のテーマを探しにいったら、&lt;a href=&#34;https://github.com/tlvince/leanpress&#34;&gt;良い感じにシンプルなやつ&lt;/a&gt; があったので、これだ！とブログをいじりはじめたのでした。&lt;/p&gt;
+
+&lt;p&gt;そして久しぶりの更新。&lt;/p&gt;
+
+&lt;p&gt;最後の記事が Emacs の記事、今では Vim を使う毎日なのであった。&lt;br /&gt;
+半年前から使い始めた Vim で memo をとる環境を(漸く)整えた整えたのでメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emacs と Tmux</title>
+      <link>http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/</link>
+      <pubDate>Mon, 25 Mar 2013 21:46:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/25/use-emacs-with-tmux/</guid>
+      <description>&lt;p&gt;思う所あって、Emacs を CUI で使う事にした。僕は zsh + tmux を使っているので、その上に Emacs を載せる事になる。
+その時のメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vagrant で SSH authentication failed! とか出た場合の対処法</title>
+      <link>http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/</link>
+      <pubDate>Mon, 25 Mar 2013 17:28:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/25/ssh-error-in-vagrant/</guid>
+      <description>&lt;p&gt;vagrant で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant halt
+[default] Attempting graceful shutdown of VM...
+SSH authentication failed! This is typically caused by the public/private
+keypair for the SSH user not being properly set on the guest VM. Please
+verify that the guest VM is setup with the proper public key, and that
+the private key path for Vagrant is setup properly as well.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんなエラーが出た時の対処方。&lt;/p&gt;
+
+&lt;p&gt;環境は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ホスト: Mac (OSX 10.8.3)&lt;/li&gt;
+&lt;li&gt;ゲスト: Ubuntu 10.04.4 LTS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Octomacs を rvm で使う、もしくは Emacs Lisp のデバッグ方法、Emacs Lisp の勉強になったという話</title>
+      <link>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</link>
+      <pubDate>Sat, 23 Mar 2013 10:19:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/23/use-octomacs/</guid>
+      <description>&lt;p&gt;個人ブログ、会社ブログとも Octopress を使っている。&lt;/p&gt;
+
+&lt;p&gt;Octopress を使ってて思うのは「Emacs から記事を作成(する rake タスクを実行)/編集したい！」&lt;/p&gt;
+
+&lt;p&gt;それで octomacs を使ったんだけど、rvm と組み合わせて使った時にハマった。&lt;/p&gt;
+
+&lt;p&gt;結果だけを先に述べると、octomacs で rvm を使いたい時は、/etc/ 以下のログインシェルの設定に rvm のパスを追加するようにすれば良い。ベストな解決策では無いだろうが、とりあえず動く。&lt;/p&gt;
+
+&lt;p&gt;以下、奮闘記。暇な人向け。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git blame in Emacs</title>
+      <link>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</link>
+      <pubDate>Fri, 22 Mar 2013 12:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/03/22/git-blame-in-emacs/</guid>
+      <description>あなたは Emacs でコードを読んでいる最中に、git blame したくなったことはありませんか？ コードの意図が知りたい時、この素晴らしいコードを書いた人を知りたい時 …そんな時、お気に入りのシェルに移動して、 git blame -L ええと何行目だったけかな、そうそう 72 行目だった、でももうちょっと前から見たいから 70 位にしてそれでええとファイル名は…なんてやっていた事はないでしょうか。私はよくあります。
+さて、あなたが使っているエディタは何でしたっけ？ …そう、Emacs ですね。Emacs なら、この問題に対する素敵なソリューションが標準で存在します。 もう git blame の為にシェルに戻る時、脳内スタックに行数とファイル名を追加する必要はありません。
+さてその方法ですが、Git 管理下のファイルで以下のコマンドを優しく叩いてください。
+C-x v g もしくは M-x git-annotate
+そうすると、新しくバッファを開いて git blame の結果を表示します。 git-annotate したポイントを中心に表示してくれるのでかなり便利です。 このバッファは q で閉じる事ができます。 popup.el と組み合わせると更に良い感じになります。
+これであの素敵なコードを書いた人を調べる作業が高速にかつ快適にできるようになりました:)</description>
+    </item>
+    
+    <item>
+      <title>sample test unit with mocha and shoulda</title>
+      <link>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</link>
+      <pubDate>Thu, 14 Feb 2013 14:39:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/02/14/sample-test-unit-with-mocha-and-shoulda/</guid>
+      <description>&lt;p&gt;最近、Test::Unit + mocha + Shoulda の構成の Rails アプリを扱っている。&lt;/p&gt;
+
+&lt;p&gt;参考になるコードが欲しくて Github で &lt;code&gt;gem shoulda gem mocha&lt;/code&gt; で検索したものから、良さ気なものをリストアップ&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>install ruby on mac</title>
+      <link>http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/</link>
+      <pubDate>Sun, 03 Feb 2013 22:27:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/02/03/install-ruby-on-mac/</guid>
+      <description>&lt;p&gt;Ruby 1.9.3-p374 を Mac にインストールしようとしたら一発でできなかったのでメモ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OS: OSX 10.8.2 (moutain lion)&lt;/li&gt;
+&lt;li&gt;rvm: 1.18.5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3行でまとめると、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MacPorts をアンインストール&lt;/li&gt;
+&lt;li&gt;Homebrew に完全移行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rm -rf ~/.rvm/usr&lt;/code&gt; (不要な rvm pkg をアンインストール)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という事になる。&lt;/p&gt;
+
+&lt;p&gt;最新の Ruby のインストールは、Homebrew のライブラリが相性が良いのかなーという印象。正しいかどうかは分からない。&lt;/p&gt;
+
+&lt;p&gt;以後、長いけれども、作業メモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ruby標準ライブラリのTest::Unitとgemのtest-unitの違い</title>
+      <link>http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/</link>
+      <pubDate>Thu, 31 Jan 2013 19:18:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/31/diffrences-between-ruby-test-unit-and-gem-test-unit/</guid>
+      <description>仕事で Test::Unit を使ってるプロジェクトに guard-test を入れたら挙動が変わった。 原因は guard-test を Gemfile に入れると、gem の Test::Unit が使われるからだった。 Ruby 標準ライブラリの Test::Unit と gem の Test::Unit は挙動が違う。
+自分が触った範囲で違うところをまとめる。
+assertion メソッドのmessage引数 ここは大きな違い。
+ Ruby標準ライブラリ
+ to_s に反応するものなら何でもOK  gemのtest-unit
+ nil String Proc AssertionMessage だけしか受け付けない   出力系 Test::Unit:::UI::Console::TestRunner 辺り
+#output 出力の為のメソッド。いろんな所で使われている。 とる引数が違うので、オーバーライドしてると大変。
+``` ruby Ruby 標準ライブラリ def output(something, level=NORMAL)
+ ``` ruby gem 版 test-unit def output(something, color=nil, level=nil)  #add_fault &amp;rdquo;&amp;hellip;F..F.E.&amp;rdquo; の、FとかEを表示してる箇所（エラーをスタックしてる箇所）。 標準ライブラリ版は進捗を表示するだけ、gem版はデフォルトで同時にエラーのスタックトレースを表示してる（@show_detail_immediatelyの値によって変わる）。
+``` ruby Ruby 標準ライブラリ def add_fault(fault) @faults &amp;lt;&amp;lt; fault output_single(fault.</description>
+    </item>
+    
+    <item>
+      <title>uninstall_rvm</title>
+      <link>http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/</link>
+      <pubDate>Mon, 07 Jan 2013 17:25:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/07/uninstall-rvm/</guid>
+      <description> rvm のアンインストール方法にちょっとはまったのでメモ。
+やりたいこと Ruby 環境の構築時に、誤って sudo 付きで rvm を入れてしまったので、消したい。
+方法 $ sudo rvm implode  したら、何故かrvmコマンドが見つからない！って起こられたので、以下の方法で消した。
+$ sudo rm -rf /usr/local/rvm $ suod rm /etc/profile.d/rvm.sh  このあと、 ログアウト→ログイン をすること。
+その後、
+$ \curl -L https://get.rvm.io | bash -s stable --ruby  すればおｋ。
+sudo で入れた rvm が残っていると、sudo 無し rvm を入れようとした時に、/usr/local 以下にインストールしにいこうとして失敗する。
+参考  ruby on rails - Made a mistake installing RVM with sudo. How to reverse? - Stack Overflow ruby - Howto Uninstall RVM - Stack Overflow  </description>
+    </item>
+    
+    <item>
+      <title>初回時のyumの設定</title>
+      <link>http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/</link>
+      <pubDate>Mon, 07 Jan 2013 16:45:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/07/setup-yum-at-first/</guid>
+      <description> CentOS 導入したら、まず yum を強くするのだ！！
+yum をはやくする % sudo yum -y install yum-fastestmirror  開発用ツール % sudo yum groupinstall &amp;quot;Development Tools&amp;quot;  パッケージ管理のリポジトリ追加 rpmforge, epel, remi の３つを入れておけば、大体なんとかなるらしい。
+rpmforge % sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt % sudo rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm  epel % sudo rpm --import http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/RPM-GPG-KEY-EPEL-6 % sudo rpm -ivh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm  remi % sudo rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi % sudo rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm  Development Tools を入れれば一応入るとおもわれるが、以下をやっておくと安心
+% sudo yum install -y gcc-c++ gcc-c make patch readline readline-devel httpd-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel ncurses-devel curl-devel bzip2 autoconf automake libtool bison iconv-devel gdbm-devel  </description>
+    </item>
+    
+    <item>
+      <title>postgresql の使い方</title>
+      <link>http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/</link>
+      <pubDate>Fri, 04 Jan 2013 14:10:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/04/how-to-use-postgresql/</guid>
+      <description> 普段 MySQL ばっかりなので、ポスグレは分からない…
+ SHOW databases;  \l  SHOW tables;  \d   大文字について もし何かの間違いでスキーマ名やテーブル名に大文字を指定していたら、ダブルクオーテーションで囲ってやること。スキーマ名とテーブル名の間のピリオドは囲まない。
+select * from &amp;quot;SCHEMA&amp;quot;.users; select * from &amp;quot;PREFIX_users&amp;quot;;  スキーマを指定 「リレーションがありません」とか言われたら、適切なスキーマを定義してやる。
+set search_path=&amp;quot;SCHEMA&amp;quot;, &amp;quot;SCHEMA2&amp;quot;, public  </description>
+    </item>
+    
+    <item>
+      <title>Setup iTerm2</title>
+      <link>http://blog.tanaka51.jp/2013/01/04/setup-iterm2/</link>
+      <pubDate>Fri, 04 Jan 2013 11:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2013/01/04/setup-iterm2/</guid>
+      <description>iTerm2 を Emacs 仕様にする Command を Meta にする。ただし、Command + Tab や Command * Space は有効にする。
+ iTerm -&amp;gt; Preferences&amp;hellip; で設定画面を開く Profiles -&amp;gt; Keys の下段の Left Option を +ESC にチェックする Keys タブの Remap Modifier Keys の Left command key と Right command key をLeft Option に変える Keys タブの Global Shortcut Keys の + をクリック、Action から Do Not Remap Modifires を選択、Command + Tab と Command + Space を登録する(必要があれば他のキーも登録する)  これで、tmux の Emacs モードも快適に使える:)</description>
+    </item>
+    
+    <item>
+      <title>Ruby on Rails で JSON をパースする</title>
+      <link>http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/</link>
+      <pubDate>Fri, 14 Dec 2012 16:05:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/12/14/parse-json-with-ror/</guid>
+      <description>結論 ActiveSupport::JSON.decode を使う
+参考 How do I parse JSON with Ruby on Rails? - Stack Overflow
+実際に使った clips/app/models/user.rb at master · tanaka51-jp/clips · GitHub</description>
+    </item>
+    
+    <item>
+      <title>rspec の shared_context をすべての example に適用する</title>
+      <link>http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/</link>
+      <pubDate>Fri, 14 Dec 2012 15:40:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/12/14/using-shared-context-in-a-global/</guid>
+      <description>clips で webmock を使って Github API との通信部分をスタブしたのだけど、このスタブ定義をすべての example に適用させた時の記録。または shared_context をすべての example に適用する方法。
+参考  rspec-users - using shared_context in a global way  結果  clips/spec/spec_helper.rb at master · tanaka51-jp/clips · GitHub clips/spec/support/stub_http_request.rb at master · tanaka51-jp/clips · GitHub  やり方 （というかほぼ参考にしたページの日本語約）
+まず、&amp;rsquo;RSpec.configure&amp;rsquo; 内で、すべての example に適用させる before を定義できる。 だけど、let だとか RSpec の DSL は &amp;lsquo;RSpec.configure&amp;rsquo; 内では使えない。だから、&amp;rsquo;RSpec::Core::SharedContext&amp;rsquo; を extend した module をつくって、configure 内ではその自作 module を include させるようにすると良い。
+で、具体例。
+# spec/spec_helper.</description>
+    </item>
+    
+    <item>
+      <title>RSpec Best Practice</title>
+      <link>http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/</link>
+      <pubDate>Fri, 14 Dec 2012 15:23:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/</guid>
+      <description>RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。
+具体例
+describe User do describe &#39;#admin?&#39; do subject { user.admin? } let(:user) { FactoryGirl.create :user, admin: admin } context &amp;quot;when user is administrator&amp;quot; do let(:admin) { true } it &amp;quot;returns true&amp;quot; do expect(subject).to be_true end end context &amp;quot;when user is not administrator&amp;quot; do let(:admin) { false } it &amp;quot;returns false&amp;quot; do expect(subject).to be_false end end end end  ポイント  describe と context を明確に使い分ける let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない  このルールを守るとテストの見通しがすごく良くなる  context 直上の describe は以下のルールを用いている  subject, let(/let!</description>
+    </item>
+    
+    <item>
+      <title>Cucumberファーストインプレッション</title>
+      <link>http://blog.tanaka51.jp/2012/10/01/my-first-cucumber/</link>
+      <pubDate>Mon, 01 Oct 2012 23:50:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/10/01/my-first-cucumber/</guid>
+      <description>Cucumberのメモガキ
+前準備  とりあえず Emacs の拡張を入れる  https://github.com/michaelklishin/cucumber.el  はじめる！ Cucumber を読む  http://tatsu-zine.com/books/cuke  The RSpec Book を読む  http://www.amazon.co.jp/dp/4798121932/  実践テスト駆動開発を読む  http://www.amazon.co.jp/sim/4798124583/2   実践  Guard で自動実行させる まず、シナリオの粒度に悩む  悩んでも仕方無いから、とにかく書いてみる  Cucumber の本である上の2冊は情報が古いため、そのままやっても動かないことがある  cucumber-rails はデフォルトのステップ定義を用意してくれない! tag の指定方法が変わっている!  &amp;ndash;tags @piyo で指定できる  etc, etc, etc,,,, 日本語情報が少ない(古いものが多い)から、英語で調べるのが吉 でも結局公式wikiで答えが見つかる事も多い  https://github.com/cucumber/cucumber   ステップ定義は Capybara との戦いになりがち  やっぱり調べ物には公式wikiが良かったりする  https://github.com/jnicklas/capybara   Capybara には HTTP メソッドの PUT と DELETE がなくて詰みかける  @javascript タグをつけるのが正解 Capybara の JS-driver は capybara-webkit が良い  Qt を入れる必要があって若干ハードルが高いけど、selenium よりこっちが良い 何より、ブラウザが立ち上がらないのが素晴らしい   Capybara さんには、save_and_open_page というメソッドでその状態の HTML をブラウザで開く機能があってめっちゃ便利  前提 /^デバッグ$/ { save_and_open_page } みたいなステップを定義しておくと幸せになれると思う  ちなみに、@wip タグを実行する方法は以下。というか cucumber.</description>
+    </item>
+    
+    <item>
+      <title>私の最初のRuby会議</title>
+      <link>http://blog.tanaka51.jp/2012/09/18/my-first-ruby-kaigi/</link>
+      <pubDate>Tue, 18 Sep 2012 22:28:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/09/18/my-first-ruby-kaigi/</guid>
+      <description>僕がRubyのコミュニティの存在に気がついたのは、2011年の10月過ぎだと思います。株式会社万葉に入ってからですね。 それまでは、こんなコミュニティがある事に気付きもしなかったし、関わろうとも思っていなかったです。 そんな僕が、Ruby会議の当日スタッフをやって、とっても泣いたという、聞く人によってはどうでも良い話をこれから書いていこうと思うわけです。 当然、酔っ払っています。Matz さんが「コードを書く事がアイデンティティだ」と言った事に加えて、僕は酒を飲むことがアイデンティティだからです。
+さて、実は昨日ブログを書いたけれども、そんなにたいした事は書いていませんでした。 それは、何か多くを書くと薄れるものがあると思ったからです。 一応、最後に随時更新予定とあるけれども、予定という言葉ほど不確かなものはありません。
+現実に戻った 9&amp;frasl;18(火) の仕事終わりに @theta777 さんに飲みに連れて行っていただいた帰りに @koichiroo さんからこんなツイートが届きました。
+https://twitter.com/koichiroo/status/248039536016363520 (なんかアメとムチな感じのやりとりが続いてるけど、気にしない事にする)
+なんていうか、僕はすごくかっこつけしい（という言葉も結構甘い言葉かもしれない）で、その事について札幌Ruby会議に行く前日に弊社の @tatsuoSakurai さんと @publichtml さんに説教（という名の愛の鞭）をいただいたんですね。 まぁだけど人が Skype チャットで変わる位ならこの世の中どんだけ良い世の中になるんだって話で、僕は少し位は意識していたけれども、会社に夏休みをもらって少し速めに現地入りして北海道旅行している間に鞭の痛みも事も忘れて、はしゃいでいた訳です。 それで、正直、当日スタッフ業を舐めてかかって札幌Ruby会議当日を向かえました。北海道旅行でテンションあがってましたし。
+ええ、こんなとんでもなく大変な仕事だと思いませんでした。
+日中サンサンと太陽光が降り注ぐ中道路に突っ立って道案内して、廊下に立って道案内して、ホールの後ろに立って見守って、辛くても人前では笑顔でいなきゃと思うし、夜に飲み会がある割に朝が速いし、2日目の深夜に激辛スープカレーを食って3日目の午前中はお腹壊すし（自業自得）、 スタッフ業やってる最中は最低限の見たいセッションだけ見たけどなんか TL 上ですっげー盛り上がってるセッションを見逃したりして悔しい思いをしたり、なんていうか、とにかくすっごい疲れた。
+でも、それでも頑張れる何かが札幌Ruby会議にはあったんですよね。 何か人を突き動かす大きな力があったような気がしています。 少なくとも僕はその力に動かされていたし、実行委員もスポンサーさんも当日スタッフも参加していたみなさんも、多くの人がそんな正体不明の力に突き動かされていたと思っています。僕の勝手な想像ですが。 だって3日間も異国の地(こんな事言うと北海道民の人達には怒られるかもしれないけれども、多くの人にとってはそうであったはずなのです。)に留まって、Rubyとか言うコンピュータ上の一言語の為に集まって話を聞いたりスタッフ業をしたりするなんて、狂気の沙汰ですよ。
+でも、それができて、大きな事故もなく札幌Ruby会議が終わった。
+僕は最終日のスタッフ業を、ルーム1の方で須藤さんのセッションを聞きたかったなーと思いつつもユーストを撮る作業をしていて、英語の発表であんまり良く分からずもすっごく良いセッションで、ああ、こっちを聞けて良かったと思いつつ、最後のしまださんの締めの言葉をユーストから聞いていたんです。
+そんな事をしつつ、僕がやったことって何だろうと思うと、上でグチグチ言っていた事位で、なんだろう、これって僕は何も生み出していないんですよ。 で、僕はシダラさんの事は札幌Ruby会議で出会うまで何も知らなかったのですが（すみません）、本当に実行委員の方達が用意してくれたレールに乗っかっていただけなんだなーと、シダラさんの5年前に書いていたブログとまったく同じ事を思った訳です。僕は最後にそれに気付いて、なんて幸せな事なんだろうと思いました。
+最後のスタッフの懇親会で、島田さんからすっごく大変だったという話を聞きました。嫌な事もあったと。島田さんは3日間、ずっと疲れた顔をしていましたが、僕がお疲れさまですと言うと笑顔でお疲れ様ですと返してくれて、実はそれにすっごく救われたりしてました。 島田さんをはじめ、実行委員の方々は本当に大変だったと思います。 会議が始まると不思議と大きな力が働いていたので、僕なんかはその力に任せて動けば良かっただけなんですが、実行委員の人達はそんな力が働いていないと思われる中で、事前にたくさんの準備をしていて（MLに流れていたのをなんとなく眺めていただけだけど、すごく大変なんだと思った。皆さん自分の仕事があるはずなのに…）、 更に東京に来て当日スタッフミーティングをしてみたりなんかもして、もう本当に、僕は実行委員の人たちが何をもって動いていたのかが分からないんです（これは単純に僕が想像しているだけの話なので、もしかしたら始まる前から大きな力が働いていたかもしれませんが）。
+だからこそ、得に実行委員の方達にはすごくお礼を言いたいと思っています。本当にありがとうございました。
+僕はただ単にレールに乗っかっただけで、僕が行ったら既に刺身と日本酒がおかれていた状態で、そんな感じで懇親会に参加しました。さっきも言ったとおりに僕はかっこつけしいでその割に人見知りして更に悪い事に引きこもりなのですが、そんな中でもネット上では知っていたけど初めて出会った 刺身☆ブーメランさん、宮川さん、sumim さん、某A社の西川さん、某元中卒フリーターのような著名な方々とお話できた事がすごくうれしかったです。え、俺こんな人たちと話していて良いの？状態でした。死ぬかと思いました。でも生きてます。生きてるって素晴らしい。
+後は、try(:english) では滅多にやることのない英会話ができてボロボロになったけど楽しかったし、RailsGirlsTokyo でお世話になった原田さんと英語の勉強法についてお話できてすごく為になったし（とにかく、飛び込む事が大切だという事が分かった）（あと原田さんが米国に戻ってやる仕事が僕の好きなプログラミング言語でなんか無性にうれしくなった）。
+セッションではたくさんの勇気をもらった。多くは聞けなかったけれども、得に Matz さんの「コードを書く故に我あり」というメッセージはすごく心に響きました。他には永和さんの方々のセッションは今実際に悩んでる事に対してのとても有用な解が得られたし、刺身さんのセッションにとても共感できたし、タシツキミハウさんのセッションでプログラマとして大きく成長したいと思えた。もう、何一つ無駄なセッションはなかった。
+そして、これだけの勇気をもらえて、他の人にもたくさんのパワーを与えて、そんな札幌Ruby会議に当日スタッフとして運営に参加する事ができて、僕は幸せなんです。幸せな気持ちになって涙を流す事は、すごく久しぶりなのです。（直近で同じくらい涙を流したのは、長年付き合った彼女と分かれた時だと思う。これは幸せな涙じゃあないけど。ぼかぁアレから涙が枯れた人間になっていたのだ）
+最終的に、東京（実は千葉だけど）の家に帰って、洗濯しながら、当日のユーストを流し見して涙を流し、ポールさんのブログを読んで涙を流し、シダラさんのブログを読んで涙を流していた訳です。
+当日スタッフの同じ班になった、班長のさかじさんをはじめ、くろさん、あきーにょさんにはとてもお世話になりました。ありがとうございました。
+後は、一緒のスタッフ宿に泊まった、おがさわらさん、ポールさん、櫻井さん、ほっかいさん。ありがとうございました。
+全員の名前をあげられなくて申し訳ないですが、しまださんをはじめ多くの実行委員の方々、他の班の当日スタッフの方々、ありがとうございました。
+僕にからんでくださった多くの参加者の方々、ありがとうございました。
+僕が札幌Ruby会議でここまで感動できたのは、たくさんの人たちの支えがあったからだと、そう思いながらまた涙が出てきております。
+これだけの事を思っていながら、昨日の僕はかっこつけてすべてを書こうとしなかったんですね。薄れるってお前何様だ！って話ですよ。
+それで、冒頭の件に戻るんですけど、僕は最終日のスタッフ飲み会で、確かにシダラさんにそんなような事を言ったんですよ。すごく酔っ払ってた。でも、本当に正直な気持ちだった。
+そしたら、それに反応してくれた。
+かっこつけてる場合じゃないんだと思いました。
+思ってる事は言葉にしなければ伝わらない。
+それで、帰ってきて急いでこのブログを書いています。
+僕の初めてのRuby会議は、なんか良く分からんけど、とにかく僕に勇気と感動を与えてくれた、人生で初めてのイベントです。
+これまで関わってくれた多くの人達に感謝しています！ありがとうございました！
+これからも Ruby コミュニティに末永く関わっていきたいなぁ:)</description>
+    </item>
+    
+    <item>
+      <title>札幌Ruby会議2012</title>
+      <link>http://blog.tanaka51.jp/2012/09/17/sapporo-ruby-kaigi-2012/</link>
+      <pubDate>Mon, 17 Sep 2012 19:41:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/09/17/sapporo-ruby-kaigi-2012/</guid>
+      <description>札幌Ruby会議2012の当日スタッフをやってきた。
+自分にとっては初Ruby会議&amp;amp;&amp;amp;初スタッフ業。
+なんだかあっという間に終わってしまって、飛行機で爆睡して、秋葉で「実践テスト駆動開発」を買って、家に帰って洗濯して、このブログを書くために Ubuntu のセットアップの続きをやって、そしてこのブログを書いている。
+それでこの3日間を思い出して、なんだか涙が出てきた。
+今回の札幌Ruby会議では、素晴らしい出会いやセッションがたくさんあって、来ていたほとんどの人たちが何かしらのパワーをもらって帰ったと思っている。僕もたくさんのパワーをもらった。
+そんな多くの人たちを動かすイベントにスタッフとして参加できて、北海道の人たちがすごく暖かく向かえてくれて、なんだろう、すごく感謝の気持ちでいっぱいです。
+今回、僕自身は実行委員の人たちが用意してくれたレールに乗っかっただけで、おいしい所だけを味わって帰っていった形になった。だから、何かしらの形で還元したい。
+本当にスタッフとして参加できてよかった。今回、札幌Ruby会議で関わったすべての人に感謝してます。ありがとうございました！
+しばらく、この3日間を思い出して涙する日が続きそうな気がする。w
+セッション 特に印象に残ったセッションをとりあえず過剰書きに。
+ Matz さん「我コードを書く、故に我がある」という言葉 浦嶌さんの Rails Bad parts 小芝さんの CFP に応募する話 角谷さんの DCI の話 刺身さんのレガシー Rails の話 タシツキミハウさんのプログラミングのトレーニングの話  随時更新する予定</description>
+    </item>
+    
+    <item>
+      <title>他の PC で Octopress をセットアップする</title>
+      <link>http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/</link>
+      <pubDate>Fri, 07 Sep 2012 10:59:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/</guid>
+      <description> 他の PC で octopress の記事をポストしたいときの手順
+前提条件  Github Pages を使っている どこかで setup が終了している  やり方  git@github.com:username/username.github.com からクローン source ブランチをチェックアウト  $ git checkout -b source origin/source  master ブランチはいらないので消す  $ git branch -D master  bundle インストール  RVM やらの設定もやっておく  $ bundle install   重要 rake setup_github_pages を必ず実行する  これは新しくクローンしたリポジトリでは毎回実行すること この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される やらないとデプロイできないので注意  $ rake setup_github_pages   後はいつもと同じ手順でポスト可能  </description>
     </item>
     
   </channel>

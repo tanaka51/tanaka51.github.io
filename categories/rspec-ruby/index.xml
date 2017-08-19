@@ -6,8 +6,11 @@
     <description>Recent content in Rspec Ruby on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>Koichi Tanaka</copyright>
     <lastBuildDate>Fri, 14 Dec 2012 15:23:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.tanaka51.jp/categories/rspec-ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.tanaka51.jp/categories/rspec-ruby/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>RSpec Best Practice</title>
@@ -15,108 +18,9 @@
       <pubDate>Fri, 14 Dec 2012 15:23:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2012/12/14/rspec-best-practice/</guid>
-      <description>
-
-&lt;p&gt;RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。&lt;/p&gt;
-
-&lt;p&gt;具体例&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;describe User do
-  describe &#39;#admin?&#39; do
-    subject { user.admin? }
-
-    let(:user) { FactoryGirl.create :user, admin: admin }
-
-    context &amp;quot;when user is administrator&amp;quot; do
-      let(:admin) { true }
-
-      it &amp;quot;returns true&amp;quot; do
-        expect(subject).to be_true
-      end
-    end
-
-    context &amp;quot;when user is not administrator&amp;quot; do
-      let(:admin) { false }
-
-      it &amp;quot;returns false&amp;quot; do
-        expect(subject).to be_false
-      end
-    end
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;ポイント:ef80913da24c69fd06250a65cd08d772&#34;&gt;ポイント&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;describe と context を明確に使い分ける&lt;/li&gt;
-&lt;li&gt;let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない
-
-&lt;ul&gt;
-&lt;li&gt;このルールを守るとテストの見通しがすごく良くなる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;context 直上の describe は以下のルールを用いている
-
-&lt;ul&gt;
-&lt;li&gt;subject, let(/let!), before, it, context の順で書く（let と let! は自分の中でまだ決まってない）&lt;/li&gt;
-&lt;li&gt;context によって状況を切り分ける必要がある場合、変化する対象を let でくくりだす（上のサンプルでは、user 生成時の admin パラメータを let としてくくりだし、context 内で変化させている）&lt;/li&gt;
-&lt;li&gt;let でくくり出した場合、必要があればこの場所にデフォルト値を書いておく&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;context による切り分けが必要ないもので、かつ変数にしたい（名前をつけておきたい）ものに関しては、let! を用いて正格評価としておくと、意味論的にすっきりする&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例えば、スタブした値を場合によって切り分けたい場合は以下のようになる（rspec, factory_girl の他に rspec-spies を使っている）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;describe ClipController do
-  describe &amp;quot;POST &#39;create&#39;&amp;quot; do
-    let!(:clip)   { FactoryGirl.create :clip }
-    let!(:params) do
-      { &#39;clip&#39; =&amp;gt; { &#39;code&#39; =&amp;gt; &#39;hogehoge&#39; } }
-    end
-
-    let(:successed) { true }
-
-    before do
-      Clip.stub(:new)  { clip }
-      clip.stub(:save) { successed }
-
-      post &#39;create&#39;, params
-    end
-
-    it &amp;quot;creates a new Clip&amp;quot; do
-      expect(Clip).to have_received(:new).with(&#39;code&#39; =&amp;gt; &#39;hogehoge&#39;)
-      expect(clip).to have_received(:save)
-    end
-
-    context &#39;when successed to save&#39; do
-      # 一見冗長だが、書いた方が context を明確にできて良い気がしている
-      let(:successed) { true }
-
-      it &amp;quot;redirects to &#39;show&#39;&amp;quot; do
-        expect(response).to redirect_to clip_path(clip)
-      end
-
-      it &amp;quot;sets a flash[:notice]&amp;quot; do
-        expect(flash[:notice]).to_not be_nil
-      end
-    end
-
-    context &#39;when failed to save&#39; do
-      let(:successed) { false }
-
-      it &amp;quot;renders template &#39;new&#39;&amp;quot; do
-        expect(page).to render_template(&#39;new&#39;)
-      end
-    end
-  end
-
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;結論:ef80913da24c69fd06250a65cd08d772&#34;&gt;結論&lt;/h2&gt;
-
-&lt;p&gt;RSpec 最大の魅力は let という遅延評価される変数を用意した事であると思っている。これを最大限に生かしたスペックをかければ、DRY かつ見通しのよいスペックが書けると思う。&lt;/p&gt;
-</description>
+      <description>RSpec の最大の魅力は、let だと思うようになった。let を使った見通しのよい、DRY なスペックの書き方の覚え書き。
+具体例
+describe User do describe &#39;#admin?&#39; do subject { user.admin? } let(:user) { FactoryGirl.create :user, admin: admin } context &amp;quot;when user is administrator&amp;quot; do let(:admin) { true } it &amp;quot;returns true&amp;quot; do expect(subject).to be_true end end context &amp;quot;when user is not administrator&amp;quot; do let(:admin) { false } it &amp;quot;returns false&amp;quot; do expect(subject).to be_false end end end end  ポイント  describe と context を明確に使い分ける let の遅延評価を利用して、context 直下は let 変数によるパラメータの操作だけにし、before などは一切書かない  このルールを守るとテストの見通しがすごく良くなる  context 直上の describe は以下のルールを用いている  subject, let(/let!</description>
     </item>
     
   </channel>

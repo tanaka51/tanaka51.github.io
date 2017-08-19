@@ -6,8 +6,11 @@
     <description>Recent content in Octopress on status code 51</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>Koichi Tanaka</copyright>
     <lastBuildDate>Fri, 07 Sep 2012 10:59:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.tanaka51.jp/categories/octopress/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.tanaka51.jp/categories/octopress/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>他の PC で Octopress をセットアップする</title>
@@ -15,50 +18,8 @@
       <pubDate>Fri, 07 Sep 2012 10:59:00 +0000</pubDate>
       
       <guid>http://blog.tanaka51.jp/2012/09/07/setup-octopress-on-other-pc/</guid>
-      <description>
-
-&lt;p&gt;他の PC で octopress の記事をポストしたいときの手順&lt;/p&gt;
-
-&lt;h2 id=&#34;前提条件:14589f500da28e05d0feee96f06c91ab&#34;&gt;前提条件&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Github Pages を使っている&lt;/li&gt;
-&lt;li&gt;どこかで setup が終了している&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;やり方:14589f500da28e05d0feee96f06c91ab&#34;&gt;やり方&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;git@github.com:username/username.github.com からクローン&lt;/li&gt;
-&lt;li&gt;source ブランチをチェックアウト
-&lt;code&gt;
-$ git checkout -b source origin/source
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;master ブランチはいらないので消す
-&lt;code&gt;
-$ git branch -D master
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;bundle インストール
-
-&lt;ul&gt;
-&lt;li&gt;RVM やらの設定もやっておく
-&lt;code&gt;
-$ bundle install
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;重要&lt;/strong&gt; rake setup_github_pages を必ず実行する
-
-&lt;ul&gt;
-&lt;li&gt;これは新しくクローンしたリポジトリでは毎回実行すること&lt;/li&gt;
-&lt;li&gt;この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される&lt;/li&gt;
-&lt;li&gt;やらないとデプロイできないので注意
-&lt;code&gt;
-$ rake setup_github_pages
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;後はいつもと同じ手順でポスト可能&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description> 他の PC で octopress の記事をポストしたいときの手順
+前提条件  Github Pages を使っている どこかで setup が終了している  やり方  git@github.com:username/username.github.com からクローン source ブランチをチェックアウト  $ git checkout -b source origin/source  master ブランチはいらないので消す  $ git branch -D master  bundle インストール  RVM やらの設定もやっておく  $ bundle install   重要 rake setup_github_pages を必ず実行する  これは新しくクローンしたリポジトリでは毎回実行すること この作業によって、_deploy 以下にデプロイ用のリポジトリが作成される やらないとデプロイできないので注意  $ rake setup_github_pages   後はいつもと同じ手順でポスト可能  </description>
     </item>
     
   </channel>

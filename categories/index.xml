@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on status code 51</title>
+    <link>http://blog.tanaka51.jp/categories/</link>
+    <description>Recent content in Categories on status code 51</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Koichi Tanaka</copyright>
+    
+	<atom:link href="http://blog.tanaka51.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cucumber</title>
+      <link>http://blog.tanaka51.jp/categories/cucumber/</link>
+      <pubDate>Mon, 01 Oct 2012 23:50:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/cucumber/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>http://blog.tanaka51.jp/categories/emacs/</link>
+      <pubDate>Fri, 22 Mar 2013 12:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs Octopress</title>
+      <link>http://blog.tanaka51.jp/categories/emacs-octopress/</link>
+      <pubDate>Sat, 23 Mar 2013 10:19:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/emacs-octopress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs Tmux</title>
+      <link>http://blog.tanaka51.jp/categories/emacs-tmux/</link>
+      <pubDate>Mon, 25 Mar 2013 21:46:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/emacs-tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iterm2 Mac</title>
+      <link>http://blog.tanaka51.jp/categories/iterm2-mac/</link>
+      <pubDate>Fri, 04 Jan 2013 11:51:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/iterm2-mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Octopress</title>
+      <link>http://blog.tanaka51.jp/categories/octopress/</link>
+      <pubDate>Fri, 07 Sep 2012 10:59:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/octopress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://blog.tanaka51.jp/categories/postgresql/</link>
+      <pubDate>Fri, 04 Jan 2013 14:10:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails Json</title>
+      <link>http://blog.tanaka51.jp/categories/rails-json/</link>
+      <pubDate>Fri, 14 Dec 2012 16:05:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/rails-json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rspec Ruby</title>
+      <link>http://blog.tanaka51.jp/categories/rspec-ruby/</link>
+      <pubDate>Fri, 14 Dec 2012 15:23:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/rspec-ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby Mac</title>
+      <link>http://blog.tanaka51.jp/categories/ruby-mac/</link>
+      <pubDate>Sun, 03 Feb 2013 22:27:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/ruby-mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby Rails Testunit Mocha Shoulda</title>
+      <link>http://blog.tanaka51.jp/categories/ruby-rails-testunit-mocha-shoulda/</link>
+      <pubDate>Thu, 14 Feb 2013 14:39:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/ruby-rails-testunit-mocha-shoulda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby Rubykaigi</title>
+      <link>http://blog.tanaka51.jp/categories/ruby-rubykaigi/</link>
+      <pubDate>Mon, 17 Sep 2012 19:41:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/ruby-rubykaigi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby Testunit</title>
+      <link>http://blog.tanaka51.jp/categories/ruby-testunit/</link>
+      <pubDate>Thu, 31 Jan 2013 19:18:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/ruby-testunit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rubykaigi</title>
+      <link>http://blog.tanaka51.jp/categories/rubykaigi/</link>
+      <pubDate>Tue, 18 Sep 2012 22:28:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/rubykaigi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rvm Ruby</title>
+      <link>http://blog.tanaka51.jp/categories/rvm-ruby/</link>
+      <pubDate>Mon, 07 Jan 2013 17:25:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/rvm-ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vagrant Ssh</title>
+      <link>http://blog.tanaka51.jp/categories/vagrant-ssh/</link>
+      <pubDate>Mon, 25 Mar 2013 17:28:00 +0000</pubDate>
+      
+      <guid>http://blog.tanaka51.jp/categories/vagrant-ssh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
